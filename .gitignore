@@ -1,11 +1,99 @@
+# ==========================================
+# 1. 外部源参考项目 (Reference Projects)
+# ==========================================
+A-Phoenix/
 Phoenix/
-*.pyc
+
+# ==========================================
+# 2. Python 编译及运行时缓存 (Python Caches)
+# ==========================================
 __pycache__/
-.env
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ==========================================
+# 3. 虚拟环境 (Virtual Environments)
+# ==========================================
 .venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ==========================================
+# 4. 测试、覆盖率与 Lint 分析缓存 (Testing & Linters)
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+
+# ==========================================
+# 5. 前端构建与依赖缓存 (Frontend & Node Caches)
+# ==========================================
 node_modules/
 dist/
 build/
+out/
+.next/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# 6. 本地运行产生的数据库与日志 (Local Runtime DB & Logs)
+#    注意：仅忽略本地运行产生的二进制数据库与 WAL 缓存文件，不忽略数据表初始化定义/Seed/Schema
+# ==========================================
 *.db
+*.db-journal
+*.db-wal
+*.db-shm
 *.sqlite
 *.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+
+# ==========================================
+# 7. 敏感密钥与私有环境变量 (Secrets & Env)
+# ==========================================
+.env
+.env.local
+.env.*.local
+.env.phoenix
+
+# ==========================================
+# 8. 操作系统与 IDE 本地配置 (OS & IDE)
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.scratch/
+
+# VS Code：忽略工作区用户个人临时配置，但保留团队共用推荐配置
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# ==========================================
+# 9. 协作白名单保留 (Explicit Whitelist for Collaboration)
+#    开发阶段关键的测试数据、配置文件、目录占位文件予以保留，确保团队成员同步可用
+# ==========================================
+!.gitkeep
+!.env.example
+!.env.template
