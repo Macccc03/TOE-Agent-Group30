@@ -1,0 +1,4 @@
+{
+  "gpt-4o": {"prompt": 5.0, "completion": 15.0},
+  "deepseek-chat": {"prompt": 0.14, "completion": 0.28}
+}
