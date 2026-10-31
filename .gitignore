@@ -1,0 +1,11 @@
+Phoenix/
+*.pyc
+__pycache__/
+.env
+.venv/
+node_modules/
+dist/
+build/
+*.db
+*.sqlite
+*.sqlite3
