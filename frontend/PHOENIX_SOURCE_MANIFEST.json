@@ -1,0 +1,3787 @@
+{
+  "upstream": "https://github.com/Arize-ai/phoenix",
+  "commit": "c6602582f13a082ba696c60c9d182e5729462e59",
+  "hashNormalization": "UTF-8 text with CRLF normalized to LF",
+  "files": [
+    {
+      "path": "@types/annotations.d.ts",
+      "upstreamPath": "js/app/src/@types/annotations.d.ts",
+      "upstreamSha256": "2e3ca94f40f9853298e7ca9d5618852fa7871fa2d1df7789976a8d015d62c15c",
+      "localSha256": "2e3ca94f40f9853298e7ca9d5618852fa7871fa2d1df7789976a8d015d62c15c",
+      "modified": false
+    },
+    {
+      "path": "@types/event.d.ts",
+      "upstreamPath": "js/app/src/@types/event.d.ts",
+      "upstreamSha256": "445ed38f75562db11eb5f045f27bb3ac53f88e8af7cfa49b9233b559fffb7a9a",
+      "localSha256": "445ed38f75562db11eb5f045f27bb3ac53f88e8af7cfa49b9233b559fffb7a9a",
+      "modified": false
+    },
+    {
+      "path": "@types/generative.d.ts",
+      "upstreamPath": "js/app/src/@types/generative.d.ts",
+      "upstreamSha256": "4300e9aafac3e824ea0135f482d0ce2d1547f028e9ebd354ef69d231e9f0527b",
+      "localSha256": "4300e9aafac3e824ea0135f482d0ce2d1547f028e9ebd354ef69d231e9f0527b",
+      "modified": false
+    },
+    {
+      "path": "@types/geometry.d.ts",
+      "upstreamPath": "js/app/src/@types/geometry.d.ts",
+      "upstreamSha256": "02da9e83c838efa27f38df7708c776e767fcb0dd79bd6044fc133c7ca42902a5",
+      "localSha256": "02da9e83c838efa27f38df7708c776e767fcb0dd79bd6044fc133c7ca42902a5",
+      "modified": false
+    },
+    {
+      "path": "@types/inferences.d.ts",
+      "upstreamPath": "js/app/src/@types/inferences.d.ts",
+      "upstreamSha256": "3b7178cdeabbcfa8342dcbf3788f572b9947d543c8af6247dc983f6c7b5fe2eb",
+      "localSha256": "3b7178cdeabbcfa8342dcbf3788f572b9947d543c8af6247dc983f6c7b5fe2eb",
+      "modified": false
+    },
+    {
+      "path": "@types/table.d.ts",
+      "upstreamPath": "js/app/src/@types/table.d.ts",
+      "upstreamSha256": "8d36b996c3dc52b1ed69739a26ce154ae755800342f20383d948e8e65afd998b",
+      "localSha256": "8d36b996c3dc52b1ed69739a26ce154ae755800342f20383d948e8e65afd998b",
+      "modified": false
+    },
+    {
+      "path": "@types/time.d.ts",
+      "upstreamPath": "js/app/src/@types/time.d.ts",
+      "upstreamSha256": "5e8d802ee0aaaf6d5f1545dacff53e9557a73828a77fcdfc128407c1ba47e376",
+      "localSha256": "5e8d802ee0aaaf6d5f1545dacff53e9557a73828a77fcdfc128407c1ba47e376",
+      "modified": false
+    },
+    {
+      "path": "App.tsx",
+      "upstreamPath": "js/app/src/App.tsx",
+      "upstreamSha256": "4f2296be900b395171f66d605e9467dc0d96f59a543231dbd15868b4f70c4328",
+      "localSha256": "bf84909044194fe3eb688c3b711852f3e533823de7eb24911c118f0e77c2797d",
+      "modified": true
+    },
+    {
+      "path": "GlobalStyles.tsx",
+      "upstreamPath": "js/app/src/GlobalStyles.tsx",
+      "upstreamSha256": "b296115fe94fb7c85ad2bd4ec407dfb9c343cccace8c25411377079c4f781f98",
+      "localSha256": "a9684f1246c631e63bd4841a2857226e14e388a673d54f9a7138ec99c4fb6c74",
+      "modified": true
+    },
+    {
+      "path": "RelayEnvironment.ts",
+      "upstreamPath": "js/app/src/RelayEnvironment.ts",
+      "upstreamSha256": "abc8c49c99ec26535ea45965645feeadbb4130e8fe5eb513daea72c1b6b92b37",
+      "localSha256": "abc8c49c99ec26535ea45965645feeadbb4130e8fe5eb513daea72c1b6b92b37",
+      "modified": false
+    },
+    {
+      "path": "Routes.tsx",
+      "upstreamPath": "js/app/src/Routes.tsx",
+      "upstreamSha256": "8482d310980b999997707c4c3d339284a1cbe223aab1ed3c240418ca3bd6420a",
+      "localSha256": "aad2d4810d69b13dd4a5118a021b82829c14f49251bd1edb55ee1e3fdf377f64",
+      "modified": true
+    },
+    {
+      "path": "analytics/fullstory.ts",
+      "upstreamPath": "js/app/src/analytics/fullstory.ts",
+      "upstreamSha256": "3dd4d21cbba45d0af3313e3c6c1743b1ba9c31e4fe28ea765204b08800e4806d",
+      "localSha256": "3dd4d21cbba45d0af3313e3c6c1743b1ba9c31e4fe28ea765204b08800e4806d",
+      "modified": false
+    },
+    {
+      "path": "authFetch.ts",
+      "upstreamPath": "js/app/src/authFetch.ts",
+      "upstreamSha256": "74fcbd58e0eab0605688fab8792bce14bb2221b1821c9337c5b395b5d6279063",
+      "localSha256": "74fcbd58e0eab0605688fab8792bce14bb2221b1821c9337c5b395b5d6279063",
+      "modified": false
+    },
+    {
+      "path": "components/DynamicContent.tsx",
+      "upstreamPath": "js/app/src/components/DynamicContent.tsx",
+      "upstreamSha256": "88ea161b384a303651ddf468e5f733c95738bc77e34efa9fb1129bc20898c8a0",
+      "localSha256": "52dc9cb80af835e500626bfc609ffdf37d748506912763e24e8a41ab25e5b610",
+      "modified": true
+    },
+    {
+      "path": "components/ShareLinkButton.tsx",
+      "upstreamPath": "js/app/src/components/ShareLinkButton.tsx",
+      "upstreamSha256": "9706de2b7e0de0955752ec3d5bed10746726713b311a9a227c3aee1a6f3c12eb",
+      "localSha256": "ba3d393c3843f2024cf69f979616209824d45861f430977c8cc2db38b33336c7",
+      "modified": true
+    },
+    {
+      "path": "components/StopPropagation.tsx",
+      "upstreamPath": "js/app/src/components/StopPropagation.tsx",
+      "upstreamSha256": "dec7df083c21b65d6a65edcb1d6bfdabd0546565edbdc424dfa37e0f3662caff",
+      "localSha256": "dec7df083c21b65d6a65edcb1d6bfdabd0546565edbdc424dfa37e0f3662caff",
+      "modified": false
+    },
+    {
+      "path": "components/annotation/AnnotationColorSwatch.tsx",
+      "upstreamPath": "js/app/src/components/annotation/AnnotationColorSwatch.tsx",
+      "upstreamSha256": "6ff8d336e31f3eed1563b2a5543b2ea685e182a8aa8394b493497c7bf7853f61",
+      "localSha256": "144fdf9decaaf8cf8872a64b24d85061bd1ac369450469c9adba756dfa64fd6d",
+      "modified": true
+    },
+    {
+      "path": "components/annotation/AnnotationLabel.tsx",
+      "upstreamPath": "js/app/src/components/annotation/AnnotationLabel.tsx",
+      "upstreamSha256": "652424b025baea2f8d6d787493d384b18eb00eb044dfc3a277296a20392e13ff",
+      "localSha256": "652424b025baea2f8d6d787493d384b18eb00eb044dfc3a277296a20392e13ff",
+      "modified": false
+    },
+    {
+      "path": "components/annotation/AnnotationNameAndValue.tsx",
+      "upstreamPath": "js/app/src/components/annotation/AnnotationNameAndValue.tsx",
+      "upstreamSha256": "e84a3cf8b74b013b12cf8ccea9d85e3a9d19f7917136edd7e538efc6f983f8f2",
+      "localSha256": "28a6e560eaf53dd34fff38e114663803de8b0498e47e40f56c7a643f00c8d152",
+      "modified": true
+    },
+    {
+      "path": "components/annotation/AnnotationScoreText.tsx",
+      "upstreamPath": "js/app/src/components/annotation/AnnotationScoreText.tsx",
+      "upstreamSha256": "466a252ae8e7dfd46418d704d36fe8247f3b2c00d8bb1006e93abdc04f155a80",
+      "localSha256": "53c170c23a112bed4083788a0de6c00e8c87c4814f919a6f3e4b4b692a80ec2f",
+      "modified": true
+    },
+    {
+      "path": "components/annotation/__generated__/ProjectAnnotationConfigsByNameFragment.graphql.ts",
+      "upstreamPath": "js/app/src/components/annotation/__generated__/ProjectAnnotationConfigsByNameFragment.graphql.ts",
+      "upstreamSha256": "94e127a07338a52756c09f9be59d22fd02835bc5a357226243300d310d51bc58",
+      "localSha256": "94e127a07338a52756c09f9be59d22fd02835bc5a357226243300d310d51bc58",
+      "modified": false
+    },
+    {
+      "path": "components/annotation/optimizationUtils.ts",
+      "upstreamPath": "js/app/src/components/annotation/optimizationUtils.ts",
+      "upstreamSha256": "55c0ea9f503e23d980e1e54480a2fca60916e6c945c4bdd6248c9c26160e8403",
+      "localSha256": "55c0ea9f503e23d980e1e54480a2fca60916e6c945c4bdd6248c9c26160e8403",
+      "modified": false
+    },
+    {
+      "path": "components/annotation/types.ts",
+      "upstreamPath": "js/app/src/components/annotation/types.ts",
+      "upstreamSha256": "b85eeb1b16491ffce705ac8833ae8ee7166fff9789f339512e4382e45bfc0897",
+      "localSha256": "b85eeb1b16491ffce705ac8833ae8ee7166fff9789f339512e4382e45bfc0897",
+      "modified": false
+    },
+    {
+      "path": "components/annotation/useProjectAnnotationConfigsByName.ts",
+      "upstreamPath": "js/app/src/components/annotation/useProjectAnnotationConfigsByName.ts",
+      "upstreamSha256": "4d121a6d4bfe812d3ff84eaea2b93af5b6fe8eaedbfd6bc36c27e8a353d8eb3b",
+      "localSha256": "2ff951db577a11b8c5fe9217737aa247b6b541f32ba2ce5a7acaabded82d171c",
+      "modified": true
+    },
+    {
+      "path": "components/auth/AuthGuard.tsx",
+      "upstreamPath": "js/app/src/components/auth/AuthGuard.tsx",
+      "upstreamSha256": "06d64e81fbb580905a18993457628d7292872648011d4b402c1ae3d67de6fd1f",
+      "localSha256": "db04335a463a275f7041f740c97ce665df77a24f710766723872440c4e6906d7",
+      "modified": true
+    },
+    {
+      "path": "components/chart/ChartPanel.tsx",
+      "upstreamPath": "js/app/src/components/chart/ChartPanel.tsx",
+      "upstreamSha256": "0d1ba9c130a3b63a7480ba413584be735c84621aeb444044ba4108bab717e237",
+      "localSha256": "3f2dbb7492bfcafca84a4638e15f958177e266bc46ca6f343cc37744bea85ae3",
+      "modified": true
+    },
+    {
+      "path": "components/chart/ChartPanelStrip.tsx",
+      "upstreamPath": "js/app/src/components/chart/ChartPanelStrip.tsx",
+      "upstreamSha256": "4fd25a7be45f97b3631ada2911d66e48a06ea8c0497c840d6ae7a253172fb536",
+      "localSha256": "9e5d05b3ba96901d7bf82367a4720706e97452d804b4889d312a3f49e5be8b3b",
+      "modified": true
+    },
+    {
+      "path": "components/chart/ChartResponsiveContainer.tsx",
+      "upstreamPath": "js/app/src/components/chart/ChartResponsiveContainer.tsx",
+      "upstreamSha256": "09e48cfbcee2334fce395ef0f1840cd5ab6bf2be09dc597e0f7122356cb145a9",
+      "localSha256": "09e48cfbcee2334fce395ef0f1840cd5ab6bf2be09dc597e0f7122356cb145a9",
+      "modified": false
+    },
+    {
+      "path": "components/chart/ChartSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/chart/ChartSkeleton.tsx",
+      "upstreamSha256": "d8aea7d69336484482ce93945f656aac58758e726eaf6e1eb18136524326fcc8",
+      "localSha256": "d8aea7d69336484482ce93945f656aac58758e726eaf6e1eb18136524326fcc8",
+      "modified": false
+    },
+    {
+      "path": "components/chart/SegmentChart.tsx",
+      "upstreamPath": "js/app/src/components/chart/SegmentChart.tsx",
+      "upstreamSha256": "bb7eb2d1e935dae3677f1777b14f8c85234f924d6e3c77cf9645f54307df7af2",
+      "localSha256": "c8e3f77a98fa25b9ead23e77e568d553b7d4dbf94b2eb94ccdbea91a57096b32",
+      "modified": true
+    },
+    {
+      "path": "components/chart/breakdown/BreakdownBars.tsx",
+      "upstreamPath": "js/app/src/components/chart/breakdown/BreakdownBars.tsx",
+      "upstreamSha256": "16f558689c6440ab015635e071c41e5a8bdb0f6f0cc67e677a79de90b85e4df3",
+      "localSha256": "f60f420e77bd8ce0f3d5da456d42442e9735cda7712e09005428e6e3ea9281a2",
+      "modified": true
+    },
+    {
+      "path": "components/chart/breakdown/BreakdownTable.tsx",
+      "upstreamPath": "js/app/src/components/chart/breakdown/BreakdownTable.tsx",
+      "upstreamSha256": "851837a751399ca63592dd581d9411d54e12873647ea0f63a5dfb4cc89802c69",
+      "localSha256": "bf58faf8a740cf8fefbf93e3788e22694f3d10e7b054ede2847c94ce7cfcf3b7",
+      "modified": true
+    },
+    {
+      "path": "components/chart/breakdown/types.ts",
+      "upstreamPath": "js/app/src/components/chart/breakdown/types.ts",
+      "upstreamSha256": "e1fd481cfa0d247b2754bc020c92e0d12b7736d0de8fb7f784f2d1c4414502fa",
+      "localSha256": "e1fd481cfa0d247b2754bc020c92e0d12b7736d0de8fb7f784f2d1c4414502fa",
+      "modified": false
+    },
+    {
+      "path": "components/chart/colors.tsx",
+      "upstreamPath": "js/app/src/components/chart/colors.tsx",
+      "upstreamSha256": "527d1820574d68bab12ee92af4938210d0413e7796dc1fd6a16bde2bbbf77926",
+      "localSha256": "4a5a771e45d0c4886279a35ac2e200b99ceae4018b9523e2dd708b3cda34fc46",
+      "modified": true
+    },
+    {
+      "path": "components/chart/defaults.tsx",
+      "upstreamPath": "js/app/src/components/chart/defaults.tsx",
+      "upstreamSha256": "1cfb4afe6b784918ee6cdcd1f04abc5c78a7845ce3a413100629e30c8b908333",
+      "localSha256": "1cfb4afe6b784918ee6cdcd1f04abc5c78a7845ce3a413100629e30c8b908333",
+      "modified": false
+    },
+    {
+      "path": "components/code/JSONBlock.tsx",
+      "upstreamPath": "js/app/src/components/code/JSONBlock.tsx",
+      "upstreamSha256": "a724bb64f9b1bbeb85877d3682a2c514bd9c58967fdfe3ba0580bf85f148e0eb",
+      "localSha256": "7757928c96c5ae761736ce7966b4484e8cf0824a12d2bc8364dad8c2ebaf10b6",
+      "modified": true
+    },
+    {
+      "path": "components/code/PlainJSONBlock.tsx",
+      "upstreamPath": "js/app/src/components/code/PlainJSONBlock.tsx",
+      "upstreamSha256": "6d2f33fe1c9a932040fa8a5e5666c5b86e61ad9b4486dbe11df500e3e53c0535",
+      "localSha256": "6d2f33fe1c9a932040fa8a5e5666c5b86e61ad9b4486dbe11df500e3e53c0535",
+      "modified": false
+    },
+    {
+      "path": "components/code/PreBlock.tsx",
+      "upstreamPath": "js/app/src/components/code/PreBlock.tsx",
+      "upstreamSha256": "7a1f51855eceadea1fcd79c16dc80b58a1a7c6065e30e6835e49348c0ba5ab20",
+      "localSha256": "7a1f51855eceadea1fcd79c16dc80b58a1a7c6065e30e6835e49348c0ba5ab20",
+      "modified": false
+    },
+    {
+      "path": "components/code/jsonView/JSONTable.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONTable.tsx",
+      "upstreamSha256": "2390b3ead3501af3400083b06d7993c49fbc67309707dd20fd6b043a3ccb815a",
+      "localSha256": "2390b3ead3501af3400083b06d7993c49fbc67309707dd20fd6b043a3ccb815a",
+      "modified": false
+    },
+    {
+      "path": "components/code/jsonView/JSONTableCell.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONTableCell.tsx",
+      "upstreamSha256": "27a105f5c1a26f204635bb222456699282a834e0459041f7978ccadc02060ba9",
+      "localSha256": "c32965e1ef3695ebc9d267d53deb3f87151d176fd94bdc02a6c7b80b81995854",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/JSONViewBody.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewBody.tsx",
+      "upstreamSha256": "e60105e6819e47aba4298a3d751fc35f1a1784b9a016ec9918e635a76c75c827",
+      "localSha256": "e60105e6819e47aba4298a3d751fc35f1a1784b9a016ec9918e635a76c75c827",
+      "modified": false
+    },
+    {
+      "path": "components/code/jsonView/JSONViewContext.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewContext.tsx",
+      "upstreamSha256": "48a7e74357af003cffc0baa2b9ea7d8d3855d69bf8d7fd5e577f02c92e690e0a",
+      "localSha256": "48a7e74357af003cffc0baa2b9ea7d8d3855d69bf8d7fd5e577f02c92e690e0a",
+      "modified": false
+    },
+    {
+      "path": "components/code/jsonView/JSONViewCopyButton.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewCopyButton.tsx",
+      "upstreamSha256": "a9ebb6f8b3b3c3041f86daf867c009ee05a3e1af00f4689251e386213c277edc",
+      "localSha256": "3d3d50249909f39ef49348eacf2b0f8174daad8ac34ec52887c64370861567be",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/JSONViewExpandSelect.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewExpandSelect.tsx",
+      "upstreamSha256": "652ecb2c28a5f6720bd5c85998eb7708814b44fc4054812a3252de5b09aa962c",
+      "localSha256": "b1fc58a3079c16972e4f8dd2163a5be40813060268891faa0d7aa0a5c4d51661",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/JSONViewModeSelect.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewModeSelect.tsx",
+      "upstreamSha256": "4fc24f1f7f9ed78958b447fe71c4b097e53c0cf25102454fceaf1c86af580d58",
+      "localSha256": "786fbf380a1be570075f9b1ef7430bd5ce39f27483570f5ac9e6724cc8593c32",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/JSONViewRowExpandButton.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewRowExpandButton.tsx",
+      "upstreamSha256": "06fbd10885dabca037ed6f6186ae9f3f53d6d9856b0bfffe390ad5554dab5179",
+      "localSha256": "6d3ee5285b2ffce71f96ca64ff2bd87104922430744e9883d2f5789c252ace71",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/JSONViewSearch.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewSearch.tsx",
+      "upstreamSha256": "2ee052f7b4c51e45cb8ee4a69937e98e3fb536c10e2fc0883cf586a41d84baf6",
+      "localSha256": "95e2920ef09fcba91d73b44551fd3da2c68c34288b3ffee733c09e47203ccdaf",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/JSONViewToolbar.tsx",
+      "upstreamPath": "js/app/src/components/code/jsonView/JSONViewToolbar.tsx",
+      "upstreamSha256": "29b597bfdf0e3fbdb4769a1fe4ef5bcbdee9000514f62b33552e903321cceb2d",
+      "localSha256": "ab7fbf4aa9c27d613f6979ef53d1f66bd8348a96c9719f1f32d90e73c5d80958",
+      "modified": true
+    },
+    {
+      "path": "components/code/jsonView/styles.ts",
+      "upstreamPath": "js/app/src/components/code/jsonView/styles.ts",
+      "upstreamSha256": "797144624f406cc2020e96e623202034b278a6ee9edee58c53391f663c6e9c43",
+      "localSha256": "797144624f406cc2020e96e623202034b278a6ee9edee58c53391f663c6e9c43",
+      "modified": false
+    },
+    {
+      "path": "components/code/jsonView/types.ts",
+      "upstreamPath": "js/app/src/components/code/jsonView/types.ts",
+      "upstreamSha256": "5940b96ffa3e7d449fd7b0a493b8b3c25c53b4549b7ffc02647ecc0954f3d81b",
+      "localSha256": "5940b96ffa3e7d449fd7b0a493b8b3c25c53b4549b7ffc02647ecc0954f3d81b",
+      "modified": false
+    },
+    {
+      "path": "components/code/pierreCodeMirrorTheme.ts",
+      "upstreamPath": "js/app/src/components/code/pierreCodeMirrorTheme.ts",
+      "upstreamSha256": "2c5cfe041419b6b890d3ac18182e3a1b284bb9487c3baa0a7800afa1cdf7a6c7",
+      "localSha256": "2c5cfe041419b6b890d3ac18182e3a1b284bb9487c3baa0a7800afa1cdf7a6c7",
+      "modified": false
+    },
+    {
+      "path": "components/color/ColorSwatch.tsx",
+      "upstreamPath": "js/app/src/components/color/ColorSwatch.tsx",
+      "upstreamSha256": "a48bb01d58d1e62b516b5d5bc513d45e1566e1a1468c8f0511a9c2c6cd8f836c",
+      "localSha256": "b94e173951431fc43274d59c84772ef087081eb0ee551e9f89bd12a883ec393e",
+      "modified": true
+    },
+    {
+      "path": "components/core/ExternalLink.tsx",
+      "upstreamPath": "js/app/src/components/core/ExternalLink.tsx",
+      "upstreamSha256": "8d5cca7800c95b9ec43a0c4488cc424e5353db2372e3a0cfc5d4ce382d4b3958",
+      "localSha256": "75162b2517cbba96c840eed5588c61abdafc67ff3dbcff23392a2be85c7711b3",
+      "modified": true
+    },
+    {
+      "path": "components/core/KeyboardToken.tsx",
+      "upstreamPath": "js/app/src/components/core/KeyboardToken.tsx",
+      "upstreamSha256": "9520a391b3af0ebe0aa61ec21e4ad222ff344a541fcd4c430ebc4391875ea2b0",
+      "localSha256": "9520a391b3af0ebe0aa61ec21e4ad222ff344a541fcd4c430ebc4391875ea2b0",
+      "modified": false
+    },
+    {
+      "path": "components/core/Link.tsx",
+      "upstreamPath": "js/app/src/components/core/Link.tsx",
+      "upstreamSha256": "f2fd14e7e9e92af35f1a282120dcce3f35315ac36b054eb88433a4db196ca429",
+      "localSha256": "f2fd14e7e9e92af35f1a282120dcce3f35315ac36b054eb88433a4db196ca429",
+      "modified": false
+    },
+    {
+      "path": "components/core/LoadMoreButton.tsx",
+      "upstreamPath": "js/app/src/components/core/LoadMoreButton.tsx",
+      "upstreamSha256": "a92846dd4909c5b53292642b8e4609648b30d29d48e4869106be1acc11887aa7",
+      "localSha256": "3bd70ec547efe192cb88380f675b8ee361eff4a9d9447057f2aa6c78c2994fdd",
+      "modified": true
+    },
+    {
+      "path": "components/core/LoadingMask.tsx",
+      "upstreamPath": "js/app/src/components/core/LoadingMask.tsx",
+      "upstreamSha256": "0208b70f378ef8e8034bbdda3aa5838376bce4c502438dfb801f9a64cc899997",
+      "localSha256": "d5b92044e258121431027204be3b0b29d479fd6d02de28ec290320e22c1bac54",
+      "modified": true
+    },
+    {
+      "path": "components/core/PageHeader.tsx",
+      "upstreamPath": "js/app/src/components/core/PageHeader.tsx",
+      "upstreamSha256": "9b9786b53ec258d2943050e8050672d9553fdf9bc5107a7ddbbc093753be5c9f",
+      "localSha256": "1af296252280b19d904feacdaadcc0bac652e791d1822a3047fc26f0fc5c1537",
+      "modified": true
+    },
+    {
+      "path": "components/core/SectionHeading.tsx",
+      "upstreamPath": "js/app/src/components/core/SectionHeading.tsx",
+      "upstreamSha256": "873dd2dfc89027b83dfb72220dcc82b7857a46d4508a30e510ec348d27c22493",
+      "localSha256": "d4226f61a5eed7b0b5773c43b08e629672e87ff33c5bad7bed5ab936414833e5",
+      "modified": true
+    },
+    {
+      "path": "components/core/ViewSummaryAside.tsx",
+      "upstreamPath": "js/app/src/components/core/ViewSummaryAside.tsx",
+      "upstreamSha256": "085a640f3f437e7fb4d007748a2c5d419c259c75f268fc99e587ee5f8d49b3a4",
+      "localSha256": "6c662938f91d172b2ee105a54fb8dd1326657490f7e07666510cbad867f2c05e",
+      "modified": true
+    },
+    {
+      "path": "components/core/alert/Alert.tsx",
+      "upstreamPath": "js/app/src/components/core/alert/Alert.tsx",
+      "upstreamSha256": "e661f969cdd9931305e2585073f9f8121ac8124e7a7ac630b26233a05a1e722a",
+      "localSha256": "62cb7594223fa893c20a4ee7fb96d38307e3847fcf9ac6b1f5b6e2cf5c1a315a",
+      "modified": true
+    },
+    {
+      "path": "components/core/alert/ValidationBadge.tsx",
+      "upstreamPath": "js/app/src/components/core/alert/ValidationBadge.tsx",
+      "upstreamSha256": "593cba5610e10a136ab630fcce26853e8902eb4854ede05d2ab91a7922cd2f2c",
+      "localSha256": "fa23620f8f5554a080d10a00eeb1dd54a0393c5b4c20bd707e54e3fe30ec4c58",
+      "modified": true
+    },
+    {
+      "path": "components/core/alert/ValidationTooltip.tsx",
+      "upstreamPath": "js/app/src/components/core/alert/ValidationTooltip.tsx",
+      "upstreamSha256": "429806dc12f6e2563ba3f02c5feffae515bc6d42eb614c07f249b87d49b32724",
+      "localSha256": "5036ffcf234171fffe42c33be90e41a07efef2c906d714bb339113dc1e287387",
+      "modified": true
+    },
+    {
+      "path": "components/core/alert/index.tsx",
+      "upstreamPath": "js/app/src/components/core/alert/index.tsx",
+      "upstreamSha256": "e7aff7a469640fef06b01d848258c4c9f3d11a49c2e1aeff7a2bb136dcf471ce",
+      "localSha256": "e7aff7a469640fef06b01d848258c4c9f3d11a49c2e1aeff7a2bb136dcf471ce",
+      "modified": false
+    },
+    {
+      "path": "components/core/badge/Badge.tsx",
+      "upstreamPath": "js/app/src/components/core/badge/Badge.tsx",
+      "upstreamSha256": "993aa0f3225a0c625f103474c61ee68ab71ff0a123fabdf9946eda8133bb394e",
+      "localSha256": "993aa0f3225a0c625f103474c61ee68ab71ff0a123fabdf9946eda8133bb394e",
+      "modified": false
+    },
+    {
+      "path": "components/core/badge/index.ts",
+      "upstreamPath": "js/app/src/components/core/badge/index.ts",
+      "upstreamSha256": "1db4b94402b9d7e24899066fe377448a04c20da38bcd12c7467442a203e0d398",
+      "localSha256": "1db4b94402b9d7e24899066fe377448a04c20da38bcd12c7467442a203e0d398",
+      "modified": false
+    },
+    {
+      "path": "components/core/badge/types.ts",
+      "upstreamPath": "js/app/src/components/core/badge/types.ts",
+      "upstreamSha256": "a1d02191a500b6e30f87abade1c2b3418688565fde013cbba380517c5ab553a7",
+      "localSha256": "a1d02191a500b6e30f87abade1c2b3418688565fde013cbba380517c5ab553a7",
+      "modified": false
+    },
+    {
+      "path": "components/core/breadcrumbs/Breadcrumb.tsx",
+      "upstreamPath": "js/app/src/components/core/breadcrumbs/Breadcrumb.tsx",
+      "upstreamSha256": "2fff72f299cb1d0fd4a2f26b323366501319c010fcb96c747600cc275e2df0ca",
+      "localSha256": "5f79f6f743960fa8221ed67b9615b06f022b531554c0df84f2a028eaf109a9a3",
+      "modified": true
+    },
+    {
+      "path": "components/core/breadcrumbs/Breadcrumbs.tsx",
+      "upstreamPath": "js/app/src/components/core/breadcrumbs/Breadcrumbs.tsx",
+      "upstreamSha256": "342a213c582ff81bc71c81131427019d506394b1802f967f3161f40ac1f673e6",
+      "localSha256": "291dcbf66065501c7a282c879db8618231eb944cd4dbe0a603a9bf4a13cadc33",
+      "modified": true
+    },
+    {
+      "path": "components/core/breadcrumbs/index.tsx",
+      "upstreamPath": "js/app/src/components/core/breadcrumbs/index.tsx",
+      "upstreamSha256": "5d089929d63c6f0401b2116c972477050da7696fbff298a619be87354fd59eb7",
+      "localSha256": "5d089929d63c6f0401b2116c972477050da7696fbff298a619be87354fd59eb7",
+      "modified": false
+    },
+    {
+      "path": "components/core/button/Button.tsx",
+      "upstreamPath": "js/app/src/components/core/button/Button.tsx",
+      "upstreamSha256": "2940b91ead15eb589f925f2c6ef694a80038affec6e2112b5075a8f86f29687a",
+      "localSha256": "2940b91ead15eb589f925f2c6ef694a80038affec6e2112b5075a8f86f29687a",
+      "modified": false
+    },
+    {
+      "path": "components/core/button/ExternalLinkButton.tsx",
+      "upstreamPath": "js/app/src/components/core/button/ExternalLinkButton.tsx",
+      "upstreamSha256": "36217bd4922ae62c4dc160abff64df8897603551e533f0c7581714fb4ed9944a",
+      "localSha256": "36217bd4922ae62c4dc160abff64df8897603551e533f0c7581714fb4ed9944a",
+      "modified": false
+    },
+    {
+      "path": "components/core/button/IconButton.tsx",
+      "upstreamPath": "js/app/src/components/core/button/IconButton.tsx",
+      "upstreamSha256": "ba0c7c20886aa3a49bfb6608f2fd362f90aae975d8589e8bf668fcd595e298e1",
+      "localSha256": "6e1318ac5eaa22cadbca8d4bb8ddb7041f294e16f8759afea2d8856336661316",
+      "modified": true
+    },
+    {
+      "path": "components/core/button/LinkButton.tsx",
+      "upstreamPath": "js/app/src/components/core/button/LinkButton.tsx",
+      "upstreamSha256": "2193f7f694b50579808366b810a03c090a33bdfa0d385d1ea6ac7c7c8aa27f14",
+      "localSha256": "2193f7f694b50579808366b810a03c090a33bdfa0d385d1ea6ac7c7c8aa27f14",
+      "modified": false
+    },
+    {
+      "path": "components/core/button/index.tsx",
+      "upstreamPath": "js/app/src/components/core/button/index.tsx",
+      "upstreamSha256": "b0e06bac364d0cda393e92d146ac93612c25ed7046907a9ccdea13b4d60043cb",
+      "localSha256": "b0e06bac364d0cda393e92d146ac93612c25ed7046907a9ccdea13b4d60043cb",
+      "modified": false
+    },
+    {
+      "path": "components/core/button/styles.tsx",
+      "upstreamPath": "js/app/src/components/core/button/styles.tsx",
+      "upstreamSha256": "c09a0ff054cb997ed4d05baa1dd108584f63a1bcc5b640ec13d18b9f57cc5ef4",
+      "localSha256": "c09a0ff054cb997ed4d05baa1dd108584f63a1bcc5b640ec13d18b9f57cc5ef4",
+      "modified": false
+    },
+    {
+      "path": "components/core/button/types.tsx",
+      "upstreamPath": "js/app/src/components/core/button/types.tsx",
+      "upstreamSha256": "f930085cdd16edfde46e44c6c5689847d6c53e2d9409ae6f46c833db439f14d2",
+      "localSha256": "f930085cdd16edfde46e44c6c5689847d6c53e2d9409ae6f46c833db439f14d2",
+      "modified": false
+    },
+    {
+      "path": "components/core/card/Card.tsx",
+      "upstreamPath": "js/app/src/components/core/card/Card.tsx",
+      "upstreamSha256": "c7f3441d9114324f7bbed408fa43fbf776431818eb90c57eba866812456f54b3",
+      "localSha256": "07bdec7f69215380cd217c657c1d0c91c85c057b9807102e7d9227405dc95b32",
+      "modified": true
+    },
+    {
+      "path": "components/core/card/CardCollapsedPreview.tsx",
+      "upstreamPath": "js/app/src/components/core/card/CardCollapsedPreview.tsx",
+      "upstreamSha256": "5b0d2d0255c49fdbdb35090adde32f8d1b278af73d8fa17010e619b83987082a",
+      "localSha256": "5b0d2d0255c49fdbdb35090adde32f8d1b278af73d8fa17010e619b83987082a",
+      "modified": false
+    },
+    {
+      "path": "components/core/card/CardContext.tsx",
+      "upstreamPath": "js/app/src/components/core/card/CardContext.tsx",
+      "upstreamSha256": "691a4da96e4af282a1f242ca741158a073bec946a7c678b0b30dc95e51d401f0",
+      "localSha256": "691a4da96e4af282a1f242ca741158a073bec946a7c678b0b30dc95e51d401f0",
+      "modified": false
+    },
+    {
+      "path": "components/core/card/index.ts",
+      "upstreamPath": "js/app/src/components/core/card/index.ts",
+      "upstreamSha256": "7c4e0d831a6971c8f21f7c0433f26984c389a73002b55dfe5c6fedebda4c1214",
+      "localSha256": "7c4e0d831a6971c8f21f7c0433f26984c389a73002b55dfe5c6fedebda4c1214",
+      "modified": false
+    },
+    {
+      "path": "components/core/card/styles.ts",
+      "upstreamPath": "js/app/src/components/core/card/styles.ts",
+      "upstreamSha256": "1ed41ff7b68fefc9f7e9615697fbb83d84c116c07f7af32d572c05e93fc0d2a2",
+      "localSha256": "1ed41ff7b68fefc9f7e9615697fbb83d84c116c07f7af32d572c05e93fc0d2a2",
+      "modified": false
+    },
+    {
+      "path": "components/core/card/types.ts",
+      "upstreamPath": "js/app/src/components/core/card/types.ts",
+      "upstreamSha256": "e7ed112a8a0bddec48be3823a201f89c1dd7b4b2e6ad6dd6fd776ce83865f5c1",
+      "localSha256": "a8e1548042773da325eb20bae59e7517f89e00f45947bda2afc23c105ec13386",
+      "modified": true
+    },
+    {
+      "path": "components/core/checkbox/Checkbox.tsx",
+      "upstreamPath": "js/app/src/components/core/checkbox/Checkbox.tsx",
+      "upstreamSha256": "cd063841895ec97d211196e9e824de6eccb81a6f16984a358237ef8955111fd0",
+      "localSha256": "cd063841895ec97d211196e9e824de6eccb81a6f16984a358237ef8955111fd0",
+      "modified": false
+    },
+    {
+      "path": "components/core/checkbox/index.ts",
+      "upstreamPath": "js/app/src/components/core/checkbox/index.ts",
+      "upstreamSha256": "3e91ba69491775b8095a2fae4ef87278cb45b81242ae9640e8a47a2ed8604bee",
+      "localSha256": "3e91ba69491775b8095a2fae4ef87278cb45b81242ae9640e8a47a2ed8604bee",
+      "modified": false
+    },
+    {
+      "path": "components/core/checkbox/styles.ts",
+      "upstreamPath": "js/app/src/components/core/checkbox/styles.ts",
+      "upstreamSha256": "364c0547be588b3a14e58348fa2e5ff20067b15b76665da64005d6b23d837e20",
+      "localSha256": "364c0547be588b3a14e58348fa2e5ff20067b15b76665da64005d6b23d837e20",
+      "modified": false
+    },
+    {
+      "path": "components/core/checkbox/types.ts",
+      "upstreamPath": "js/app/src/components/core/checkbox/types.ts",
+      "upstreamSha256": "4f69aa2d92ee8f44a53735ec41c6611f03fd37f87993e308e5055c25d41d92d9",
+      "localSha256": "4f69aa2d92ee8f44a53735ec41c6611f03fd37f87993e308e5055c25d41d92d9",
+      "modified": false
+    },
+    {
+      "path": "components/core/combobox/ComboBox.tsx",
+      "upstreamPath": "js/app/src/components/core/combobox/ComboBox.tsx",
+      "upstreamSha256": "4db8137db0cf9be06b96d46582dce17f05a28c16ee6d5794c62bd9b8727ca0e2",
+      "localSha256": "73699a3d6bf365846b3e8373552f2734f8bdca1da77903e4535ee1275a5f0f8d",
+      "modified": true
+    },
+    {
+      "path": "components/core/combobox/index.tsx",
+      "upstreamPath": "js/app/src/components/core/combobox/index.tsx",
+      "upstreamSha256": "9de0d5226ed60d9a8d807a2113f769d5b2c07ae4b7cfb056d8716184bb1a7f12",
+      "localSha256": "9de0d5226ed60d9a8d807a2113f769d5b2c07ae4b7cfb056d8716184bb1a7f12",
+      "modified": false
+    },
+    {
+      "path": "components/core/combobox/styles.tsx",
+      "upstreamPath": "js/app/src/components/core/combobox/styles.tsx",
+      "upstreamSha256": "e60a78ad6677282a93dd15f8c37b23bb896510980cf71aa5b0e304e97957cba1",
+      "localSha256": "e60a78ad6677282a93dd15f8c37b23bb896510980cf71aa5b0e304e97957cba1",
+      "modified": false
+    },
+    {
+      "path": "components/core/commandpalette/CommandPalette.tsx",
+      "upstreamPath": "js/app/src/components/core/commandpalette/CommandPalette.tsx",
+      "upstreamSha256": "9c8816c8b6622826fcab157c7596ab9f5edfaf91dda0804ee42520b8c24290f4",
+      "localSha256": "efd4b42db1343cde4bd9f4da0a21b072f9db3bc95ef2a7e8d6d0e0e350f50b25",
+      "modified": true
+    },
+    {
+      "path": "components/core/commandpalette/CommandPaletteItem.tsx",
+      "upstreamPath": "js/app/src/components/core/commandpalette/CommandPaletteItem.tsx",
+      "upstreamSha256": "508be7e9e87c2da702ac995051dda4bccfcb5611e8750ac26432e05c9644b555",
+      "localSha256": "65bc605168d09d7bfb5387be9bb9f627f6a11656b3db8ef5b13e475dc5721a5b",
+      "modified": true
+    },
+    {
+      "path": "components/core/commandpalette/MatchText.tsx",
+      "upstreamPath": "js/app/src/components/core/commandpalette/MatchText.tsx",
+      "upstreamSha256": "a2573dc77515a039566ed36bd9e88ee3df5199f1c56b4726a272a6668183ecd6",
+      "localSha256": "a2573dc77515a039566ed36bd9e88ee3df5199f1c56b4726a272a6668183ecd6",
+      "modified": false
+    },
+    {
+      "path": "components/core/commandpalette/index.tsx",
+      "upstreamPath": "js/app/src/components/core/commandpalette/index.tsx",
+      "upstreamSha256": "e0ac7cac2635c93f3f254a319672843d9c0abacc96fd9fb7a65485db7423ed4c",
+      "localSha256": "e0ac7cac2635c93f3f254a319672843d9c0abacc96fd9fb7a65485db7423ed4c",
+      "modified": false
+    },
+    {
+      "path": "components/core/content/ExpandableContent.tsx",
+      "upstreamPath": "js/app/src/components/core/content/ExpandableContent.tsx",
+      "upstreamSha256": "eee78b6f908e6ba479565d9bc460d102f7747007ce0d36705978d68992cad3c7",
+      "localSha256": "6724b9a33eb9cf9be6be5d8fd983a18b1f1b74677732e8b918cadb0b4ffdbcf2",
+      "modified": true
+    },
+    {
+      "path": "components/core/content/Heading.tsx",
+      "upstreamPath": "js/app/src/components/core/content/Heading.tsx",
+      "upstreamSha256": "ce2c1327a02143794c592e934168880fbfa7e676d65d9df416f6d524f073f29c",
+      "localSha256": "ce2c1327a02143794c592e934168880fbfa7e676d65d9df416f6d524f073f29c",
+      "modified": false
+    },
+    {
+      "path": "components/core/content/Keyboard.tsx",
+      "upstreamPath": "js/app/src/components/core/content/Keyboard.tsx",
+      "upstreamSha256": "79cfc2b8218efd3835889fee2b03196355eb742171665aee26add400656605b3",
+      "localSha256": "79cfc2b8218efd3835889fee2b03196355eb742171665aee26add400656605b3",
+      "modified": false
+    },
+    {
+      "path": "components/core/content/Text.tsx",
+      "upstreamPath": "js/app/src/components/core/content/Text.tsx",
+      "upstreamSha256": "4106714b12386ccbb221bba92017554b92db353a2c7aaba9683d8c86ba598cb0",
+      "localSha256": "794d4cfe778d69e6be3e4bdeec9d791cafedb5dc5a417063ea2507ed277c25f5",
+      "modified": true
+    },
+    {
+      "path": "components/core/content/VisuallyHidden.tsx",
+      "upstreamPath": "js/app/src/components/core/content/VisuallyHidden.tsx",
+      "upstreamSha256": "4c738aebb15be9d0fb8ab11d8574a084739d26b6e8134d22312d355247f37527",
+      "localSha256": "4c738aebb15be9d0fb8ab11d8574a084739d26b6e8134d22312d355247f37527",
+      "modified": false
+    },
+    {
+      "path": "components/core/content/index.tsx",
+      "upstreamPath": "js/app/src/components/core/content/index.tsx",
+      "upstreamSha256": "24d1974633f935f2baaeaebbf45b485959548d925cb571274facc0bffc4ce0e1",
+      "localSha256": "24d1974633f935f2baaeaebbf45b485959548d925cb571274facc0bffc4ce0e1",
+      "modified": false
+    },
+    {
+      "path": "components/core/content/styles.tsx",
+      "upstreamPath": "js/app/src/components/core/content/styles.tsx",
+      "upstreamSha256": "b90e118ac0b2677bc76639bb3bba8bad17c541bc64f11124f9d28512c8a351e3",
+      "localSha256": "b90e118ac0b2677bc76639bb3bba8bad17c541bc64f11124f9d28512c8a351e3",
+      "modified": false
+    },
+    {
+      "path": "components/core/content/textUtils.ts",
+      "upstreamPath": "js/app/src/components/core/content/textUtils.ts",
+      "upstreamSha256": "6b99fba4afbb5f7ec4e464a9cfb5a8d6ddbdfa4d2327fa730f0a2c3e91a61375",
+      "localSha256": "e6366634edc575d66166ceaff5a8af74c1ec7c67a342bfb337e32893a24f3e4c",
+      "modified": true
+    },
+    {
+      "path": "components/core/content/types.ts",
+      "upstreamPath": "js/app/src/components/core/content/types.ts",
+      "upstreamSha256": "42c19c911d10ad58e2126012641bc4138fd9bb8c3012c11fffc8cb8987c7b46d",
+      "localSha256": "42c19c911d10ad58e2126012641bc4138fd9bb8c3012c11fffc8cb8987c7b46d",
+      "modified": false
+    },
+    {
+      "path": "components/core/contexts/SizeContext.tsx",
+      "upstreamPath": "js/app/src/components/core/contexts/SizeContext.tsx",
+      "upstreamSha256": "483034c80e2cb051b12927bd13caf016e3cd2012518da55a03d2e9b3b5240158",
+      "localSha256": "d2d019135c49fe27705ddde39422d01d78a0f136f57a96e667327d87e7518c58",
+      "modified": true
+    },
+    {
+      "path": "components/core/copy/CopyActionMenu.tsx",
+      "upstreamPath": "js/app/src/components/core/copy/CopyActionMenu.tsx",
+      "upstreamSha256": "96a97faf81a139409fd0ea067d7a77de76a21f9cbe3552aa5fd7aa13474bcb61",
+      "localSha256": "1274de7e40425c6cbeb707abba288420a90350faf4aa74d4240ebee26066abdf",
+      "modified": true
+    },
+    {
+      "path": "components/core/copy/CopyToClipboardButton.tsx",
+      "upstreamPath": "js/app/src/components/core/copy/CopyToClipboardButton.tsx",
+      "upstreamSha256": "2a4e6cfd58663ef09a5d42df25c18ce9975bb58f38f7e1dbfa4455add413fe1b",
+      "localSha256": "2a8e9984fc0873a7a17ca9f29c21ee629ef24a56afee7501104f3082b82ee321",
+      "modified": true
+    },
+    {
+      "path": "components/core/copy/index.tsx",
+      "upstreamPath": "js/app/src/components/core/copy/index.tsx",
+      "upstreamSha256": "e1f9cf11f49e88e6853ac3809cca50177df995262186e8314e59758732eff6cf",
+      "localSha256": "e1f9cf11f49e88e6853ac3809cca50177df995262186e8314e59758732eff6cf",
+      "modified": false
+    },
+    {
+      "path": "components/core/copy/styles.ts",
+      "upstreamPath": "js/app/src/components/core/copy/styles.ts",
+      "upstreamSha256": "00bea7ce2c9bff633860f4c1cfb146a9d7fbd62958fa267fa96dc3e5357ffde0",
+      "localSha256": "00bea7ce2c9bff633860f4c1cfb146a9d7fbd62958fa267fa96dc3e5357ffde0",
+      "modified": false
+    },
+    {
+      "path": "components/core/copy/types.ts",
+      "upstreamPath": "js/app/src/components/core/copy/types.ts",
+      "upstreamSha256": "6ba87f3f4142c609af58bafa0cb78ea52e31ad9f22479de57da13d312efdbbf2",
+      "localSha256": "6ba87f3f4142c609af58bafa0cb78ea52e31ad9f22479de57da13d312efdbbf2",
+      "modified": false
+    },
+    {
+      "path": "components/core/counter/Counter.tsx",
+      "upstreamPath": "js/app/src/components/core/counter/Counter.tsx",
+      "upstreamSha256": "dd9cc259f80319ffbb8dd5ca64a78f9674f522219df37215ee8725d01a46d443",
+      "localSha256": "dd9cc259f80319ffbb8dd5ca64a78f9674f522219df37215ee8725d01a46d443",
+      "modified": false
+    },
+    {
+      "path": "components/core/counter/index.tsx",
+      "upstreamPath": "js/app/src/components/core/counter/index.tsx",
+      "upstreamSha256": "077cb4075b03364bd98db3bf237566f78826fe17bf99a33d06ff280f667a3894",
+      "localSha256": "077cb4075b03364bd98db3bf237566f78826fe17bf99a33d06ff280f667a3894",
+      "modified": false
+    },
+    {
+      "path": "components/core/datetime/Calendar.tsx",
+      "upstreamPath": "js/app/src/components/core/datetime/Calendar.tsx",
+      "upstreamSha256": "bcad8f4dcc76d4acdfa07c31679d55a27414eca876592a63391c36e9716e087b",
+      "localSha256": "90e9fe9f45433e8d09dee0511348ce01e46f8d104ab0dd8eae0611fbbb37a310",
+      "modified": true
+    },
+    {
+      "path": "components/core/datetime/CalendarContent.tsx",
+      "upstreamPath": "js/app/src/components/core/datetime/CalendarContent.tsx",
+      "upstreamSha256": "fccf962968d01f4bd02f98754883ccd9d3ead28631f7bcc1f0cd5e4ef541a621",
+      "localSha256": "fccf962968d01f4bd02f98754883ccd9d3ead28631f7bcc1f0cd5e4ef541a621",
+      "modified": false
+    },
+    {
+      "path": "components/core/datetime/CalendarNavigation.tsx",
+      "upstreamPath": "js/app/src/components/core/datetime/CalendarNavigation.tsx",
+      "upstreamSha256": "c404b90be6531ad45ccbd80970326395f79f2b2e570cc3f645e315446c85f6f6",
+      "localSha256": "d8e4f7d4b4985217389ed100543ed3a20fd86f2fbf2bfcbda8f5210195cd1f7b",
+      "modified": true
+    },
+    {
+      "path": "components/core/datetime/DateField.tsx",
+      "upstreamPath": "js/app/src/components/core/datetime/DateField.tsx",
+      "upstreamSha256": "a1560d948e33d310c2437712b4aebe35880d2b2fca3821c53af9f0b5ff31be45",
+      "localSha256": "627e51e3ad598bfa200e9a6c7045dd9155fb5b8881c3d21d07db848d1be14972",
+      "modified": true
+    },
+    {
+      "path": "components/core/datetime/RangeCalendar.tsx",
+      "upstreamPath": "js/app/src/components/core/datetime/RangeCalendar.tsx",
+      "upstreamSha256": "20ea9cbaa8f29ef5b88fcd1b01560a124de7686f285cb186174582dc86629427",
+      "localSha256": "5140e96167b5e3e58f10b54ebd8e5eca7a47eb7b40da5c69634f47c7f59d5fa0",
+      "modified": true
+    },
+    {
+      "path": "components/core/datetime/TimeField.tsx",
+      "upstreamPath": "js/app/src/components/core/datetime/TimeField.tsx",
+      "upstreamSha256": "ca1b51499250d7ce093d3622be36ccc6f25dfa7b33521019c59be8e5b0be1a63",
+      "localSha256": "ca1b51499250d7ce093d3622be36ccc6f25dfa7b33521019c59be8e5b0be1a63",
+      "modified": false
+    },
+    {
+      "path": "components/core/datetime/calendarStyles.ts",
+      "upstreamPath": "js/app/src/components/core/datetime/calendarStyles.ts",
+      "upstreamSha256": "cf8df7717a4556fe206c02d0b7b8b42a04d8b123089a5ef11e1ac042e51df26a",
+      "localSha256": "cf8df7717a4556fe206c02d0b7b8b42a04d8b123089a5ef11e1ac042e51df26a",
+      "modified": false
+    },
+    {
+      "path": "components/core/dialog/Dialog.tsx",
+      "upstreamPath": "js/app/src/components/core/dialog/Dialog.tsx",
+      "upstreamSha256": "65e9d2b11a684d79402e2f72deb4cc26a7eb8e2affc3c14dd38a5a2c2d28f7ce",
+      "localSha256": "80e7b5431f6210fd652c62aaec413a271538f49cbaf06149a550ee6407b5c4d3",
+      "modified": true
+    },
+    {
+      "path": "components/core/dialog/index.tsx",
+      "upstreamPath": "js/app/src/components/core/dialog/index.tsx",
+      "upstreamSha256": "5cc63af7408fa9ac78ebab70f2192c97a7f4aa94059fed4f42571dbe07acf78e",
+      "localSha256": "5cc63af7408fa9ac78ebab70f2192c97a7f4aa94059fed4f42571dbe07acf78e",
+      "modified": false
+    },
+    {
+      "path": "components/core/disclosure/Disclosure.tsx",
+      "upstreamPath": "js/app/src/components/core/disclosure/Disclosure.tsx",
+      "upstreamSha256": "d6d3c24f768a978edab294da60439492861b38f0a4aff851049c771a06249b45",
+      "localSha256": "5eb76f329ff8f74abc7c047e1c33899a278c351a7ccf3cc06a759c19ec121ddf",
+      "modified": true
+    },
+    {
+      "path": "components/core/disclosure/index.ts",
+      "upstreamPath": "js/app/src/components/core/disclosure/index.ts",
+      "upstreamSha256": "d176696a9365071bf38b63fe04a03af072987a7f113ea4daedf94f78ab79cc90",
+      "localSha256": "d176696a9365071bf38b63fe04a03af072987a7f113ea4daedf94f78ab79cc90",
+      "modified": false
+    },
+    {
+      "path": "components/core/disclosure/styles.tsx",
+      "upstreamPath": "js/app/src/components/core/disclosure/styles.tsx",
+      "upstreamSha256": "2a4f07eda9428d0d5c0ec393b03fead55bcebac58bac322bc4656da811efe425",
+      "localSha256": "2a4f07eda9428d0d5c0ec393b03fead55bcebac58bac322bc4656da811efe425",
+      "modified": false
+    },
+    {
+      "path": "components/core/dropzone/DropOverlay.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/DropOverlay.tsx",
+      "upstreamSha256": "d480c7a19cb58f3d5f6fa0641a2f4addcbaa6e8f2e4c52d24effc78c38caff42",
+      "localSha256": "d480c7a19cb58f3d5f6fa0641a2f4addcbaa6e8f2e4c52d24effc78c38caff42",
+      "modified": false
+    },
+    {
+      "path": "components/core/dropzone/DropZone.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/DropZone.tsx",
+      "upstreamSha256": "f8ed3c3ada7ecc55fbf3591a9ce877ed109d272f0fa513d3eeebb9a85b717e0e",
+      "localSha256": "f8ed3c3ada7ecc55fbf3591a9ce877ed109d272f0fa513d3eeebb9a85b717e0e",
+      "modified": false
+    },
+    {
+      "path": "components/core/dropzone/FileDropZone.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/FileDropZone.tsx",
+      "upstreamSha256": "7e4c3c69da4478ab9b5301c92878cd55b00f659b0640675f15667a18e46ad906",
+      "localSha256": "3f0dea344cdb9a921691cb38c74db804f82db826349914fecd22b6821f269b3a",
+      "modified": true
+    },
+    {
+      "path": "components/core/dropzone/FileInput.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/FileInput.tsx",
+      "upstreamSha256": "c496342cbae1d7274dd6098ad1ebc12cc8203d28d39197ba2510474e3518eed8",
+      "localSha256": "0aebf619cdaa1e83f2341c4e2acf52d587b26d064f98ee3cb0e93134f41e9e66",
+      "modified": true
+    },
+    {
+      "path": "components/core/dropzone/FileList.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/FileList.tsx",
+      "upstreamSha256": "2fedce6285a7a55c67bf8cd2151aba7e638320fd626a46058e42ddf4de464d51",
+      "localSha256": "2fedce6285a7a55c67bf8cd2151aba7e638320fd626a46058e42ddf4de464d51",
+      "modified": false
+    },
+    {
+      "path": "components/core/dropzone/FileListItem.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/FileListItem.tsx",
+      "upstreamSha256": "c1f4776fbbdda7bcb79372ef4dc7050eb8e0fccf35029b8ceb13ae8be69894b1",
+      "localSha256": "34436d94428568e4534dabf01dd15eb77288da57f47978bd64627fbfadc0881e",
+      "modified": true
+    },
+    {
+      "path": "components/core/dropzone/index.tsx",
+      "upstreamPath": "js/app/src/components/core/dropzone/index.tsx",
+      "upstreamSha256": "8b2ebaede3b08cf90d24fb5c2e64567e26639cf125753f3aed3f27cb5c4b69c2",
+      "localSha256": "8b2ebaede3b08cf90d24fb5c2e64567e26639cf125753f3aed3f27cb5c4b69c2",
+      "modified": false
+    },
+    {
+      "path": "components/core/dropzone/styles.ts",
+      "upstreamPath": "js/app/src/components/core/dropzone/styles.ts",
+      "upstreamSha256": "13579241827e70b04bc8e1b90378972df5e0211c530bf4c1be2cada14248cfd3",
+      "localSha256": "13579241827e70b04bc8e1b90378972df5e0211c530bf4c1be2cada14248cfd3",
+      "modified": false
+    },
+    {
+      "path": "components/core/dropzone/types.ts",
+      "upstreamPath": "js/app/src/components/core/dropzone/types.ts",
+      "upstreamSha256": "ab6dca54cffc3780d16a5a58cb5145ea63fa5abbd923461a9501fdfa9b0f96a0",
+      "localSha256": "ab6dca54cffc3780d16a5a58cb5145ea63fa5abbd923461a9501fdfa9b0f96a0",
+      "modified": false
+    },
+    {
+      "path": "components/core/empty/CompactEmptyState.tsx",
+      "upstreamPath": "js/app/src/components/core/empty/CompactEmptyState.tsx",
+      "upstreamSha256": "bc0604fdfc5b769062b9373718c3aec5d0937586fb2d27cbb5edfe34a3f01512",
+      "localSha256": "2aa630d507983b9a4a62aad0cd85ef843d6a5e9646c217959abca63011b1c296",
+      "modified": true
+    },
+    {
+      "path": "components/core/empty/Empty.tsx",
+      "upstreamPath": "js/app/src/components/core/empty/Empty.tsx",
+      "upstreamSha256": "a04c641a24157d957fbe93ab1974638de31ff1c3c3bf5833fa0755c39fafc188",
+      "localSha256": "f6634fa9ecefb0280e80d7988a037a43269a7b1fdca676728e49397e0c0fbdce",
+      "modified": true
+    },
+    {
+      "path": "components/core/empty/EmptyState.tsx",
+      "upstreamPath": "js/app/src/components/core/empty/EmptyState.tsx",
+      "upstreamSha256": "4a34632aaa2e912ae1ac903985aeb23e9f810e80b1772a7fab65c2cbf0f148e4",
+      "localSha256": "10e6605e99e989231bce268f533b8bfc198646cdc8f999a5c97fd724fdad1957",
+      "modified": true
+    },
+    {
+      "path": "components/core/empty/EmptyStateArea.tsx",
+      "upstreamPath": "js/app/src/components/core/empty/EmptyStateArea.tsx",
+      "upstreamSha256": "aba61b3db91752dea84d87a678ccb2505ea80608fcc08ed3df7b7473d11acff7",
+      "localSha256": "aba61b3db91752dea84d87a678ccb2505ea80608fcc08ed3df7b7473d11acff7",
+      "modified": false
+    },
+    {
+      "path": "components/core/empty/EmptyStateGraphic.tsx",
+      "upstreamPath": "js/app/src/components/core/empty/EmptyStateGraphic.tsx",
+      "upstreamSha256": "42b4dd11f7d53db531176c69efc7108a49ce8a83bef93ab68849db9cce7fac70",
+      "localSha256": "857f3fa07f61ad5db68db0acdb6d433c1df98c26e7abcc57b9a2c7d8c3ed7a47",
+      "modified": true
+    },
+    {
+      "path": "components/core/empty/LinkCard.tsx",
+      "upstreamPath": "js/app/src/components/core/empty/LinkCard.tsx",
+      "upstreamSha256": "9288372c3ae05967472974279bb0f2fe2dd8a632e8cd40c24582f68275aa3775",
+      "localSha256": "c3c3ef3c666e1120ae4de217f7a34927a9bae4eaded3d0fd55067a002f93b00f",
+      "modified": true
+    },
+    {
+      "path": "components/core/empty/index.ts",
+      "upstreamPath": "js/app/src/components/core/empty/index.ts",
+      "upstreamSha256": "c8292c1a06e5eb2a3856b8a6233cb3a8757b37554a6d2b2237f4b530d3c19cfd",
+      "localSha256": "c8292c1a06e5eb2a3856b8a6233cb3a8757b37554a6d2b2237f4b530d3c19cfd",
+      "modified": false
+    },
+    {
+      "path": "components/core/empty/styles.ts",
+      "upstreamPath": "js/app/src/components/core/empty/styles.ts",
+      "upstreamSha256": "372764fccee1432cecddc033befdb9cc92279178114c1a0f321f1adb61831fb1",
+      "localSha256": "372764fccee1432cecddc033befdb9cc92279178114c1a0f321f1adb61831fb1",
+      "modified": false
+    },
+    {
+      "path": "components/core/field/CompositeField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/CompositeField.tsx",
+      "upstreamSha256": "d2912288c7615625bea9ad8557238687013dd929f3a3c159b4c463c0c0a12eac",
+      "localSha256": "d2912288c7615625bea9ad8557238687013dd929f3a3c159b4c463c0c0a12eac",
+      "modified": false
+    },
+    {
+      "path": "components/core/field/CopyField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/CopyField.tsx",
+      "upstreamSha256": "b69a9d32c86893acf333abb9f272dec639fcfbb460aff8e681c201b53e5e9048",
+      "localSha256": "cf1e67732018f728976299fc4ab810f3f16a4632f390c4984c939916a1887343",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/CopyInput.tsx",
+      "upstreamPath": "js/app/src/components/core/field/CopyInput.tsx",
+      "upstreamSha256": "47c6db59a62a2a1357c7ee51368e756c83632093a1b18862cebc449fc4095e5c",
+      "localSha256": "7423946cd023e5f61a264a1ed213234ebfc94017bfef78bf0f24a18fe623241e",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/CredentialContext.tsx",
+      "upstreamPath": "js/app/src/components/core/field/CredentialContext.tsx",
+      "upstreamSha256": "54f21b118e0d8b4881abdea589977db90b287dfe8a48485be0f6980ddc53a2bf",
+      "localSha256": "54f21b118e0d8b4881abdea589977db90b287dfe8a48485be0f6980ddc53a2bf",
+      "modified": false
+    },
+    {
+      "path": "components/core/field/CredentialField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/CredentialField.tsx",
+      "upstreamSha256": "84fff2e65ad6f5a0b9040347ba1458ba8a48d09e3bee5088b4bd763156efd3aa",
+      "localSha256": "29713244716f251b711e3b6198120bbde6ea39e630ca0ec9f74f27c11e84c012",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/CredentialInput.tsx",
+      "upstreamPath": "js/app/src/components/core/field/CredentialInput.tsx",
+      "upstreamSha256": "743589b3e252f8fc09de815b34d8265fd1de913980fa6d5e7c6bff3f699f65f0",
+      "localSha256": "9fe2280b0060e921418a98009cc2588a1195c898676c61a140074d0dc3cd4735",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/DebouncedSearch.tsx",
+      "upstreamPath": "js/app/src/components/core/field/DebouncedSearch.tsx",
+      "upstreamSha256": "fb69c1f1119e3ebe66ed545e79db25bea9b371f93922abc22d4fbc09c71c3654",
+      "localSha256": "fb69c1f1119e3ebe66ed545e79db25bea9b371f93922abc22d4fbc09c71c3654",
+      "modified": false
+    },
+    {
+      "path": "components/core/field/FieldDangerIcon.tsx",
+      "upstreamPath": "js/app/src/components/core/field/FieldDangerIcon.tsx",
+      "upstreamSha256": "f5be90bb4fc55e72bea437a80cf4dda789a73ffaf201dd6188ec1b5b8f11f027",
+      "localSha256": "b040a95236f3bf403e1c34315769899c948b31b5b8f4661f57782e6f0dbe3a0f",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/FieldSuccessIcon.tsx",
+      "upstreamPath": "js/app/src/components/core/field/FieldSuccessIcon.tsx",
+      "upstreamSha256": "1c4a7fd8b42c50e09bf2cf4eeb593ad9d99b8ab636333885c0b24f1108d75c1a",
+      "localSha256": "562f09dbafeb096e3f28ca28d0bb21baaa452a215a0e68a1f738bbaaa9e64ff9",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/NumberField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/NumberField.tsx",
+      "upstreamSha256": "1f407d731ab1337b9e699e7075d000a04d9c63b6ec5aa5e5bbac694e049d16be",
+      "localSha256": "722f64a1bcbb257fbcab75324e2069a731756d277376e5f258cc9156f47811cd",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/RedactedCredentialField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/RedactedCredentialField.tsx",
+      "upstreamSha256": "08fe9167f02f9968f4a13e32f7db70d117e3e0e8bc5de3a6b0f025ecafcdd8ac",
+      "localSha256": "e4ae25382f835f5e17545ea3626de645f7a51bae21ae22603d8bcc9842569d9f",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/SearchButton.tsx",
+      "upstreamPath": "js/app/src/components/core/field/SearchButton.tsx",
+      "upstreamSha256": "4357aed5d5bbfc012a80e51099d27454b4c516b9c7fbf33e11935315b83aa802",
+      "localSha256": "ea39404dfc421edac2bdd5dc4405488c8dd795d5122e880b82aa62b5998116c4",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/SearchField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/SearchField.tsx",
+      "upstreamSha256": "d8c3531fc021b2173bb099a5b8f103d60138941eb881870a69d6fe13a7cd8cf8",
+      "localSha256": "8b1a49772d2330d55284d1b240d9ed6b27d2c527341392b4e1ce558ff04a6708",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/TextField.tsx",
+      "upstreamPath": "js/app/src/components/core/field/TextField.tsx",
+      "upstreamSha256": "33548e8b6976cab2fb4b96895aa1813d6b5f1203d23bc622513453d7c9e0b540",
+      "localSha256": "ca25d114e02dd7d9132da55cbdd2756559cdf26fd91fefeace2edb99deada002",
+      "modified": true
+    },
+    {
+      "path": "components/core/field/index.tsx",
+      "upstreamPath": "js/app/src/components/core/field/index.tsx",
+      "upstreamSha256": "de274857bb5e135aa1daeda688c1ce050b2ff69a6dc0d23d2535f26e9af6508c",
+      "localSha256": "de274857bb5e135aa1daeda688c1ce050b2ff69a6dc0d23d2535f26e9af6508c",
+      "modified": false
+    },
+    {
+      "path": "components/core/field/styles.ts",
+      "upstreamPath": "js/app/src/components/core/field/styles.ts",
+      "upstreamSha256": "33a9173a7e16fdc8f87fde4920e11872c951a7ebdc44b2642558d119b9f9ee06",
+      "localSha256": "33a9173a7e16fdc8f87fde4920e11872c951a7ebdc44b2642558d119b9f9ee06",
+      "modified": false
+    },
+    {
+      "path": "components/core/field/transformInputValue.ts",
+      "upstreamPath": "js/app/src/components/core/field/transformInputValue.ts",
+      "upstreamSha256": "98c982ab09c4b0a29fd03365b0866282a9bd87597244bfad9bd79d2fe804fe5a",
+      "localSha256": "98c982ab09c4b0a29fd03365b0866282a9bd87597244bfad9bd79d2fe804fe5a",
+      "modified": false
+    },
+    {
+      "path": "components/core/gridlist/GridList.tsx",
+      "upstreamPath": "js/app/src/components/core/gridlist/GridList.tsx",
+      "upstreamSha256": "8aa2c2b3fab15c68a87de7d8bbee885cd2ee711e1e6a25d153ee80b16af426b5",
+      "localSha256": "5fbceb70a0f0c4195899f614e38cc9447f1c380ba2c912e7c2acb42f1498dabb",
+      "modified": true
+    },
+    {
+      "path": "components/core/gridlist/index.tsx",
+      "upstreamPath": "js/app/src/components/core/gridlist/index.tsx",
+      "upstreamSha256": "b557486b3908dff6bc7f1c24a559fbfc8a3f644ea8382cfeda6756d8cef06b03",
+      "localSha256": "b557486b3908dff6bc7f1c24a559fbfc8a3f644ea8382cfeda6756d8cef06b03",
+      "modified": false
+    },
+    {
+      "path": "components/core/gridlist/styles.ts",
+      "upstreamPath": "js/app/src/components/core/gridlist/styles.ts",
+      "upstreamSha256": "6c6579df281f71719481aeb76b78bbe08400e74f4a8ea3abdf9599dc5fd58912",
+      "localSha256": "6c6579df281f71719481aeb76b78bbe08400e74f4a8ea3abdf9599dc5fd58912",
+      "modified": false
+    },
+    {
+      "path": "components/core/icon/DisclosureArrow.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/DisclosureArrow.tsx",
+      "upstreamSha256": "9ee263bd0866dfe2e21152a5e5e55088de54741d44b3e00db03bc48f89ee20a5",
+      "localSha256": "88e08d9628f22c63cf0da0c19f4bd68cf617f74550c018453ed327790213d27a",
+      "modified": true
+    },
+    {
+      "path": "components/core/icon/Icon.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/Icon.tsx",
+      "upstreamSha256": "9c643332fdeaae26701d3bf851b61e74bf8e2f3dd1379571d46c87a8eabf4e54",
+      "localSha256": "601fb5407fdb4d0d91546a09122a5da7d62a3a698c638149b2e866ce0eeae95a",
+      "modified": true
+    },
+    {
+      "path": "components/core/icon/Icons.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/Icons.tsx",
+      "upstreamSha256": "2f7b1d4cf82bcbb28413d1575cdad88bcd61736808b013c2df550aa184b77647",
+      "localSha256": "2f7b1d4cf82bcbb28413d1575cdad88bcd61736808b013c2df550aa184b77647",
+      "modified": false
+    },
+    {
+      "path": "components/core/icon/RecordIcon.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/RecordIcon.tsx",
+      "upstreamSha256": "8fd7641a184d15f52cbca70be879d53b61f60f5873b085d971b108c9040a4d7c",
+      "localSha256": "8fd7641a184d15f52cbca70be879d53b61f60f5873b085d971b108c9040a4d7c",
+      "modified": false
+    },
+    {
+      "path": "components/core/icon/SelectChevronUpDownIcon.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/SelectChevronUpDownIcon.tsx",
+      "upstreamSha256": "c64f72f517baff091c43503383fa3dcf740b45e123732d6f07095d1274be6272",
+      "localSha256": "c64f72f517baff091c43503383fa3dcf740b45e123732d6f07095d1274be6272",
+      "modified": false
+    },
+    {
+      "path": "components/core/icon/index.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/index.tsx",
+      "upstreamSha256": "99cf3aaee9cf6506b60bd80f4bc541d5668a994c3285e3e0693b48f9617ca955",
+      "localSha256": "680755477d42375e88f77d146b615cc4e8b0134573e81a940dda7d2a1de1ca22",
+      "modified": true
+    },
+    {
+      "path": "components/core/icon/utils.tsx",
+      "upstreamPath": "js/app/src/components/core/icon/utils.tsx",
+      "upstreamSha256": "03b915e763489da9447787cb40a6cca89f09f158e0c1a3616971379edc0f4a98",
+      "localSha256": "ae49f96e6c7b76297bb227f7c7c1006ae438c11d396d0f24d57ebad530fd1cc2",
+      "modified": true
+    },
+    {
+      "path": "components/core/id/IDBadge.tsx",
+      "upstreamPath": "js/app/src/components/core/id/IDBadge.tsx",
+      "upstreamSha256": "fc8daea29cee5a829230f1fc63a4c920419d1ba58265fcf891a9fad1b15557be",
+      "localSha256": "09e96a269d142eae29c86e28a52b4415c9c2aded71c187434dcf3ed4de3c0ebd",
+      "modified": true
+    },
+    {
+      "path": "components/core/id/TitleWithID.tsx",
+      "upstreamPath": "js/app/src/components/core/id/TitleWithID.tsx",
+      "upstreamSha256": "7b7ed2940161c2363b35988f692b1098074862af7a0b36324f1166d01829611f",
+      "localSha256": "3a493503dca64030e071b1b56b86a16eea5920fa5ce826c8650af83a1503918d",
+      "modified": true
+    },
+    {
+      "path": "components/core/id/index.ts",
+      "upstreamPath": "js/app/src/components/core/id/index.ts",
+      "upstreamSha256": "a454f615633cec19a3550bac58d6106b63d907eb8cb647f918aac6191675c636",
+      "localSha256": "a454f615633cec19a3550bac58d6106b63d907eb8cb647f918aac6191675c636",
+      "modified": false
+    },
+    {
+      "path": "components/core/index.tsx",
+      "upstreamPath": "js/app/src/components/core/index.tsx",
+      "upstreamSha256": "9320319bca71d19b88e9669d5438a656c783004dd572da62fc4281900607c036",
+      "localSha256": "9320319bca71d19b88e9669d5438a656c783004dd572da62fc4281900607c036",
+      "modified": false
+    },
+    {
+      "path": "components/core/layout/Divider.tsx",
+      "upstreamPath": "js/app/src/components/core/layout/Divider.tsx",
+      "upstreamSha256": "2c10dda7f58bc5ed554a0c84031c41187f5dfaafe4ad65bb3ef4c2f05c3e228d",
+      "localSha256": "2c10dda7f58bc5ed554a0c84031c41187f5dfaafe4ad65bb3ef4c2f05c3e228d",
+      "modified": false
+    },
+    {
+      "path": "components/core/layout/EdgeFade.tsx",
+      "upstreamPath": "js/app/src/components/core/layout/EdgeFade.tsx",
+      "upstreamSha256": "fee9dcc12ab8b9b45cf9d45cf4a384e5d70ad4c44c0af82fc07c5691d3dd86e4",
+      "localSha256": "fee9dcc12ab8b9b45cf9d45cf4a384e5d70ad4c44c0af82fc07c5691d3dd86e4",
+      "modified": false
+    },
+    {
+      "path": "components/core/layout/Flex.tsx",
+      "upstreamPath": "js/app/src/components/core/layout/Flex.tsx",
+      "upstreamSha256": "396a1e11863fa6c7b24a82c177d2583de6ba6e53ed590675800fafd0df72cd31",
+      "localSha256": "7d4decb5d47b530aaab30e439ce7f8dc02f0be6ee4bae19fbb505aec9b4b170e",
+      "modified": true
+    },
+    {
+      "path": "components/core/layout/Group.tsx",
+      "upstreamPath": "js/app/src/components/core/layout/Group.tsx",
+      "upstreamSha256": "99662ae567875761323e9fc3744883ea69ac73116e026c8d84454e4847181f7a",
+      "localSha256": "e8c029d34d2ad706f8144d5a93906a6f7d6371ee62356ae5c8db6706817c94dc",
+      "modified": true
+    },
+    {
+      "path": "components/core/layout/dividerFadeCSS.ts",
+      "upstreamPath": "js/app/src/components/core/layout/dividerFadeCSS.ts",
+      "upstreamSha256": "dc2fcdbc4221dbff101f9918f6c75a23951db4e83ccfc301d4fda9146586b586",
+      "localSha256": "dc2fcdbc4221dbff101f9918f6c75a23951db4e83ccfc301d4fda9146586b586",
+      "modified": false
+    },
+    {
+      "path": "components/core/layout/edgeFadeCSS.ts",
+      "upstreamPath": "js/app/src/components/core/layout/edgeFadeCSS.ts",
+      "upstreamSha256": "7aa7ba7c5c95d2f1785d31f5a518b552f11d46b2aef7a1e620c17c09ceb6b1b8",
+      "localSha256": "7aa7ba7c5c95d2f1785d31f5a518b552f11d46b2aef7a1e620c17c09ceb6b1b8",
+      "modified": false
+    },
+    {
+      "path": "components/core/layout/index.tsx",
+      "upstreamPath": "js/app/src/components/core/layout/index.tsx",
+      "upstreamSha256": "74f0d33de46cb071650935a055677621945b473b1d957ff06facfa8af07081bf",
+      "localSha256": "74f0d33de46cb071650935a055677621945b473b1d957ff06facfa8af07081bf",
+      "modified": false
+    },
+    {
+      "path": "components/core/list/List.tsx",
+      "upstreamPath": "js/app/src/components/core/list/List.tsx",
+      "upstreamSha256": "dd04c076ca82fa8c8ffe53e8c7d06427a9fff399cb1c528c031eead208bbac7e",
+      "localSha256": "dd04c076ca82fa8c8ffe53e8c7d06427a9fff399cb1c528c031eead208bbac7e",
+      "modified": false
+    },
+    {
+      "path": "components/core/list/ListItem.tsx",
+      "upstreamPath": "js/app/src/components/core/list/ListItem.tsx",
+      "upstreamSha256": "5f9b37771eb16dfd8b56fcab7d9e25a19d35b2f1f048d57dc1248c8ca5f7d781",
+      "localSha256": "5f9b37771eb16dfd8b56fcab7d9e25a19d35b2f1f048d57dc1248c8ca5f7d781",
+      "modified": false
+    },
+    {
+      "path": "components/core/list/ListSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/core/list/ListSkeleton.tsx",
+      "upstreamSha256": "48f0e890084e1caab2dbdf8dfa5c5faeebead36377425a917c75b50ccf3439d2",
+      "localSha256": "c7c85730748b429b951dd721ebce8f69160e2f338be24152c1e74c4adabb7038",
+      "modified": true
+    },
+    {
+      "path": "components/core/list/index.ts",
+      "upstreamPath": "js/app/src/components/core/list/index.ts",
+      "upstreamSha256": "eeb2fe643c565bce34ab170c1f22be590cfc63c0e3f86b3b12cc9b78db66497d",
+      "localSha256": "eeb2fe643c565bce34ab170c1f22be590cfc63c0e3f86b3b12cc9b78db66497d",
+      "modified": false
+    },
+    {
+      "path": "components/core/list/styles.ts",
+      "upstreamPath": "js/app/src/components/core/list/styles.ts",
+      "upstreamSha256": "2e68fc573f6ed745fa4ada52837cfa5ae54869023c00312cba7d4685b5290980",
+      "localSha256": "2e68fc573f6ed745fa4ada52837cfa5ae54869023c00312cba7d4685b5290980",
+      "modified": false
+    },
+    {
+      "path": "components/core/list/types.ts",
+      "upstreamPath": "js/app/src/components/core/list/types.ts",
+      "upstreamSha256": "8b01204194c177330c8f44cf9fc768a405287a6bbd91d23c3c7e9b6a199e02ba",
+      "localSha256": "8b01204194c177330c8f44cf9fc768a405287a6bbd91d23c3c7e9b6a199e02ba",
+      "modified": false
+    },
+    {
+      "path": "components/core/listbox/ListBox.tsx",
+      "upstreamPath": "js/app/src/components/core/listbox/ListBox.tsx",
+      "upstreamSha256": "338574381ed4751604866ee81d2fcb1d962cbd5d844fa2e6c2975f1e3e99ac57",
+      "localSha256": "f192e623ea0321809220572a479991dd453f52dfed50775b6c0794321efffcc0",
+      "modified": true
+    },
+    {
+      "path": "components/core/listbox/index.tsx",
+      "upstreamPath": "js/app/src/components/core/listbox/index.tsx",
+      "upstreamSha256": "598f77cbb6ef95f7b16ac54fa1afdb949e83da3f93beb6a471e2bf0d87f14f05",
+      "localSha256": "9bfbf12aa09338767e60cc7691f7d9699fe6efcadf5fc389f93b7b110c8af1e6",
+      "modified": true
+    },
+    {
+      "path": "components/core/loading/ContentSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/core/loading/ContentSkeleton.tsx",
+      "upstreamSha256": "80a9be6994cbd9971f9a2baf3e54fe04fc18c61d694b813bc465115d24f1734b",
+      "localSha256": "997089733f1dcc73db0a96006f7567eb5bf512e5514db7772aa582facc8aa007",
+      "modified": true
+    },
+    {
+      "path": "components/core/loading/Loading.tsx",
+      "upstreamPath": "js/app/src/components/core/loading/Loading.tsx",
+      "upstreamSha256": "ed481ec5b75a802e98945e2a82ed217158cdb66c09da0a87dc4c23ff34813ce4",
+      "localSha256": "5ee2ab87a5b76b8d80b795b74c6c8eff4f08ca5d16c1b372941c21eb7a1ad898",
+      "modified": true
+    },
+    {
+      "path": "components/core/loading/ParagraphSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/core/loading/ParagraphSkeleton.tsx",
+      "upstreamSha256": "c074efe99d11292359d31054ef7bb8aeef2675e20478a0b5a3c8d4e4fcee1c05",
+      "localSha256": "c074efe99d11292359d31054ef7bb8aeef2675e20478a0b5a3c8d4e4fcee1c05",
+      "modified": false
+    },
+    {
+      "path": "components/core/loading/Skeleton.tsx",
+      "upstreamPath": "js/app/src/components/core/loading/Skeleton.tsx",
+      "upstreamSha256": "0059e346bbff62d2237c3e62b4e8dffcb632fa88c84f0d602d5a57c1bdb1c77d",
+      "localSha256": "0059e346bbff62d2237c3e62b4e8dffcb632fa88c84f0d602d5a57c1bdb1c77d",
+      "modified": false
+    },
+    {
+      "path": "components/core/loading/TextSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/core/loading/TextSkeleton.tsx",
+      "upstreamSha256": "ec2245125ec1e63cb1203ca824b10930a44ca54f8f18a32fd1b479a9446848f5",
+      "localSha256": "ec2245125ec1e63cb1203ca824b10930a44ca54f8f18a32fd1b479a9446848f5",
+      "modified": false
+    },
+    {
+      "path": "components/core/loading/index.tsx",
+      "upstreamPath": "js/app/src/components/core/loading/index.tsx",
+      "upstreamSha256": "08d2cf78cbcc87063c7adb72a27433f881d6eb4a3b83cb7ba5054aa5f62b97a0",
+      "localSha256": "08d2cf78cbcc87063c7adb72a27433f881d6eb4a3b83cb7ba5054aa5f62b97a0",
+      "modified": false
+    },
+    {
+      "path": "components/core/media/Video.tsx",
+      "upstreamPath": "js/app/src/components/core/media/Video.tsx",
+      "upstreamSha256": "856e22be35af5046ba1bc339cfd4dfb672410a7bb96ca5b3c3481e62b55c5d92",
+      "localSha256": "856e22be35af5046ba1bc339cfd4dfb672410a7bb96ca5b3c3481e62b55c5d92",
+      "modified": false
+    },
+    {
+      "path": "components/core/media/index.tsx",
+      "upstreamPath": "js/app/src/components/core/media/index.tsx",
+      "upstreamSha256": "a798e2e9f0f05578f30de3ca5bdd74ce96528b736564e2faed295b67a1914fdf",
+      "localSha256": "a798e2e9f0f05578f30de3ca5bdd74ce96528b736564e2faed295b67a1914fdf",
+      "modified": false
+    },
+    {
+      "path": "components/core/menu/Menu.tsx",
+      "upstreamPath": "js/app/src/components/core/menu/Menu.tsx",
+      "upstreamSha256": "ab586c2b56432c15fa408e61953ef0ad9a04426a1e79716f40cc41fe4e213fb0",
+      "localSha256": "fc85694ad999c04049f6e933267c52dacac5628e054ecee3aaf86c131c12ad9e",
+      "modified": true
+    },
+    {
+      "path": "components/core/menu/MenuButton.tsx",
+      "upstreamPath": "js/app/src/components/core/menu/MenuButton.tsx",
+      "upstreamSha256": "186f011908029d67c85665e014284e73b480dc6fcd46b5f5ceef0e6d0252f467",
+      "localSha256": "a11c6ba0d782cb6355a3180f87a4961f54e83f8f1a4c6e9b93bc9f84c0faf5a2",
+      "modified": true
+    },
+    {
+      "path": "components/core/menu/index.tsx",
+      "upstreamPath": "js/app/src/components/core/menu/index.tsx",
+      "upstreamSha256": "81fae711879fa2ca1527fc1633b6920b65b691ab3ea6ff97f437416016e7c0c3",
+      "localSha256": "81fae711879fa2ca1527fc1633b6920b65b691ab3ea6ff97f437416016e7c0c3",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/Drawer.tsx",
+      "upstreamPath": "js/app/src/components/core/overlay/Drawer.tsx",
+      "upstreamSha256": "e7ec93212db4ee53665f75d5d2e52324ec874d834b254a7e55ba54180458af9d",
+      "localSha256": "e7ec93212db4ee53665f75d5d2e52324ec874d834b254a7e55ba54180458af9d",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/DrawerContext.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/DrawerContext.ts",
+      "upstreamSha256": "6916c0cda534d980dfe0de5b7d736101b2613c94976dbe64aea20fc6144f7439",
+      "localSha256": "6916c0cda534d980dfe0de5b7d736101b2613c94976dbe64aea20fc6144f7439",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/Modal.tsx",
+      "upstreamPath": "js/app/src/components/core/overlay/Modal.tsx",
+      "upstreamSha256": "e14a740d17956eb08c13c6634801ba300d5ae8cc5204024f07d237a6fcbc450e",
+      "localSha256": "e14a740d17956eb08c13c6634801ba300d5ae8cc5204024f07d237a6fcbc450e",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/Popover.tsx",
+      "upstreamPath": "js/app/src/components/core/overlay/Popover.tsx",
+      "upstreamSha256": "854a5b377327ee4a17a8f49188e1567ab873a2952198b3c4a1d9eefcdd8b530a",
+      "localSha256": "854a5b377327ee4a17a8f49188e1567ab873a2952198b3c4a1d9eefcdd8b530a",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/PopoverArrow.tsx",
+      "upstreamPath": "js/app/src/components/core/overlay/PopoverArrow.tsx",
+      "upstreamSha256": "b72b98ed3a9b9a8b0c2c2e4bdb9d1f65178f83001dd1d89f887da3c34d0cb622",
+      "localSha256": "b72b98ed3a9b9a8b0c2c2e4bdb9d1f65178f83001dd1d89f887da3c34d0cb622",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/ViewportModal.tsx",
+      "upstreamPath": "js/app/src/components/core/overlay/ViewportModal.tsx",
+      "upstreamSha256": "85add2cd49e56fa0d164e4d51f89b25d9508899fc2fa7c4702b2d04a30b6e3f0",
+      "localSha256": "85add2cd49e56fa0d164e4d51f89b25d9508899fc2fa7c4702b2d04a30b6e3f0",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/constants.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/constants.ts",
+      "upstreamSha256": "e5d19ba7b19c31b855672a033e5e41388b05186be72a94e51aff19709e548d0c",
+      "localSha256": "e5d19ba7b19c31b855672a033e5e41388b05186be72a94e51aff19709e548d0c",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/frame.tsx",
+      "upstreamPath": "js/app/src/components/core/overlay/frame.tsx",
+      "upstreamSha256": "cd56b7d7d4a47c9a258cf988b211ae63c55d0a512f038a0871cd5c46b5475c73",
+      "localSha256": "cd56b7d7d4a47c9a258cf988b211ae63c55d0a512f038a0871cd5c46b5475c73",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/index.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/index.ts",
+      "upstreamSha256": "21a23ac9a75adc34a3dba973c2ae93023140c862aac9f2c922cda1d04e64d79d",
+      "localSha256": "21a23ac9a75adc34a3dba973c2ae93023140c862aac9f2c922cda1d04e64d79d",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/outsideInteraction.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/outsideInteraction.ts",
+      "upstreamSha256": "9ea0885b344961fc76ce12d09368b18ebca93189c751bd933b58721868464b04",
+      "localSha256": "9ea0885b344961fc76ce12d09368b18ebca93189c751bd933b58721868464b04",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/sizing.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/sizing.ts",
+      "upstreamSha256": "b778ff2b9c46dc7345f6339a6909207772bcbc3724ff0b6b58e75022680008e8",
+      "localSha256": "b778ff2b9c46dc7345f6339a6909207772bcbc3724ff0b6b58e75022680008e8",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/stacking.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/stacking.ts",
+      "upstreamSha256": "57a74d26fcdc76fbc5fb0c6d6132e3e5a214400465a938b6423d63a61575c691",
+      "localSha256": "57a74d26fcdc76fbc5fb0c6d6132e3e5a214400465a938b6423d63a61575c691",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/styles.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/styles.ts",
+      "upstreamSha256": "b131f5a2001f296a048a263cb1f289f5cbb99c6824fe4c78c19658a6aca68ffe",
+      "localSha256": "b131f5a2001f296a048a263cb1f289f5cbb99c6824fe4c78c19658a6aca68ffe",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/triggerState.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/triggerState.ts",
+      "upstreamSha256": "21453e5282c7add3a3a6549e5580136c5b32186456f7c7f1509b2e26d78a0871",
+      "localSha256": "21453e5282c7add3a3a6549e5580136c5b32186456f7c7f1509b2e26d78a0871",
+      "modified": false
+    },
+    {
+      "path": "components/core/overlay/useDefaultDrawerSize.ts",
+      "upstreamPath": "js/app/src/components/core/overlay/useDefaultDrawerSize.ts",
+      "upstreamSha256": "352bee1e8f51e0a7e1225bf1ea583009ceddd33ce6beffdb533a033729dc76d3",
+      "localSha256": "352bee1e8f51e0a7e1225bf1ea583009ceddd33ce6beffdb533a033729dc76d3",
+      "modified": false
+    },
+    {
+      "path": "components/core/progress/ProgressBar.tsx",
+      "upstreamPath": "js/app/src/components/core/progress/ProgressBar.tsx",
+      "upstreamSha256": "8585d82573137ffb1bb07feb072da6b1ffa886f4f3ba9f070d2f30d9b6ba69b8",
+      "localSha256": "8585d82573137ffb1bb07feb072da6b1ffa886f4f3ba9f070d2f30d9b6ba69b8",
+      "modified": false
+    },
+    {
+      "path": "components/core/progress/ProgressCircle.tsx",
+      "upstreamPath": "js/app/src/components/core/progress/ProgressCircle.tsx",
+      "upstreamSha256": "1144a4949907e4e837442ab676bb89f35a6aadb875292ddbf9fb3328784923ec",
+      "localSha256": "1144a4949907e4e837442ab676bb89f35a6aadb875292ddbf9fb3328784923ec",
+      "modified": false
+    },
+    {
+      "path": "components/core/progress/index.tsx",
+      "upstreamPath": "js/app/src/components/core/progress/index.tsx",
+      "upstreamSha256": "8433120e023170e362d0b4d021ff43bb5a4931d1e8654b573d4e7bdc7daf6504",
+      "localSha256": "8433120e023170e362d0b4d021ff43bb5a4931d1e8654b573d4e7bdc7daf6504",
+      "modified": false
+    },
+    {
+      "path": "components/core/progress/styles.ts",
+      "upstreamPath": "js/app/src/components/core/progress/styles.ts",
+      "upstreamSha256": "08ba0975cb82b1e153296b13a05cf4af78555cd55d206526ec853bed811ccd9f",
+      "localSha256": "08ba0975cb82b1e153296b13a05cf4af78555cd55d206526ec853bed811ccd9f",
+      "modified": false
+    },
+    {
+      "path": "components/core/progress/types.ts",
+      "upstreamPath": "js/app/src/components/core/progress/types.ts",
+      "upstreamSha256": "288877248762648d6a4b824ec8e18709ac2bca834d60f6ee5dce7dea6a0aa8bd",
+      "localSha256": "288877248762648d6a4b824ec8e18709ac2bca834d60f6ee5dce7dea6a0aa8bd",
+      "modified": false
+    },
+    {
+      "path": "components/core/radio/Radio.tsx",
+      "upstreamPath": "js/app/src/components/core/radio/Radio.tsx",
+      "upstreamSha256": "79817b643dfbc0619b97cf23d4bd6b714dce0446f8a8c0d9d01d8d8b0add1cdb",
+      "localSha256": "a4472cdb3b4e8773c45d65d94c01491cf545691849b5e0e132aba2d19e090200",
+      "modified": true
+    },
+    {
+      "path": "components/core/radio/RadioGroup.tsx",
+      "upstreamPath": "js/app/src/components/core/radio/RadioGroup.tsx",
+      "upstreamSha256": "b4625bcf6560054b65f5034b8590e3705d50a1cd0096edbc00c1a2a73accb423",
+      "localSha256": "32f0e3a8b90cdf9e7afc95c1f8e3ed2c1738aabbee4a0c6b2168c6e3a3c49c17",
+      "modified": true
+    },
+    {
+      "path": "components/core/radio/index.ts",
+      "upstreamPath": "js/app/src/components/core/radio/index.ts",
+      "upstreamSha256": "5c1d8ef86e63d312b0be435547e5d26415459702293a96cce6ff163fb761bb1f",
+      "localSha256": "5c1d8ef86e63d312b0be435547e5d26415459702293a96cce6ff163fb761bb1f",
+      "modified": false
+    },
+    {
+      "path": "components/core/segmentedControl/SegmentedControl.tsx",
+      "upstreamPath": "js/app/src/components/core/segmentedControl/SegmentedControl.tsx",
+      "upstreamSha256": "0f29decf1df8b3148e16e812257296649744b716cf22ecda54cc6c5ea3ab2b5b",
+      "localSha256": "0f29decf1df8b3148e16e812257296649744b716cf22ecda54cc6c5ea3ab2b5b",
+      "modified": false
+    },
+    {
+      "path": "components/core/segmentedControl/SegmentedControlItem.tsx",
+      "upstreamPath": "js/app/src/components/core/segmentedControl/SegmentedControlItem.tsx",
+      "upstreamSha256": "99b316c69d50cdbafd8f0e14bcfec33e036f5ed6a4cc2f1a6df26171dfa42c86",
+      "localSha256": "3b111a064cb767a08786a2cb370f22ce53278d8bff4fe2ab94a7a3058342d36b",
+      "modified": true
+    },
+    {
+      "path": "components/core/segmentedControl/index.ts",
+      "upstreamPath": "js/app/src/components/core/segmentedControl/index.ts",
+      "upstreamSha256": "7f6cb627703801b418a4e857a32e140db19cdbf5eb37d135df8a22091dd0fb32",
+      "localSha256": "7f6cb627703801b418a4e857a32e140db19cdbf5eb37d135df8a22091dd0fb32",
+      "modified": false
+    },
+    {
+      "path": "components/core/segmentedControl/styles.ts",
+      "upstreamPath": "js/app/src/components/core/segmentedControl/styles.ts",
+      "upstreamSha256": "d264271a2c685ce18811b2f7929f072db693e48dbc13bcc8f4da0953c294e733",
+      "localSha256": "d264271a2c685ce18811b2f7929f072db693e48dbc13bcc8f4da0953c294e733",
+      "modified": false
+    },
+    {
+      "path": "components/core/segmentedControl/types.ts",
+      "upstreamPath": "js/app/src/components/core/segmentedControl/types.ts",
+      "upstreamSha256": "949ed3f8de095c7c8826e00236eab19f32e83e426e50f2949568bfcb8c380725",
+      "localSha256": "f4c0a39743e2e4c6e0532ea967d7f7df961230cd86167d4518eaf992bed60dc7",
+      "modified": true
+    },
+    {
+      "path": "components/core/select/Select.tsx",
+      "upstreamPath": "js/app/src/components/core/select/Select.tsx",
+      "upstreamSha256": "92a82b263fad1c3d7783b321b1dbfd4c690645b42752ccf777376fa2bd7ef2cd",
+      "localSha256": "8943d5d76f64109a5a7848adbfbf2686ab9a0cd8b46a968aae1731e5863f0ace",
+      "modified": true
+    },
+    {
+      "path": "components/core/select/SelectItem.tsx",
+      "upstreamPath": "js/app/src/components/core/select/SelectItem.tsx",
+      "upstreamSha256": "959e59f1a14c2630390ae93259cf1dbd607f984fbfd74d47bba1e159dca703fc",
+      "localSha256": "49c0acc8cd31f427c8a9f0c3ce3db776ab6d8f84dca0cb11822d28b8000d8a26",
+      "modified": true
+    },
+    {
+      "path": "components/core/select/SelectValue.tsx",
+      "upstreamPath": "js/app/src/components/core/select/SelectValue.tsx",
+      "upstreamSha256": "7778331065ca77c4189e019bd85303e93a5d38603f7b416f45f0335dceaf7268",
+      "localSha256": "7778331065ca77c4189e019bd85303e93a5d38603f7b416f45f0335dceaf7268",
+      "modified": false
+    },
+    {
+      "path": "components/core/select/index.tsx",
+      "upstreamPath": "js/app/src/components/core/select/index.tsx",
+      "upstreamSha256": "dccf28fdc7e0c97eb62734f94c5dd8e46613a476df5720987a9532a6c787115c",
+      "localSha256": "dccf28fdc7e0c97eb62734f94c5dd8e46613a476df5720987a9532a6c787115c",
+      "modified": false
+    },
+    {
+      "path": "components/core/select/styles.ts",
+      "upstreamPath": "js/app/src/components/core/select/styles.ts",
+      "upstreamSha256": "15bb9b93f90e89efc41bddf416ff104499e026ce4c9da15f6a7e1376ebef7392",
+      "localSha256": "15bb9b93f90e89efc41bddf416ff104499e026ce4c9da15f6a7e1376ebef7392",
+      "modified": false
+    },
+    {
+      "path": "components/core/slider/Slider.tsx",
+      "upstreamPath": "js/app/src/components/core/slider/Slider.tsx",
+      "upstreamSha256": "55e8eaa42721e7b89b78629d9d28292c8c46686126eb8da174e58cd859ca03b8",
+      "localSha256": "f07e35dbac332fb71ffcf2b5cf1eeaefcd83c97225d72c4f2d9aed31dfafea2e",
+      "modified": true
+    },
+    {
+      "path": "components/core/slider/index.tsx",
+      "upstreamPath": "js/app/src/components/core/slider/index.tsx",
+      "upstreamSha256": "76cc642486a64787505367ef390e26f830017508059f3b9ecb1264ebf9c88095",
+      "localSha256": "76cc642486a64787505367ef390e26f830017508059f3b9ecb1264ebf9c88095",
+      "modified": false
+    },
+    {
+      "path": "components/core/styles.ts",
+      "upstreamPath": "js/app/src/components/core/styles.ts",
+      "upstreamSha256": "64f146f7cea92fd62dfea2bdbe412f16b7ef6f53c9faadbb802e631e19314e8c",
+      "localSha256": "64f146f7cea92fd62dfea2bdbe412f16b7ef6f53c9faadbb802e631e19314e8c",
+      "modified": false
+    },
+    {
+      "path": "components/core/switch/Switch.tsx",
+      "upstreamPath": "js/app/src/components/core/switch/Switch.tsx",
+      "upstreamSha256": "c946a0f73acf1587e51c93cd3641000beef83d50c9e4834229751c780bfd20b2",
+      "localSha256": "c946a0f73acf1587e51c93cd3641000beef83d50c9e4834229751c780bfd20b2",
+      "modified": false
+    },
+    {
+      "path": "components/core/switch/index.ts",
+      "upstreamPath": "js/app/src/components/core/switch/index.ts",
+      "upstreamSha256": "a30bdb3253591b9bd3959f8bc10d937a632243603e1c06450e4df4a400d3772d",
+      "localSha256": "a30bdb3253591b9bd3959f8bc10d937a632243603e1c06450e4df4a400d3772d",
+      "modified": false
+    },
+    {
+      "path": "components/core/tabs/Tabs.tsx",
+      "upstreamPath": "js/app/src/components/core/tabs/Tabs.tsx",
+      "upstreamSha256": "b0a367abe833362efdcccd5882cef689a336737de9a7f4dee5a452fe55b30213",
+      "localSha256": "375a61f9dc162427cc96b0e3b6b6312f3d06ce4438efd333e25f3539dccca8d2",
+      "modified": true
+    },
+    {
+      "path": "components/core/tabs/index.tsx",
+      "upstreamPath": "js/app/src/components/core/tabs/index.tsx",
+      "upstreamSha256": "6034a4dd05665f073ec90a28b6f8703ff3b8384f6a9f78ecac7dcbdf1f68ca28",
+      "localSha256": "6034a4dd05665f073ec90a28b6f8703ff3b8384f6a9f78ecac7dcbdf1f68ca28",
+      "modified": false
+    },
+    {
+      "path": "components/core/tag/Tag.tsx",
+      "upstreamPath": "js/app/src/components/core/tag/Tag.tsx",
+      "upstreamSha256": "adf7a28f2d4422144befe007d597018d460277e703923acf4fd383794145921d",
+      "localSha256": "adf7a28f2d4422144befe007d597018d460277e703923acf4fd383794145921d",
+      "modified": false
+    },
+    {
+      "path": "components/core/tag/TagGroup.tsx",
+      "upstreamPath": "js/app/src/components/core/tag/TagGroup.tsx",
+      "upstreamSha256": "708295473ea9f669a033071e3ac19fb4e8791c08e6ef92b3cd5a434c5d219377",
+      "localSha256": "708295473ea9f669a033071e3ac19fb4e8791c08e6ef92b3cd5a434c5d219377",
+      "modified": false
+    },
+    {
+      "path": "components/core/tag/TagList.tsx",
+      "upstreamPath": "js/app/src/components/core/tag/TagList.tsx",
+      "upstreamSha256": "22ef95ce4eae4acaa44b0f81656a67c0c34bfee4d8eb3f0091c2c5d4a122be74",
+      "localSha256": "22ef95ce4eae4acaa44b0f81656a67c0c34bfee4d8eb3f0091c2c5d4a122be74",
+      "modified": false
+    },
+    {
+      "path": "components/core/tag/index.tsx",
+      "upstreamPath": "js/app/src/components/core/tag/index.tsx",
+      "upstreamSha256": "76a518a4a18384d1d16692eeb5774b17117efdab644d795c805a6a3931982775",
+      "localSha256": "76a518a4a18384d1d16692eeb5774b17117efdab644d795c805a6a3931982775",
+      "modified": false
+    },
+    {
+      "path": "components/core/timer/Timer.tsx",
+      "upstreamPath": "js/app/src/components/core/timer/Timer.tsx",
+      "upstreamSha256": "233430c4a43db4b6c18e80083ed2df3a21764c06d9d614786285d6ab7f4727ec",
+      "localSha256": "d6632894f475ca203f99b6d3b5a79d9ac96b993de4c5decd974ce3589238e789",
+      "modified": true
+    },
+    {
+      "path": "components/core/timer/index.tsx",
+      "upstreamPath": "js/app/src/components/core/timer/index.tsx",
+      "upstreamSha256": "ee3c0e90ec6d9d46eb3daf82e16f0635bfbcdf0c8e835b751825d9528a34715b",
+      "localSha256": "ee3c0e90ec6d9d46eb3daf82e16f0635bfbcdf0c8e835b751825d9528a34715b",
+      "modified": false
+    },
+    {
+      "path": "components/core/toast/Toast.tsx",
+      "upstreamPath": "js/app/src/components/core/toast/Toast.tsx",
+      "upstreamSha256": "935211b8a3f296282f4e5f163f773e5a1d191c5879901d28df80c78a20632465",
+      "localSha256": "5ecccf1a6d369c027e0fed2b24fd45b9d2a1f6a3a02d96e3c34a692cfedaaa9d",
+      "modified": true
+    },
+    {
+      "path": "components/core/toast/ToastPositioner.tsx",
+      "upstreamPath": "js/app/src/components/core/toast/ToastPositioner.tsx",
+      "upstreamSha256": "3b0c21c36b60ee761e94e42c65ee3a8f2d38ca7b3d1879f10431e941c020458c",
+      "localSha256": "3b0c21c36b60ee761e94e42c65ee3a8f2d38ca7b3d1879f10431e941c020458c",
+      "modified": false
+    },
+    {
+      "path": "components/core/toast/ToastRegion.tsx",
+      "upstreamPath": "js/app/src/components/core/toast/ToastRegion.tsx",
+      "upstreamSha256": "38ba3024f291a928f86875c82bf9a502f73dfcf0600ab0ed4ed07d7b09194e62",
+      "localSha256": "954d365b00ccd6e1d57becee6bc02a0cdf7d778292aa1fe95747b670f05aefc2",
+      "modified": true
+    },
+    {
+      "path": "components/core/toast/index.tsx",
+      "upstreamPath": "js/app/src/components/core/toast/index.tsx",
+      "upstreamSha256": "6cd46c00e0827486a97cfd696d316728e84061fa934f3687e91ff5be57f7609c",
+      "localSha256": "6cd46c00e0827486a97cfd696d316728e84061fa934f3687e91ff5be57f7609c",
+      "modified": false
+    },
+    {
+      "path": "components/core/toast/styles.ts",
+      "upstreamPath": "js/app/src/components/core/toast/styles.ts",
+      "upstreamSha256": "8d38834177c5676caa3e6ce169ddb375c4a2779fb985a70bc14c05fe81e9fbd9",
+      "localSha256": "8d38834177c5676caa3e6ce169ddb375c4a2779fb985a70bc14c05fe81e9fbd9",
+      "modified": false
+    },
+    {
+      "path": "components/core/toggleButtonGroup/ToggleButton.tsx",
+      "upstreamPath": "js/app/src/components/core/toggleButtonGroup/ToggleButton.tsx",
+      "upstreamSha256": "3255e50262fd7d2c093b1968267c509530876a1e9028a442ec6425f093896408",
+      "localSha256": "46a724c83d7143f4b3d96359c9a18a4f585939bfb922a589a76b4f4375ae5b56",
+      "modified": true
+    },
+    {
+      "path": "components/core/toggleButtonGroup/ToggleButtonGroup.tsx",
+      "upstreamPath": "js/app/src/components/core/toggleButtonGroup/ToggleButtonGroup.tsx",
+      "upstreamSha256": "9c0fefd4bde5cdfd201d617bfaf6f248513b0eb7c91edeb56fce7208ed06cddc",
+      "localSha256": "c549b59b52692c642b4f11d2997ba38daa081d244228007794f7d9631b1f5db1",
+      "modified": true
+    },
+    {
+      "path": "components/core/toggleButtonGroup/index.ts",
+      "upstreamPath": "js/app/src/components/core/toggleButtonGroup/index.ts",
+      "upstreamSha256": "ec11a45c392158c0e0a04f4a8978cfef426ddb614f5ab261f0d7bcdb6dda6dbf",
+      "localSha256": "ec11a45c392158c0e0a04f4a8978cfef426ddb614f5ab261f0d7bcdb6dda6dbf",
+      "modified": false
+    },
+    {
+      "path": "components/core/token/Token.tsx",
+      "upstreamPath": "js/app/src/components/core/token/Token.tsx",
+      "upstreamSha256": "c6201be72804810ade5ff63320bad505bb6384650d034facf2436bcd88580382",
+      "localSha256": "0123e640b399b1f7e53aff74b4a21f8d09b1bee4a62ed5c475669151a18be231",
+      "modified": true
+    },
+    {
+      "path": "components/core/token/index.tsx",
+      "upstreamPath": "js/app/src/components/core/token/index.tsx",
+      "upstreamSha256": "32121a3ef92d5a9f7b96bf1b7865e30b547277fdbd60b8e21456312f90b58a84",
+      "localSha256": "32121a3ef92d5a9f7b96bf1b7865e30b547277fdbd60b8e21456312f90b58a84",
+      "modified": false
+    },
+    {
+      "path": "components/core/toolbar/FloatingToolbarContainer.tsx",
+      "upstreamPath": "js/app/src/components/core/toolbar/FloatingToolbarContainer.tsx",
+      "upstreamSha256": "1f0b97c069b689736ca4715ad42389c9efff1f3cdde5f4129986b4a83d034e2c",
+      "localSha256": "1f0b97c069b689736ca4715ad42389c9efff1f3cdde5f4129986b4a83d034e2c",
+      "modified": false
+    },
+    {
+      "path": "components/core/toolbar/Separator.tsx",
+      "upstreamPath": "js/app/src/components/core/toolbar/Separator.tsx",
+      "upstreamSha256": "c05ecb39cbc4a84b1b652172af29381fdeef050fca7582c4d2df32145d500512",
+      "localSha256": "c05ecb39cbc4a84b1b652172af29381fdeef050fca7582c4d2df32145d500512",
+      "modified": false
+    },
+    {
+      "path": "components/core/toolbar/Toolbar.tsx",
+      "upstreamPath": "js/app/src/components/core/toolbar/Toolbar.tsx",
+      "upstreamSha256": "4a136ec9aad45981134e208454e7b2818b4eccf29028151d14b8f581e4acf77f",
+      "localSha256": "4a136ec9aad45981134e208454e7b2818b4eccf29028151d14b8f581e4acf77f",
+      "modified": false
+    },
+    {
+      "path": "components/core/toolbar/index.tsx",
+      "upstreamPath": "js/app/src/components/core/toolbar/index.tsx",
+      "upstreamSha256": "72a7cea15fae2145503561c6c56c4376678c52bb95ea4c0e775191af497d3485",
+      "localSha256": "72a7cea15fae2145503561c6c56c4376678c52bb95ea4c0e775191af497d3485",
+      "modified": false
+    },
+    {
+      "path": "components/core/tooltip/ContextualHelp.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/ContextualHelp.tsx",
+      "upstreamSha256": "3ca492c2930faff2e5213448d6b511d2833cbc5fa9cf6c80d8ef85f839e1a20a",
+      "localSha256": "60a1643fbf4f7bb5435825a137231d305c2cc56d4a19455630165014a97f9ba3",
+      "modified": true
+    },
+    {
+      "path": "components/core/tooltip/DocumentationHelp.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/DocumentationHelp.tsx",
+      "upstreamSha256": "6aa93a178a9040702317fc17f1b25cf127f3ab4d28139c461e753d7a15ccd457",
+      "localSha256": "520cda2d58123efd2ac7f1c013fc7785a6b4a561463e79eb0938f8968a9573dc",
+      "modified": true
+    },
+    {
+      "path": "components/core/tooltip/RichTooltip.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/RichTooltip.tsx",
+      "upstreamSha256": "a31b5f49bc3b85806976e2a406be18cdbc649096ceef5e667f558f4821013c7b",
+      "localSha256": "29f20cc4fc953b0a7f602c875f36647af285e3d620969d2919bc42f7250abab6",
+      "modified": true
+    },
+    {
+      "path": "components/core/tooltip/Tooltip.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/Tooltip.tsx",
+      "upstreamSha256": "13d1f765e9ebf02caed4708a1370b10fb14b236db8864a68dc98c09ef71563ad",
+      "localSha256": "13d1f765e9ebf02caed4708a1370b10fb14b236db8864a68dc98c09ef71563ad",
+      "modified": false
+    },
+    {
+      "path": "components/core/tooltip/TooltipArrow.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/TooltipArrow.tsx",
+      "upstreamSha256": "9afea493b808d5fb2ae416117bb09411e817717454c3b1d7d69678546ed58de7",
+      "localSha256": "a75050675f567fea28391d2e41384ad0cdf859e304d8583dcbef6cc3a87521d3",
+      "modified": true
+    },
+    {
+      "path": "components/core/tooltip/TriggerWrap.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/TriggerWrap.tsx",
+      "upstreamSha256": "4afb1975c1a9d80d7da4d35247f49a184617d5d2f9164ea85c8fa4fcbbcdee05",
+      "localSha256": "4afb1975c1a9d80d7da4d35247f49a184617d5d2f9164ea85c8fa4fcbbcdee05",
+      "modified": false
+    },
+    {
+      "path": "components/core/tooltip/index.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/index.tsx",
+      "upstreamSha256": "6676e2d463f18e3229047260da0fd1a360c6c51f7777392b9d0cee0d3bc47a64",
+      "localSha256": "820b4f155197b77daf8b3fc3a1a0f6e0c9aaee7f97bc9724402915a3f5876d7c",
+      "modified": true
+    },
+    {
+      "path": "components/core/tooltip/styles.ts",
+      "upstreamPath": "js/app/src/components/core/tooltip/styles.ts",
+      "upstreamSha256": "c10dd24f1c635e001a99ac837af5817fb7d6e80eef0161d9a22e90a49df63598",
+      "localSha256": "c10dd24f1c635e001a99ac837af5817fb7d6e80eef0161d9a22e90a49df63598",
+      "modified": false
+    },
+    {
+      "path": "components/core/tooltip/types.tsx",
+      "upstreamPath": "js/app/src/components/core/tooltip/types.tsx",
+      "upstreamSha256": "bcf0162a9758002201c5219c4ab6c17dc5fd7147c8090b74d9312e8560e773e6",
+      "localSha256": "bcf0162a9758002201c5219c4ab6c17dc5fd7147c8090b74d9312e8560e773e6",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/dom.ts",
+      "upstreamPath": "js/app/src/components/core/types/dom.ts",
+      "upstreamSha256": "08b7a8610ada1b0dac022eb4ed6646981263e7a8bb0b881969ae4fd5f9f516a5",
+      "localSha256": "08b7a8610ada1b0dac022eb4ed6646981263e7a8bb0b881969ae4fd5f9f516a5",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/execution.ts",
+      "upstreamPath": "js/app/src/components/core/types/execution.ts",
+      "upstreamSha256": "f782c67316564a7dd101e80aedab5f0da7a32979c5d1a9123b98b9fa0fc10546",
+      "localSha256": "f782c67316564a7dd101e80aedab5f0da7a32979c5d1a9123b98b9fa0fc10546",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/index.ts",
+      "upstreamPath": "js/app/src/components/core/types/index.ts",
+      "upstreamSha256": "7434b98c3741240ff00d50b538ddec06ba0cc5d736391c3e268c7cf9332962d4",
+      "localSha256": "7434b98c3741240ff00d50b538ddec06ba0cc5d736391c3e268c7cf9332962d4",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/locale.ts",
+      "upstreamPath": "js/app/src/components/core/types/locale.ts",
+      "upstreamSha256": "b08976dd83e2b6ea9efb4baf636eec2e79d55f01f9993df90e9597d4de56e23a",
+      "localSha256": "b08976dd83e2b6ea9efb4baf636eec2e79d55f01f9993df90e9597d4de56e23a",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/severity.ts",
+      "upstreamPath": "js/app/src/components/core/types/severity.ts",
+      "upstreamSha256": "b0107c906f5a7ea321f790e5a0dcf929d6a4450b678244458574789e279ec679",
+      "localSha256": "b0107c906f5a7ea321f790e5a0dcf929d6a4450b678244458574789e279ec679",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/sizing.ts",
+      "upstreamPath": "js/app/src/components/core/types/sizing.ts",
+      "upstreamSha256": "87a3576a7e9fbd2e3097095c1a535ef4cdb618a6b6f8a7cfb6b2af911cb0f669",
+      "localSha256": "87a3576a7e9fbd2e3097095c1a535ef4cdb618a6b6f8a7cfb6b2af911cb0f669",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/style.ts",
+      "upstreamPath": "js/app/src/components/core/types/style.ts",
+      "upstreamSha256": "db4b6c89e3190d68e77ebb4218cda2f8bdc1ea4457c19cfa8f3f00f62494e6a8",
+      "localSha256": "db4b6c89e3190d68e77ebb4218cda2f8bdc1ea4457c19cfa8f3f00f62494e6a8",
+      "modified": false
+    },
+    {
+      "path": "components/core/types/variance.ts",
+      "upstreamPath": "js/app/src/components/core/types/variance.ts",
+      "upstreamSha256": "6c734c7a50a7b545818092bb5a6f9ae454d6989fe36e8577eeb4c2c0c58c643d",
+      "localSha256": "6c734c7a50a7b545818092bb5a6f9ae454d6989fe36e8577eeb4c2c0c58c643d",
+      "modified": false
+    },
+    {
+      "path": "components/core/utility/LineClamp.tsx",
+      "upstreamPath": "js/app/src/components/core/utility/LineClamp.tsx",
+      "upstreamSha256": "d390c064cc1df38a7237dba650280a8195c115515c078dcc92e4c6ae33a4ce93",
+      "localSha256": "d390c064cc1df38a7237dba650280a8195c115515c078dcc92e4c6ae33a4ce93",
+      "modified": false
+    },
+    {
+      "path": "components/core/utility/OverflowRow.tsx",
+      "upstreamPath": "js/app/src/components/core/utility/OverflowRow.tsx",
+      "upstreamSha256": "5d6abc7cd2e0f4da8183ae4d2dc2593cca865e9341ffd2f4bbb3e7518bfc7660",
+      "localSha256": "005b001ba1f40148e65513de4492830635f4a31f0b0d8765cc236d9c99fc6f64",
+      "modified": true
+    },
+    {
+      "path": "components/core/utility/Truncate.tsx",
+      "upstreamPath": "js/app/src/components/core/utility/Truncate.tsx",
+      "upstreamSha256": "70f82f3e3e7c0a92181b63bcd239b9791417e57b56d92958e684b76cd9f176b3",
+      "localSha256": "70f82f3e3e7c0a92181b63bcd239b9791417e57b56d92958e684b76cd9f176b3",
+      "modified": false
+    },
+    {
+      "path": "components/core/utils/styleProps.ts",
+      "upstreamPath": "js/app/src/components/core/utils/styleProps.ts",
+      "upstreamSha256": "6afec771564e24e613e8b8c18a8bd782b68c46bfcb24bed919fb6b9e927b5229",
+      "localSha256": "4018af3ca4b13918a5bb8f3c73f64a533c648e34a9a2cdab475c193b635a7a86",
+      "modified": true
+    },
+    {
+      "path": "components/core/view/View.tsx",
+      "upstreamPath": "js/app/src/components/core/view/View.tsx",
+      "upstreamSha256": "b754e3e9514d7620e695f80ae86847b016ad2c183f9548ab370abfd4435f7246",
+      "localSha256": "363b7f3351557b5c8e9ae24b0271f6ecc380c3b58f6d51f0541dc76298c6f6a2",
+      "modified": true
+    },
+    {
+      "path": "components/core/view/index.tsx",
+      "upstreamPath": "js/app/src/components/core/view/index.tsx",
+      "upstreamSha256": "c4f640bb361bc018b64e59e1b6c678967efb8a79a7c3e5d938f029d0cd9e66c9",
+      "localSha256": "c4f640bb361bc018b64e59e1b6c678967efb8a79a7c3e5d938f029d0cd9e66c9",
+      "modified": false
+    },
+    {
+      "path": "components/core/zIndex.ts",
+      "upstreamPath": "js/app/src/components/core/zIndex.ts",
+      "upstreamSha256": "186ff9d458531507d23ec0302356a9d889b418f473011e8eba5141d3f44cf2a9",
+      "localSha256": "186ff9d458531507d23ec0302356a9d889b418f473011e8eba5141d3f44cf2a9",
+      "modified": false
+    },
+    {
+      "path": "components/datetime/ConnectedTimeRangeControls.tsx",
+      "upstreamPath": "js/app/src/components/datetime/ConnectedTimeRangeControls.tsx",
+      "upstreamSha256": "b034fc55d74d9b048e93a8151e75d2157d1f527ea1896ae56aeb7401d4379fce",
+      "localSha256": "b034fc55d74d9b048e93a8151e75d2157d1f527ea1896ae56aeb7401d4379fce",
+      "modified": false
+    },
+    {
+      "path": "components/datetime/ConnectedTimeRangeSelector.tsx",
+      "upstreamPath": "js/app/src/components/datetime/ConnectedTimeRangeSelector.tsx",
+      "upstreamSha256": "73669472ea5f4a12a7adc5ba575cfe719447be7443729a9a0c97a87dd9aa55ab",
+      "localSha256": "615ece4922993eb4af1ca39a490faae8b09f5c149070325aedcaf81a0c9193de",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/TimeRangeCalendarPicker.tsx",
+      "upstreamPath": "js/app/src/components/datetime/TimeRangeCalendarPicker.tsx",
+      "upstreamSha256": "8c88c1b5a2e4519b51ccf4c4b69e130b3119ccd3b9316cb0cec07e38faea5ae6",
+      "localSha256": "b5d18e6fe488f2459ea926e76a8e8fbe401e74bced86d47a9d800dc74e1ff0b3",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/TimeRangeContext.tsx",
+      "upstreamPath": "js/app/src/components/datetime/TimeRangeContext.tsx",
+      "upstreamSha256": "9fe535c847a0eaa19411af3d767c23577672535d16bd5d6db5df4cefed628846",
+      "localSha256": "3c9581fa92c09bb1f9ada8798e1ab9a6552e0fa27ec81da9bb2be5f5cd399aa0",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/TimeRangeControls.tsx",
+      "upstreamPath": "js/app/src/components/datetime/TimeRangeControls.tsx",
+      "upstreamSha256": "ed0b679ea2a3ecdc085cfbe0ac494d5254176d7642da53a9cd894793c533eb4f",
+      "localSha256": "19708d689e1fd9b951e851de798467adcf6ed76edd3972a5e314b74dc1931db3",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/TimeRangeFields.tsx",
+      "upstreamPath": "js/app/src/components/datetime/TimeRangeFields.tsx",
+      "upstreamSha256": "af6345beb6a96e6aadd32ef2b2e5d4058c539a0aca157c76078fe787d2a05fae",
+      "localSha256": "ef4dd8f9cd313b1d651e53a654beabe5f54f67224a7b8c74fc68440fac475a18",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/TimeRangeForm.tsx",
+      "upstreamPath": "js/app/src/components/datetime/TimeRangeForm.tsx",
+      "upstreamSha256": "44a9f979d9889b71010158a994257ba9446b3cde07fda5dd5e39d2c5d2f97c42",
+      "localSha256": "a0d057c5fe5a77147f6134eaf65c1f16b06461ad1b82b136feb5e2fa3ffa6acb",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/TimeRangeSelector.tsx",
+      "upstreamPath": "js/app/src/components/datetime/TimeRangeSelector.tsx",
+      "upstreamSha256": "bfd85dff8d36bcc2eaf42c03b07a1f34a9b3ea899420e3e9811967e56d0de21a",
+      "localSha256": "e3202604cb5fd076822429c16c35b6be5ea638b127d351a4db9fa63e59b53d00",
+      "modified": true
+    },
+    {
+      "path": "components/datetime/constants.ts",
+      "upstreamPath": "js/app/src/components/datetime/constants.ts",
+      "upstreamSha256": "a7d96895da217e5856ad08364b4056193be17d38fb9e6ecb0947bc763b8b9dcb",
+      "localSha256": "a7d96895da217e5856ad08364b4056193be17d38fb9e6ecb0947bc763b8b9dcb",
+      "modified": false
+    },
+    {
+      "path": "components/datetime/index.tsx",
+      "upstreamPath": "js/app/src/components/datetime/index.tsx",
+      "upstreamSha256": "98f76a01b811a37a178a909ecce5f54ed7f9a74cc973e1d034dd2a8247e5e699",
+      "localSha256": "98f76a01b811a37a178a909ecce5f54ed7f9a74cc973e1d034dd2a8247e5e699",
+      "modified": false
+    },
+    {
+      "path": "components/datetime/types.ts",
+      "upstreamPath": "js/app/src/components/datetime/types.ts",
+      "upstreamSha256": "aad711bcca2345b2b5a06a753f9208f418890912c9f7531803aa802fbaffa565",
+      "localSha256": "aad711bcca2345b2b5a06a753f9208f418890912c9f7531803aa802fbaffa565",
+      "modified": false
+    },
+    {
+      "path": "components/datetime/utils.ts",
+      "upstreamPath": "js/app/src/components/datetime/utils.ts",
+      "upstreamSha256": "334e527cb769e2ce604c5c711bdca3cacb83890c4200325ff0da29707219560f",
+      "localSha256": "334e527cb769e2ce604c5c711bdca3cacb83890c4200325ff0da29707219560f",
+      "modified": false
+    },
+    {
+      "path": "components/dnd/ReorderProvider.tsx",
+      "upstreamPath": "js/app/src/components/dnd/ReorderProvider.tsx",
+      "upstreamSha256": "94dc92665932c8623b81c42cd7ea4cf3ad2685a9eedd0ed6d6ddee06ba8b0a33",
+      "localSha256": "94dc92665932c8623b81c42cd7ea4cf3ad2685a9eedd0ed6d6ddee06ba8b0a33",
+      "modified": false
+    },
+    {
+      "path": "components/dnd/styles.ts",
+      "upstreamPath": "js/app/src/components/dnd/styles.ts",
+      "upstreamSha256": "0e65015255dd2fdb15f605a2a23036661919830b9685915a03c0c2da35ba997c",
+      "localSha256": "0e65015255dd2fdb15f605a2a23036661919830b9685915a03c0c2da35ba997c",
+      "modified": false
+    },
+    {
+      "path": "components/exception/BugReportErrorBoundaryFallback.tsx",
+      "upstreamPath": "js/app/src/components/exception/BugReportErrorBoundaryFallback.tsx",
+      "upstreamSha256": "fba13dd32c2b6e90bb33f6e6ce01e56b30bbb5e57fa45a4e0318f2e14e91579e",
+      "localSha256": "cb1a354a087cd6d0b85182b3668ce56b100601260f0c7022fe836bf0073bffe9",
+      "modified": true
+    },
+    {
+      "path": "components/exception/ErrorBoundary.tsx",
+      "upstreamPath": "js/app/src/components/exception/ErrorBoundary.tsx",
+      "upstreamSha256": "2264d679afb3b0cff9605d959e48d0b5cdea2d47b3f808393b219005584ff158",
+      "localSha256": "2264d679afb3b0cff9605d959e48d0b5cdea2d47b3f808393b219005584ff158",
+      "modified": false
+    },
+    {
+      "path": "components/exception/TextErrorBoundaryFallback.tsx",
+      "upstreamPath": "js/app/src/components/exception/TextErrorBoundaryFallback.tsx",
+      "upstreamSha256": "52a49bf067f86d04d6fa8a90fbfc2df499d64a6f0176e2e9ea17f2f9b4e4642c",
+      "localSha256": "22ba02df5f7052172bd2020121e835a7f60871868d48682a960aa8c58e7aa79f",
+      "modified": true
+    },
+    {
+      "path": "components/exception/index.tsx",
+      "upstreamPath": "js/app/src/components/exception/index.tsx",
+      "upstreamSha256": "2285a7fba684e845a50033f96e21cd5795bc192a1fb73df9cf1e71994b8b32b5",
+      "localSha256": "2285a7fba684e845a50033f96e21cd5795bc192a1fb73df9cf1e71994b8b32b5",
+      "modified": false
+    },
+    {
+      "path": "components/exception/isConnectionTimeoutError.ts",
+      "upstreamPath": "js/app/src/components/exception/isConnectionTimeoutError.ts",
+      "upstreamSha256": "05891ac74520c19e7782ffad539b5b9f261a7eebfaa826fe740e791d76f5da14",
+      "localSha256": "05891ac74520c19e7782ffad539b5b9f261a7eebfaa826fe740e791d76f5da14",
+      "modified": false
+    },
+    {
+      "path": "components/exception/types.ts",
+      "upstreamPath": "js/app/src/components/exception/types.ts",
+      "upstreamSha256": "e2f411e9320ed47dbd45120e485b86f99996655fb7c676b33386f8aabfd658b1",
+      "localSha256": "e2f411e9320ed47dbd45120e485b86f99996655fb7c676b33386f8aabfd658b1",
+      "modified": false
+    },
+    {
+      "path": "components/generative/GenerativeProviderIcon.tsx",
+      "upstreamPath": "js/app/src/components/generative/GenerativeProviderIcon.tsx",
+      "upstreamSha256": "7a22536d4f6841fc7c6b806b7ac9cadca9925ca9f672e5f9b7ab33eadecdf7ae",
+      "localSha256": "7a22536d4f6841fc7c6b806b7ac9cadca9925ca9f672e5f9b7ab33eadecdf7ae",
+      "modified": false
+    },
+    {
+      "path": "components/index.tsx",
+      "upstreamPath": "js/app/src/components/index.tsx",
+      "upstreamSha256": "541fa4e9e63e1d8a4318844a6a504a9f0825674a38a7943244a37c8941b09f67",
+      "localSha256": "0b0600b475f8a6ad979849e6652eabc2495165d82003065f167fd53671a2d083",
+      "modified": true
+    },
+    {
+      "path": "components/markdown/MarkdownBlock.tsx",
+      "upstreamPath": "js/app/src/components/markdown/MarkdownBlock.tsx",
+      "upstreamSha256": "96163a4b3495ad17298d958da6937fe6313fd5b13005d9768f1df749a4ed681f",
+      "localSha256": "bde1da7dbf3e2aa820ae38435863ba0c476dec793bbfa6583b5dd247243e4b4b",
+      "modified": true
+    },
+    {
+      "path": "components/markdown/MarkdownDisplayContext.tsx",
+      "upstreamPath": "js/app/src/components/markdown/MarkdownDisplayContext.tsx",
+      "upstreamSha256": "2d2472a79942b3cd502866c2ac9c30e672b703841712b2836cd1b86f54c7e49a",
+      "localSha256": "2d2472a79942b3cd502866c2ac9c30e672b703841712b2836cd1b86f54c7e49a",
+      "modified": false
+    },
+    {
+      "path": "components/markdown/MarkdownModeSelect.tsx",
+      "upstreamPath": "js/app/src/components/markdown/MarkdownModeSelect.tsx",
+      "upstreamSha256": "7ba17359cfdb9724d55efcddf81fb80c035f4f098925dd4c5400bca61025039a",
+      "localSha256": "750c3dc0eded1cb39479eccfda3e3f08733028e4cea52b24cb0efada8cbc6b88",
+      "modified": true
+    },
+    {
+      "path": "components/markdown/streamdownComponents.tsx",
+      "upstreamPath": "js/app/src/components/markdown/streamdownComponents.tsx",
+      "upstreamSha256": "1e899a76ed3d126866620a71bcd613933ec9c8810ed751fdc15e969d3b5f28e8",
+      "localSha256": "94981666564864d8a2e649d0680bcd91b3bcb6014b2727c79db72b4c0ae5505c",
+      "modified": true
+    },
+    {
+      "path": "components/markdown/styles.ts",
+      "upstreamPath": "js/app/src/components/markdown/styles.ts",
+      "upstreamSha256": "1cfd9f525e5e565d2d29b5541b293d10aae24220fcf3cc51dc04a9c2d150a728",
+      "localSha256": "1cfd9f525e5e565d2d29b5541b293d10aae24220fcf3cc51dc04a9c2d150a728",
+      "modified": false
+    },
+    {
+      "path": "components/markdown/types.ts",
+      "upstreamPath": "js/app/src/components/markdown/types.ts",
+      "upstreamSha256": "d43f6574794fb67d27a263417e0e19034eb86315ebef35694d9e19bc55ba1bee",
+      "localSha256": "d43f6574794fb67d27a263417e0e19034eb86315ebef35694d9e19bc55ba1bee",
+      "modified": false
+    },
+    {
+      "path": "components/nav/GitHubStarCount.tsx",
+      "upstreamPath": "js/app/src/components/nav/GitHubStarCount.tsx",
+      "upstreamSha256": "ae71d115eb9570cbbcf50579cd6dfc3cd123de962dfad5b6a52b67718a9f27fb",
+      "localSha256": "3f689d19259f484e8ebdeab86edc2ff462087aa7877b02345ef84f69c5d059cd",
+      "modified": true
+    },
+    {
+      "path": "components/nav/Logo.tsx",
+      "upstreamPath": "js/app/src/components/nav/Logo.tsx",
+      "upstreamSha256": "16d2d1ae5616fdadf4f840f1ba23b10c3edd960709119eaeb2f33c3e0140eb16",
+      "localSha256": "16d2d1ae5616fdadf4f840f1ba23b10c3edd960709119eaeb2f33c3e0140eb16",
+      "modified": false
+    },
+    {
+      "path": "components/nav/NavBreadcrumb.tsx",
+      "upstreamPath": "js/app/src/components/nav/NavBreadcrumb.tsx",
+      "upstreamSha256": "1d5fb08bda7c9835dc0e147f30bc022e32aee03620b6d9d45d8e961ee5578f97",
+      "localSha256": "39e712597ea434989f733d8d32b1b404c717f3125426cded443a12777a5f31ef",
+      "modified": true
+    },
+    {
+      "path": "components/nav/Navbar.tsx",
+      "upstreamPath": "js/app/src/components/nav/Navbar.tsx",
+      "upstreamSha256": "976b253c454036ae57b566535722de57961a8f748e90a4b220ea7ce87c2978c9",
+      "localSha256": "2fb48ede81f4d53902c6250e6b2bd6de4b647ef58c39cd1be343774eaa7734cc",
+      "modified": true
+    },
+    {
+      "path": "components/nav/SideNavToggleButton.tsx",
+      "upstreamPath": "js/app/src/components/nav/SideNavToggleButton.tsx",
+      "upstreamSha256": "54eff8e59c9bb1255ffe651c9d123cc51600902a34fbd442661e03f15d0edb04",
+      "localSha256": "ee77bd4a6814fe89130779aad41269e495160561cd527a83292678c9ce9acf86",
+      "modified": true
+    },
+    {
+      "path": "components/nav/TopNavActions.tsx",
+      "upstreamPath": "js/app/src/components/nav/TopNavActions.tsx",
+      "upstreamSha256": "d45f5696920d18f6c1df6cfa6c20004e54ee147a59249f647b8e225a6ed6f9e9",
+      "localSha256": "d45f5696920d18f6c1df6cfa6c20004e54ee147a59249f647b8e225a6ed6f9e9",
+      "modified": false
+    },
+    {
+      "path": "components/nav/useResponsiveSideNav.ts",
+      "upstreamPath": "js/app/src/components/nav/useResponsiveSideNav.ts",
+      "upstreamSha256": "6469b852e08a86f256be132ff1728ba1e6ad4000a50155c4d38e7fe07b1ba0b3",
+      "localSha256": "263d0780dd4ba511a2d5b25af7634d48e6ac39ee38341d6e6d322afa85f9e5e4",
+      "modified": true
+    },
+    {
+      "path": "components/project/GradientCircle.tsx",
+      "upstreamPath": "js/app/src/components/project/GradientCircle.tsx",
+      "upstreamSha256": "6acec32ed0e7288e49ac71663d3dea90aded7d29a7539c4cc1f433a1bf150284",
+      "localSha256": "6acec32ed0e7288e49ac71663d3dea90aded7d29a7539c4cc1f433a1bf150284",
+      "modified": false
+    },
+    {
+      "path": "components/resize/styles.tsx",
+      "upstreamPath": "js/app/src/components/resize/styles.tsx",
+      "upstreamSha256": "c5463553eb0b4050c9bedc1318f99d01ccc3f80db64e401f4d965d0bc2b5bd4c",
+      "localSha256": "c5463553eb0b4050c9bedc1318f99d01ccc3f80db64e401f4d965d0bc2b5bd4c",
+      "modified": false
+    },
+    {
+      "path": "components/table/CellWithControlsWrap.tsx",
+      "upstreamPath": "js/app/src/components/table/CellWithControlsWrap.tsx",
+      "upstreamSha256": "d29bb4bb91fe6bf31c97061b502508c61769f10a7dbbdafbdc283e1253d6999f",
+      "localSha256": "d29bb4bb91fe6bf31c97061b502508c61769f10a7dbbdafbdc283e1253d6999f",
+      "modified": false
+    },
+    {
+      "path": "components/table/CopyableTextCell.tsx",
+      "upstreamPath": "js/app/src/components/table/CopyableTextCell.tsx",
+      "upstreamSha256": "b1f6b755e4ef0bddfeb990b1951d32c001591ce3cbdc73f88e73742caefd08bf",
+      "localSha256": "f52106fff5038103e9c53f21f383230c4cfd6901ed310ba002c5300c402c0985",
+      "modified": true
+    },
+    {
+      "path": "components/table/RowExpandToggleButton.tsx",
+      "upstreamPath": "js/app/src/components/table/RowExpandToggleButton.tsx",
+      "upstreamSha256": "0106b3e55e3a24528faa4a13d56ca74f608096c7fac524716078f1e203f1a8fe",
+      "localSha256": "63426edd21bcbc319d9410aaa3adccc40191decbf06aa38a994f2550327edc59",
+      "modified": true
+    },
+    {
+      "path": "components/table/TableColumnHeader.tsx",
+      "upstreamPath": "js/app/src/components/table/TableColumnHeader.tsx",
+      "upstreamSha256": "f2aa088ec46826dea7da70451188ba77cb9835ad648e5e8ca85c3b0663dd162d",
+      "localSha256": "ede06e41acdd93219d803291dab3c2080b366090a6f5a6930900a605fa07778c",
+      "modified": true
+    },
+    {
+      "path": "components/table/TableEmpty.tsx",
+      "upstreamPath": "js/app/src/components/table/TableEmpty.tsx",
+      "upstreamSha256": "3ee1223845a2d1cecd9aa9bb417d9dfa1560c04bd613530b8c28867155b37071",
+      "localSha256": "85585a57fb8b9ceff31847eda882bcecd5622ba607de1a1dd1144a97d9927ff8",
+      "modified": true
+    },
+    {
+      "path": "components/table/TableEmptyWrap.tsx",
+      "upstreamPath": "js/app/src/components/table/TableEmptyWrap.tsx",
+      "upstreamSha256": "50cabdfe113fe0048d25015963450d07f90e4155688dcb093e2a31f4792ac207",
+      "localSha256": "50cabdfe113fe0048d25015963450d07f90e4155688dcb093e2a31f4792ac207",
+      "modified": false
+    },
+    {
+      "path": "components/table/TableExpandButton.tsx",
+      "upstreamPath": "js/app/src/components/table/TableExpandButton.tsx",
+      "upstreamSha256": "30690767b80dbdcb14c9c84877c0c116f8ba6bfab1b5e3835ae14c11920bae7b",
+      "localSha256": "f04c74d719c370ead13a350588448b7654becfaa6b0e144a7e0d08caca0ac7d6",
+      "modified": true
+    },
+    {
+      "path": "components/table/TableSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/table/TableSkeleton.tsx",
+      "upstreamSha256": "375ac77eaf0c8ca3d7ca0e908a011ffe80bf50f6b34385c29fa60309ca99fac2",
+      "localSha256": "0831b4b885784e297d5b6ad8e408abe53a4675ab58490e0a006f084f5e06c662",
+      "modified": true
+    },
+    {
+      "path": "components/table/TimestampCell.tsx",
+      "upstreamPath": "js/app/src/components/table/TimestampCell.tsx",
+      "upstreamSha256": "9d60d2b64a9d1d5563823c53c00154753da0680edb0c8ecb35aba3cdec24bf8a",
+      "localSha256": "9d60d2b64a9d1d5563823c53c00154753da0680edb0c8ecb35aba3cdec24bf8a",
+      "modified": false
+    },
+    {
+      "path": "components/table/columnOrdering/ColumnHeaderCell.tsx",
+      "upstreamPath": "js/app/src/components/table/columnOrdering/ColumnHeaderCell.tsx",
+      "upstreamSha256": "4dfb25289518ed940a132f856e0d30db73eb2910a15a0aa7960bb0c67286989d",
+      "localSha256": "4dfb25289518ed940a132f856e0d30db73eb2910a15a0aa7960bb0c67286989d",
+      "modified": false
+    },
+    {
+      "path": "components/table/columnOrdering/ColumnOrderingProvider.tsx",
+      "upstreamPath": "js/app/src/components/table/columnOrdering/ColumnOrderingProvider.tsx",
+      "upstreamSha256": "345557e6cf1a199c35cb7b0ddda5a1bfa02a641fc627b63116cd141d6fbab2ea",
+      "localSha256": "c2e45cfb0ea3e962d0fcbde70dcd47e1aefae2a54a3593812da7350d6a8135a3",
+      "modified": true
+    },
+    {
+      "path": "components/table/columnOrdering/SortableColumnHeader.tsx",
+      "upstreamPath": "js/app/src/components/table/columnOrdering/SortableColumnHeader.tsx",
+      "upstreamSha256": "bb09e7ea1d14995c42bb1c6eaa0450ba1b26c12dcf9fed00079963c84a802e13",
+      "localSha256": "caeb4e314b60733861f0db8cab49d3b8be3a8f0cc0ac4ffcd2e05ac7a7e80b28",
+      "modified": true
+    },
+    {
+      "path": "components/table/columnOrdering/columnOrderingUtils.ts",
+      "upstreamPath": "js/app/src/components/table/columnOrdering/columnOrderingUtils.ts",
+      "upstreamSha256": "a782fef96987c5b00341b35ca5bc28f2753ec92876bb451237c94605d53d76fd",
+      "localSha256": "a782fef96987c5b00341b35ca5bc28f2753ec92876bb451237c94605d53d76fd",
+      "modified": false
+    },
+    {
+      "path": "components/table/columnOrdering/useColumnOrder.ts",
+      "upstreamPath": "js/app/src/components/table/columnOrdering/useColumnOrder.ts",
+      "upstreamSha256": "a683463ce9d52b309dfe5e9e0f2cc3a88b3dd4eefb6347d4e4bc3d7620b18b4b",
+      "localSha256": "a683463ce9d52b309dfe5e9e0f2cc3a88b3dd4eefb6347d4e4bc3d7620b18b4b",
+      "modified": false
+    },
+    {
+      "path": "components/table/constants.ts",
+      "upstreamPath": "js/app/src/components/table/constants.ts",
+      "upstreamSha256": "8697875043d78c2979bc3d7a33f15c7e0a484fb3d4c0773c78242b15a1809067",
+      "localSha256": "8697875043d78c2979bc3d7a33f15c7e0a484fb3d4c0773c78242b15a1809067",
+      "modified": false
+    },
+    {
+      "path": "components/table/styles.ts",
+      "upstreamPath": "js/app/src/components/table/styles.ts",
+      "upstreamSha256": "67be2590eb3aff8c1cc438ed6928e653a488ae2b7d0cf145a1b0ed26c8910edd",
+      "localSha256": "67be2590eb3aff8c1cc438ed6928e653a488ae2b7d0cf145a1b0ed26c8910edd",
+      "modified": false
+    },
+    {
+      "path": "components/table/tableFeatures.ts",
+      "upstreamPath": "js/app/src/components/table/tableFeatures.ts",
+      "upstreamSha256": "5a99892969474b1353ee2cc80477d0fff4fd144330c76556f1b129d7e723dc2c",
+      "localSha256": "e3339e3c2f86fdbcd6a013acecab8f2f85ca5b32965f44bd04e587112a72fa86",
+      "modified": true
+    },
+    {
+      "path": "components/table/useTableRowsExpanded.ts",
+      "upstreamPath": "js/app/src/components/table/useTableRowsExpanded.ts",
+      "upstreamSha256": "6f948e2cb06e09b39c4c672971a2373cda6a635298fdb2d026d7581ef19521af",
+      "localSha256": "a2094448b05439bd690963c9114002bcd48d9559c133953c7376984c7f99855d",
+      "modified": true
+    },
+    {
+      "path": "components/timeline/TimelineBar.tsx",
+      "upstreamPath": "js/app/src/components/timeline/TimelineBar.tsx",
+      "upstreamSha256": "5029629503cea732e09430d4b1cc4996a82baeb8dc1946659dd789f05f851a5c",
+      "localSha256": "5029629503cea732e09430d4b1cc4996a82baeb8dc1946659dd789f05f851a5c",
+      "modified": false
+    },
+    {
+      "path": "components/trace/LatencyText.tsx",
+      "upstreamPath": "js/app/src/components/trace/LatencyText.tsx",
+      "upstreamSha256": "d907bb6463183dcf4fd645b7bd10c127505c72b32ed9672916d52853a41c2ac0",
+      "localSha256": "bf4d4f05e6527816212ecd5fe81c58a1ee0114cac1a6e749c51d7690338ab15c",
+      "modified": true
+    },
+    {
+      "path": "components/trace/RowPreviewCard.tsx",
+      "upstreamPath": "js/app/src/components/trace/RowPreviewCard.tsx",
+      "upstreamSha256": "1769bc1e87c3498587ae3869da1c3a03daf3f0a83e0db866965450c726197b75",
+      "localSha256": "1769bc1e87c3498587ae3869da1c3a03daf3f0a83e0db866965450c726197b75",
+      "modified": false
+    },
+    {
+      "path": "components/trace/RowPreviewQuery.tsx",
+      "upstreamPath": "js/app/src/components/trace/RowPreviewQuery.tsx",
+      "upstreamSha256": "947c1b817d18f540168857524e401e7a25aecc386f46a47053fa5f30e9c422d1",
+      "localSha256": "2694e727214092146cafe5b3ab1f7d0c86bb563d2aa8f79da56a374b9dc2a2c4",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanKindIcon.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanKindIcon.tsx",
+      "upstreamSha256": "79d9700262b684c2bd52efe563d7ce2494d6d4ba98707857aeda26408cbc131b",
+      "localSha256": "2d9ae75b7c2709ee74602e1b5aba07fe893d7cd443ed67afde0f94d0e59a2fd4",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanKindToken.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanKindToken.tsx",
+      "upstreamSha256": "768ec14a3d0aa1988714782e037b20b1b44ac9b3ced0ca104f6266e242b469de",
+      "localSha256": "6868274f2c04c7080d199b380a8dc04601ca18445811f8141cf30e083ad3be42",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanMetrics.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanMetrics.tsx",
+      "upstreamSha256": "25df606f055d41c9a3c247165bb2eb61c69bb315c94a7a71b505877e3b8d76c4",
+      "localSha256": "780b2fc3a93f4013ee6426b9fecaa50961903eb02982b06cd25b5fb6ff870197",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanMetricsDetails.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanMetricsDetails.tsx",
+      "upstreamSha256": "91f2357fcd761e08d3e050070e1c4b7f850e4fcc6ec966fa94f660c2977ed00f",
+      "localSha256": "cbe075f3ee9ae387952b96092973a97eee0acf5024dcbb0512062dd8b21a4f23",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanMetricsRow.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanMetricsRow.tsx",
+      "upstreamSha256": "cde84c0f3b4d18abadd872f80bb85db29011c90dd643d4344762fb359fa16eb9",
+      "localSha256": "ee14f6b3c226d7a7fdb1f4f4bef097b568d71d0917b88eca91c40ebe0136285b",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanPreviewCard.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanPreviewCard.tsx",
+      "upstreamSha256": "fd87ebb24380b0708dd265ac0f23d17d89a658d0474820acc82e845df9fd52e3",
+      "localSha256": "96587cbcbb8f23707bc89dad846694f198ce21e57e5bf53deefc37697f562966",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanPreviewTooltip.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanPreviewTooltip.tsx",
+      "upstreamSha256": "9d490c998ef4bad1ad845e0126b82fd5d8718c43ee1849110e108e03ed9b66f5",
+      "localSha256": "13353c356eb8de8eb868b9f9c12ac413457b7f9d54923c4eb767ac40815c31ad",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanStatusBadge.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanStatusBadge.tsx",
+      "upstreamSha256": "6eda500087c77acf57397d14f439d44758b27bb3a3f63062c45e293d9132f186",
+      "localSha256": "35b7c4e232419a6983a23b059a552d3343e5e0f79d67cb52ac2dcf8e8c5634b7",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanStatusCodeIcon.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanStatusCodeIcon.tsx",
+      "upstreamSha256": "7d7ddd399e9f654efcc8ac7ed39598e66423e4058560bd7145fd4a1170dd4a0a",
+      "localSha256": "e24188b4d0097e03f7ba6e511b2bf9912ace2a5ac828a6f91d305fe4f656a037",
+      "modified": true
+    },
+    {
+      "path": "components/trace/SpanTimingDetails.tsx",
+      "upstreamPath": "js/app/src/components/trace/SpanTimingDetails.tsx",
+      "upstreamSha256": "80ae6c7ada6d7c6f7be69b60f3e3021940288529266dd7d5802ac249994d062c",
+      "localSha256": "6cfecffad109a326fbc741855934a2b5cd666a6ffae1358183425f2da1fb685e",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TokenCosts.tsx",
+      "upstreamPath": "js/app/src/components/trace/TokenCosts.tsx",
+      "upstreamSha256": "83b7fb50f3810893d0e4ba5b58d49727bdaa1d4f76c800f1b4939d99ebf95f3b",
+      "localSha256": "dbc6e9687a98f74c135bf52426274b889ad4894c62731a79dd166709c2beb406",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TokenCostsDetails.tsx",
+      "upstreamPath": "js/app/src/components/trace/TokenCostsDetails.tsx",
+      "upstreamSha256": "ed0be6ef3fa21bf18e34eb65e23f07dace30e208ed55c5e52baa7999767d8879",
+      "localSha256": "ed0be6ef3fa21bf18e34eb65e23f07dace30e208ed55c5e52baa7999767d8879",
+      "modified": false
+    },
+    {
+      "path": "components/trace/TokenCount.tsx",
+      "upstreamPath": "js/app/src/components/trace/TokenCount.tsx",
+      "upstreamSha256": "3a0223fca791df2d18fb6adfbb32863d871e7a8eae6354e0d4d5b08b29342cc7",
+      "localSha256": "5c62b929cdc06def01aca9eae60191b62dd9b2d20f6a8fe679b76a11e20b8b01",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TokenCountDetails.tsx",
+      "upstreamPath": "js/app/src/components/trace/TokenCountDetails.tsx",
+      "upstreamSha256": "3c416eac07abfdce009dc40b7f8dd333f09deb4a94dac09215cb1824046b3247",
+      "localSha256": "3c416eac07abfdce009dc40b7f8dd333f09deb4a94dac09215cb1824046b3247",
+      "modified": false
+    },
+    {
+      "path": "components/trace/TokenDetailsBreakdown.tsx",
+      "upstreamPath": "js/app/src/components/trace/TokenDetailsBreakdown.tsx",
+      "upstreamSha256": "e9b19acabf2c7099dff2df700e36e04fc0f099f2588668fedf4f2f43c5fd98a7",
+      "localSha256": "970ca564f383399b935007135ebfa1f343cf80690f206031a2b30538602c4664",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TraceTokenCosts.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTokenCosts.tsx",
+      "upstreamSha256": "4cb71fa7fb568501d0ffddac44c6355a5f43978687b457808258580fc7db2ef1",
+      "localSha256": "6d48bbe14101aa6878e523ce93f93f42f3a51808107a334ee96424ff6459a245",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TraceTokenCostsDetails.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTokenCostsDetails.tsx",
+      "upstreamSha256": "202ec5b42b769d6e771e39f43c5763635751e9d33c13b6d173dcea33868ce212",
+      "localSha256": "63733f7f574e3b4b51b92dbf176636d46a21ff74d236fbd4bdf1ed1ccf25b768",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TraceTokenCount.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTokenCount.tsx",
+      "upstreamSha256": "7e1f4f4b6d3a80ca5edc237929313f7d13557db9c6aa17385169af9d68fe18b7",
+      "localSha256": "a8733ed9718eadf133cc3f79aafcfb13d5f78a86c641eb43ad5c7591b5606ec4",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TraceTokenCountDetails.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTokenCountDetails.tsx",
+      "upstreamSha256": "7f34ef4fc3cc0e2d5679dcfbb86abc759982f5584d02e6dd0d1d5b55fd4ce460",
+      "localSha256": "5299d1ee328745a67c2b97bf749caab8d8f1b3896aeee65203f64efea4277373",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TraceTree.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTree.tsx",
+      "upstreamSha256": "471e5892b8d0a196e8a54d2cdbec7137da0a76e0ad8c703a862e6ccb528349e3",
+      "localSha256": "9e4120e8ef81c663f3f92ea3525151090f084a5e111d213cd8b6f2d78c84c2f4",
+      "modified": true
+    },
+    {
+      "path": "components/trace/TraceTreeContext.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTreeContext.tsx",
+      "upstreamSha256": "40cead8535b39f61c5aaa40e8b20e44dd52cbccb0a626c56f8db548d623f5965",
+      "localSha256": "40cead8535b39f61c5aaa40e8b20e44dd52cbccb0a626c56f8db548d623f5965",
+      "modified": false
+    },
+    {
+      "path": "components/trace/TraceTreeEdges.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTreeEdges.tsx",
+      "upstreamSha256": "041561678184462387c0d8ba1d44b5fbe84ff6bf9642755be2c72b2ad0c401dc",
+      "localSha256": "041561678184462387c0d8ba1d44b5fbe84ff6bf9642755be2c72b2ad0c401dc",
+      "modified": false
+    },
+    {
+      "path": "components/trace/TraceTreeSkeleton.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTreeSkeleton.tsx",
+      "upstreamSha256": "45f93320ed2782ceb0de9742ea79e64e8d1fd81162353e2b26c37159009dffae",
+      "localSha256": "45f93320ed2782ceb0de9742ea79e64e8d1fd81162353e2b26c37159009dffae",
+      "modified": false
+    },
+    {
+      "path": "components/trace/TraceTreeToolbar.tsx",
+      "upstreamPath": "js/app/src/components/trace/TraceTreeToolbar.tsx",
+      "upstreamSha256": "1a0df58b8ab3b0413817fa3bf46bb05fc93429334ed9f496f92b695511bfae18",
+      "localSha256": "4084f05314821217e4ac49e5345efeed7d0eefbb9e7b833ed0bd116a5edae5a3",
+      "modified": true
+    },
+    {
+      "path": "components/trace/__generated__/SpanCumulativeTokenCountDetailsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/components/trace/__generated__/SpanCumulativeTokenCountDetailsQuery.graphql.ts",
+      "upstreamSha256": "b948d3341507c411665556815eadbc8e3ece1bc36e1354cae7753438416685b9",
+      "localSha256": "b948d3341507c411665556815eadbc8e3ece1bc36e1354cae7753438416685b9",
+      "modified": false
+    },
+    {
+      "path": "components/trace/__generated__/SpanMetricsDetailsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/components/trace/__generated__/SpanMetricsDetailsQuery.graphql.ts",
+      "upstreamSha256": "7bf13fce7c1b14fe68a5319a957a59f95b5128a64530407c4f3e4390f85efa7c",
+      "localSha256": "7bf13fce7c1b14fe68a5319a957a59f95b5128a64530407c4f3e4390f85efa7c",
+      "modified": false
+    },
+    {
+      "path": "components/trace/__generated__/SpanMetricsDetails_span.graphql.ts",
+      "upstreamPath": "js/app/src/components/trace/__generated__/SpanMetricsDetails_span.graphql.ts",
+      "upstreamSha256": "cf9f74b9faa26b7f7fe2fa014ad0d0e85be63ce266f83ba86dd927d2de33fa41",
+      "localSha256": "cf9f74b9faa26b7f7fe2fa014ad0d0e85be63ce266f83ba86dd927d2de33fa41",
+      "modified": false
+    },
+    {
+      "path": "components/trace/__generated__/TraceTokenCostsDetailsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/components/trace/__generated__/TraceTokenCostsDetailsQuery.graphql.ts",
+      "upstreamSha256": "2ce09194a34d6268ffb997bfef08798867ff07110af780a261c161ceee51c94c",
+      "localSha256": "2ce09194a34d6268ffb997bfef08798867ff07110af780a261c161ceee51c94c",
+      "modified": false
+    },
+    {
+      "path": "components/trace/__generated__/TraceTokenCountDetailsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/components/trace/__generated__/TraceTokenCountDetailsQuery.graphql.ts",
+      "upstreamSha256": "c7861af65187f804346689858c60a5e079f07d26278a41f469a79c92cdd66f85",
+      "localSha256": "c7861af65187f804346689858c60a5e079f07d26278a41f469a79c92cdd66f85",
+      "modified": false
+    },
+    {
+      "path": "components/trace/spanKindColor.ts",
+      "upstreamPath": "js/app/src/components/trace/spanKindColor.ts",
+      "upstreamSha256": "cb4ffdc98de876f72c6505f0446e68fdc74a9b05ffce317e739cf331288468cf",
+      "localSha256": "cb4ffdc98de876f72c6505f0446e68fdc74a9b05ffce317e739cf331288468cf",
+      "modified": false
+    },
+    {
+      "path": "components/trace/traceTreeStyles.ts",
+      "upstreamPath": "js/app/src/components/trace/traceTreeStyles.ts",
+      "upstreamSha256": "87ea63036524c29737602ad45f1cf888b13da88cb574146eab3c01f06c299afb",
+      "localSha256": "87ea63036524c29737602ad45f1cf888b13da88cb574146eab3c01f06c299afb",
+      "modified": false
+    },
+    {
+      "path": "components/trace/types.ts",
+      "upstreamPath": "js/app/src/components/trace/types.ts",
+      "upstreamSha256": "81a1a95c52e11bbc35a16b39109c41fe91506b7e9135cfb2e11bdbce9cabf5aa",
+      "localSha256": "81a1a95c52e11bbc35a16b39109c41fe91506b7e9135cfb2e11bdbce9cabf5aa",
+      "modified": false
+    },
+    {
+      "path": "components/trace/useSpanKindColor.ts",
+      "upstreamPath": "js/app/src/components/trace/useSpanKindColor.ts",
+      "upstreamSha256": "3429376e033762085eebdff08579461f9b352f68dbf66299a2465a5abd9dbe5b",
+      "localSha256": "ecfc3e68ac4bf7f3215390404aa93bd9edb4c265123c36fecbd896a8abf74c46",
+      "modified": true
+    },
+    {
+      "path": "components/trace/useSpanStatusCodeColor.ts",
+      "upstreamPath": "js/app/src/components/trace/useSpanStatusCodeColor.ts",
+      "upstreamSha256": "f003310ad2f591006eca0569c58746613dbfa59b00f0a100463fc20e8b413c48",
+      "localSha256": "c22abc0f62bb31f5aa320b2fd2eb8a3676f50a6bb72a8d1bc5470631406e6576",
+      "modified": true
+    },
+    {
+      "path": "components/trace/utils.ts",
+      "upstreamPath": "js/app/src/components/trace/utils.ts",
+      "upstreamSha256": "7c64b792a9d71e32775775e51a954f5fc5df7723a79eed77cd860228cbc78144",
+      "localSha256": "7c64b792a9d71e32775775e51a954f5fc5df7723a79eed77cd860228cbc78144",
+      "modified": false
+    },
+    {
+      "path": "components/utility/PrettyText.tsx",
+      "upstreamPath": "js/app/src/components/utility/PrettyText.tsx",
+      "upstreamSha256": "230cc16616040b026bc78e667036cc1e1e75cb816a409c9015d20f1b34ac6f20",
+      "localSha256": "230cc16616040b026bc78e667036cc1e1e75cb816a409c9015d20f1b34ac6f20",
+      "modified": false
+    },
+    {
+      "path": "config.ts",
+      "upstreamPath": "js/app/src/config.ts",
+      "upstreamSha256": "159c4005fd178addf5a79bc206f10ba613b73640d59b92a3baefb0d81a709362",
+      "localSha256": "159c4005fd178addf5a79bc206f10ba613b73640d59b92a3baefb0d81a709362",
+      "modified": false
+    },
+    {
+      "path": "constants/breakpoints.ts",
+      "upstreamPath": "js/app/src/constants/breakpoints.ts",
+      "upstreamSha256": "4b3a1a31bdc6f5aaf07cd8ca2f38117d9eed478b3099348ef34ab93f91890b00",
+      "localSha256": "4b3a1a31bdc6f5aaf07cd8ca2f38117d9eed478b3099348ef34ab93f91890b00",
+      "modified": false
+    },
+    {
+      "path": "constants/docsConstants.ts",
+      "upstreamPath": "js/app/src/constants/docsConstants.ts",
+      "upstreamSha256": "b777b04b8ff73710b841bcee2720a99cba2112fa6cb8987c5f123d6b76790b3b",
+      "localSha256": "b777b04b8ff73710b841bcee2720a99cba2112fa6cb8987c5f123d6b76790b3b",
+      "modified": false
+    },
+    {
+      "path": "constants/generativeConstants.ts",
+      "upstreamPath": "js/app/src/constants/generativeConstants.ts",
+      "upstreamSha256": "6c5ce09b3860ae11b15197b8c4118fac11f7b69e50258b2dfad616913f91cc65",
+      "localSha256": "6c5ce09b3860ae11b15197b8c4118fac11f7b69e50258b2dfad616913f91cc65",
+      "modified": false
+    },
+    {
+      "path": "constants/searchParams.ts",
+      "upstreamPath": "js/app/src/constants/searchParams.ts",
+      "upstreamSha256": "1054d4d8bf6943579f509b34acc585925a4dcbb23c8ee9b33fa64fd037666343",
+      "localSha256": "1054d4d8bf6943579f509b34acc585925a4dcbb23c8ee9b33fa64fd037666343",
+      "modified": false
+    },
+    {
+      "path": "constants/storageConstants.ts",
+      "upstreamPath": "js/app/src/constants/storageConstants.ts",
+      "upstreamSha256": "d31f05abed2f257c2b59efdc4c3e8c7a8def0f6bd389a8e9ecac1cabe422a124",
+      "localSha256": "d31f05abed2f257c2b59efdc4c3e8c7a8def0f6bd389a8e9ecac1cabe422a124",
+      "modified": false
+    },
+    {
+      "path": "constants/timeConstants.ts",
+      "upstreamPath": "js/app/src/constants/timeConstants.ts",
+      "upstreamSha256": "55dd1faec32d660ce45bf79f8d08c69ae91a90f8d2672aff7322e3951d1171cc",
+      "localSha256": "55dd1faec32d660ce45bf79f8d08c69ae91a90f8d2672aff7322e3951d1171cc",
+      "modified": false
+    },
+    {
+      "path": "contexts/FeatureFlagsContext.tsx",
+      "upstreamPath": "js/app/src/contexts/FeatureFlagsContext.tsx",
+      "upstreamSha256": "3d468e05b3ba9ee24c6c7dec8127c69dc4ffa01e27d2431fcc18306f5924283a",
+      "localSha256": "465f06f522900261e5a38e2648e428886b841a158cc0264721e488139b8bd86c",
+      "modified": true
+    },
+    {
+      "path": "contexts/FunctionalityContext.tsx",
+      "upstreamPath": "js/app/src/contexts/FunctionalityContext.tsx",
+      "upstreamSha256": "2f06d4c0d0600a60e609b036fd7d0b5197ea57da42cf7ae5ec5fecfd52dde502",
+      "localSha256": "2f06d4c0d0600a60e609b036fd7d0b5197ea57da42cf7ae5ec5fecfd52dde502",
+      "modified": false
+    },
+    {
+      "path": "contexts/NotificationContext/NotificationContext.tsx",
+      "upstreamPath": "js/app/src/contexts/NotificationContext/NotificationContext.tsx",
+      "upstreamSha256": "b0ddeae5967de3542307339130fd46f5f84a06820aa43b50617a212aec25820b",
+      "localSha256": "b0ddeae5967de3542307339130fd46f5f84a06820aa43b50617a212aec25820b",
+      "modified": false
+    },
+    {
+      "path": "contexts/PreferencesContext.tsx",
+      "upstreamPath": "js/app/src/contexts/PreferencesContext.tsx",
+      "upstreamSha256": "0954b8f880cfc7475233ae0492bc684ee25dee9f148c6cdee4189037969280c4",
+      "localSha256": "0954b8f880cfc7475233ae0492bc684ee25dee9f148c6cdee4189037969280c4",
+      "modified": false
+    },
+    {
+      "path": "contexts/ProjectContext.tsx",
+      "upstreamPath": "js/app/src/contexts/ProjectContext.tsx",
+      "upstreamSha256": "55073c49773a39000074635abbdefad25f32294cd262d7bd3f1c3cdb02f5c82d",
+      "localSha256": "55073c49773a39000074635abbdefad25f32294cd262d7bd3f1c3cdb02f5c82d",
+      "modified": false
+    },
+    {
+      "path": "contexts/QueryRetentionContext.tsx",
+      "upstreamPath": "js/app/src/contexts/QueryRetentionContext.tsx",
+      "upstreamSha256": "8f384cc52d74fefda2f0ecb4fe122b5af0e90ca50843e3cdba648e87eb2bea3f",
+      "localSha256": "8f384cc52d74fefda2f0ecb4fe122b5af0e90ca50843e3cdba648e87eb2bea3f",
+      "modified": false
+    },
+    {
+      "path": "contexts/StreamStateContext.tsx",
+      "upstreamPath": "js/app/src/contexts/StreamStateContext.tsx",
+      "upstreamSha256": "c0433941ed63d6e1d4b376208fb31c7a4e9f45d621975bd6f4887e3bd7c5faf7",
+      "localSha256": "c0433941ed63d6e1d4b376208fb31c7a4e9f45d621975bd6f4887e3bd7c5faf7",
+      "modified": false
+    },
+    {
+      "path": "contexts/ThemeContext.tsx",
+      "upstreamPath": "js/app/src/contexts/ThemeContext.tsx",
+      "upstreamSha256": "7604ee7b663f9749d3b39ed67f4faf6da20042e435c074b86a75b94d39f5e9a2",
+      "localSha256": "7604ee7b663f9749d3b39ed67f4faf6da20042e435c074b86a75b94d39f5e9a2",
+      "modified": false
+    },
+    {
+      "path": "contexts/TracingContext.tsx",
+      "upstreamPath": "js/app/src/contexts/TracingContext.tsx",
+      "upstreamSha256": "2f55e458542bac6c41d37d774847e15dcf98bd33256c31d8a8bdc447499a5d6b",
+      "localSha256": "2f55e458542bac6c41d37d774847e15dcf98bd33256c31d8a8bdc447499a5d6b",
+      "modified": false
+    },
+    {
+      "path": "contexts/ViewerContext.tsx",
+      "upstreamPath": "js/app/src/contexts/ViewerContext.tsx",
+      "upstreamSha256": "be47d55ea72593ce3f6deac03ef7b8e8f629d05b636eec8de667a998002dbcb4",
+      "localSha256": "19953924ff1999c87400d6d97c94a8da40223916b415c40f53172c79113039e3",
+      "modified": true
+    },
+    {
+      "path": "contexts/__generated__/ViewerContextRefetchQuery.graphql.ts",
+      "upstreamPath": "js/app/src/contexts/__generated__/ViewerContextRefetchQuery.graphql.ts",
+      "upstreamSha256": "623f1c8d732f8b8e8b51c3cc158a06b0d6cb5674efcfd7a76ab8a6f0923ac6a5",
+      "localSha256": "623f1c8d732f8b8e8b51c3cc158a06b0d6cb5674efcfd7a76ab8a6f0923ac6a5",
+      "modified": false
+    },
+    {
+      "path": "contexts/__generated__/ViewerContext_viewer.graphql.ts",
+      "upstreamPath": "js/app/src/contexts/__generated__/ViewerContext_viewer.graphql.ts",
+      "upstreamSha256": "59cac9459d73eb648cdeb0871777e25793551fb6d83c0be18a33c74a1097af2e",
+      "localSha256": "59cac9459d73eb648cdeb0871777e25793551fb6d83c0be18a33c74a1097af2e",
+      "modified": false
+    },
+    {
+      "path": "hooks/useChatMessageStyles.ts",
+      "upstreamPath": "js/app/src/hooks/useChatMessageStyles.ts",
+      "upstreamSha256": "11414480f6869aaf6818e3d8dad7535a7d42ce5f225f6e7f21d55e96aad9ea80",
+      "localSha256": "4b9658bdc740c067c3f6218394b5803f61ff1923ecc9305faa181b9c1887ce5c",
+      "modified": true
+    },
+    {
+      "path": "hooks/useContentType.ts",
+      "upstreamPath": "js/app/src/hooks/useContentType.ts",
+      "upstreamSha256": "1d5eb29c90f4d3f46c6c0bdd96b1cf1d6d4912ea6fd2900ec8366d4dc51ecb80",
+      "localSha256": "1d5eb29c90f4d3f46c6c0bdd96b1cf1d6d4912ea6fd2900ec8366d4dc51ecb80",
+      "modified": false
+    },
+    {
+      "path": "hooks/useDebouncedChange.ts",
+      "upstreamPath": "js/app/src/hooks/useDebouncedChange.ts",
+      "upstreamSha256": "8ea82d1e88004d3440d334bc9158969493b90136bc1915dfd01c77d2549abf1b",
+      "localSha256": "8ea82d1e88004d3440d334bc9158969493b90136bc1915dfd01c77d2549abf1b",
+      "modified": false
+    },
+    {
+      "path": "hooks/useDimensions.ts",
+      "upstreamPath": "js/app/src/hooks/useDimensions.ts",
+      "upstreamSha256": "329c066ef9635f9d46ab08fa9cd5ecdf181e0ccd1516ebfa42467f02fe8b0293",
+      "localSha256": "329c066ef9635f9d46ab08fa9cd5ecdf181e0ccd1516ebfa42467f02fe8b0293",
+      "modified": false
+    },
+    {
+      "path": "hooks/useInterval.ts",
+      "upstreamPath": "js/app/src/hooks/useInterval.ts",
+      "upstreamSha256": "c1076ef27f2b6274c2695ba62a12ff951626e7e10a418eae9ce7d6466e47f0a8",
+      "localSha256": "c1076ef27f2b6274c2695ba62a12ff951626e7e10a418eae9ce7d6466e47f0a8",
+      "modified": false
+    },
+    {
+      "path": "hooks/useMatchesWithCrumb.ts",
+      "upstreamPath": "js/app/src/hooks/useMatchesWithCrumb.ts",
+      "upstreamSha256": "f32bd40fa19f0b265b362606e9ef571db2768426890dfaac786a76a923d33c8a",
+      "localSha256": "ef45bc36b70e276944158b6cc66ba6efe4c6da6a0933387e670a3237ba55ba0e",
+      "modified": true
+    },
+    {
+      "path": "hooks/useMediaQuery.ts",
+      "upstreamPath": "js/app/src/hooks/useMediaQuery.ts",
+      "upstreamSha256": "6108f5fb567d08d17f8a6319290c9199981b319f197429f4ab29b7b9142e1d1d",
+      "localSha256": "6108f5fb567d08d17f8a6319290c9199981b319f197429f4ab29b7b9142e1d1d",
+      "modified": false
+    },
+    {
+      "path": "hooks/useOwnedPreloadedQuery.ts",
+      "upstreamPath": "js/app/src/hooks/useOwnedPreloadedQuery.ts",
+      "upstreamSha256": "55331dc9ded9ab438d929b6fc0df55366f9aacce5247609e16301426c7272613",
+      "localSha256": "55331dc9ded9ab438d929b6fc0df55366f9aacce5247609e16301426c7272613",
+      "modified": false
+    },
+    {
+      "path": "hooks/usePrettyText.ts",
+      "upstreamPath": "js/app/src/hooks/usePrettyText.ts",
+      "upstreamSha256": "2032fed07d2bf7866dbdaeff061bb109d3db77a9c15c845b32cac73a11bff5bd",
+      "localSha256": "2032fed07d2bf7866dbdaeff061bb109d3db77a9c15c845b32cac73a11bff5bd",
+      "modified": false
+    },
+    {
+      "path": "hooks/useProjectRootPath.ts",
+      "upstreamPath": "js/app/src/hooks/useProjectRootPath.ts",
+      "upstreamSha256": "6765e599a9109258a82e7b4d75914e5ac14174a3adf11ccf92178d785b3567af",
+      "localSha256": "6765e599a9109258a82e7b4d75914e5ac14174a3adf11ccf92178d785b3567af",
+      "modified": false
+    },
+    {
+      "path": "hooks/useSettled.ts",
+      "upstreamPath": "js/app/src/hooks/useSettled.ts",
+      "upstreamSha256": "e593f39ea91019bdfb28226a36a6ef51ed208751e3e5b02cbdf7f330838ee34d",
+      "localSha256": "e593f39ea91019bdfb28226a36a6ef51ed208751e3e5b02cbdf7f330838ee34d",
+      "modified": false
+    },
+    {
+      "path": "hooks/useTimeFormatters.ts",
+      "upstreamPath": "js/app/src/hooks/useTimeFormatters.ts",
+      "upstreamSha256": "c3361fc83cd695c15ee31efe8893bd041a16ec4bf032391e13b54165a58a26ff",
+      "localSha256": "acd095e65e10730ff78fe2adfe0da88baa13eeab7b2c1fafff3913520fcb6be7",
+      "modified": true
+    },
+    {
+      "path": "hooks/useWordColor.ts",
+      "upstreamPath": "js/app/src/hooks/useWordColor.ts",
+      "upstreamSha256": "86638d231b7126028ce06d07ee38b8d7e48f9250dcf2d0b2dcef7d4010fd4c51",
+      "localSha256": "d640f4f73da2319500c0c83b9e9893707011faffebdb4e6c21572e1440a14199",
+      "modified": true
+    },
+    {
+      "path": "index.tsx",
+      "upstreamPath": "js/app/src/index.tsx",
+      "upstreamSha256": "1a848611da27a4072770257581682b87ea66bf78db0557204be6a401af872e3b",
+      "localSha256": "3a6d84deaab4db5622006caa63358e543a8df632e9d3bec0c3841cf7bc6c4f14",
+      "modified": true
+    },
+    {
+      "path": "openInference/tracing/types.ts",
+      "upstreamPath": "js/app/src/openInference/tracing/types.ts",
+      "upstreamSha256": "c2fef86d38cd384db793adfe216fc0a8135e0c49f52e8ebc93510f804b58d66c",
+      "localSha256": "c2fef86d38cd384db793adfe216fc0a8135e0c49f52e8ebc93510f804b58d66c",
+      "modified": false
+    },
+    {
+      "path": "pages/AuthenticatedRoot.tsx",
+      "upstreamPath": "js/app/src/pages/AuthenticatedRoot.tsx",
+      "upstreamSha256": "63e37c33a1310a9817aefb715f4e212dec1d4b58bf827018cab43fe5bef16bc3",
+      "localSha256": "151c4ec1f691436b2d2dd3ad1ce2d86798ba84e15bbdc2bc9e07ae64263b6c66",
+      "modified": true
+    },
+    {
+      "path": "pages/ErrorElement.tsx",
+      "upstreamPath": "js/app/src/pages/ErrorElement.tsx",
+      "upstreamSha256": "3222382928461ac3b5b958cb2102ad98ca47ad9880ff4824728a831855281549",
+      "localSha256": "f16a0b4629d5fa8ef2911aae6dd3a1ded572d3ee3a97a54dd88adb1a63229bcb",
+      "modified": true
+    },
+    {
+      "path": "pages/Layout.tsx",
+      "upstreamPath": "js/app/src/pages/Layout.tsx",
+      "upstreamSha256": "86a8fdcc9d9b30cc0aa61e112fb1651cfda46403d46a2feab945db20a94d8ae3",
+      "localSha256": "386643661de412e52ab92882dd99cb082ceba933809766eeabedc289cb6cd9ed",
+      "modified": true
+    },
+    {
+      "path": "pages/NotFound.tsx",
+      "upstreamPath": "js/app/src/pages/NotFound.tsx",
+      "upstreamSha256": "ccac75a85c7ba7133d5b9ffde459cb14d52c85f547c0d12c98bdfded80e04417",
+      "localSha256": "19b00cdc44c5ecc1b30884b7b05f17e311bbaafd9d209baf7c4f0b3e51e0b717",
+      "modified": true
+    },
+    {
+      "path": "pages/ProjectsRoot.tsx",
+      "upstreamPath": "js/app/src/pages/ProjectsRoot.tsx",
+      "upstreamSha256": "f87e03688d926567fa55091253b3c28417043071ea3c43b188cd03bacd348650",
+      "localSha256": "f7c619b34d333c51a0d29e836f1718c0ed7eb8dff49465226a1490eb7807a072",
+      "modified": true
+    },
+    {
+      "path": "pages/RootLayout.tsx",
+      "upstreamPath": "js/app/src/pages/RootLayout.tsx",
+      "upstreamSha256": "e01bdfbcb4c7877263d1f200853934d447640b7d283408246ce26a20b04069cc",
+      "localSha256": "e01bdfbcb4c7877263d1f200853934d447640b7d283408246ce26a20b04069cc",
+      "modified": false
+    },
+    {
+      "path": "pages/SpanHeader.tsx",
+      "upstreamPath": "js/app/src/pages/SpanHeader.tsx",
+      "upstreamSha256": "77b69948c6fedb72897b79f29e0a654a449365c9bb149864ebf4095590102f4b",
+      "localSha256": "7d078bec2c5b7e7957dd962b8f2c3929c7d9d45b6b9262613b32d4e36eef23c7",
+      "modified": true
+    },
+    {
+      "path": "pages/TracingRoot.tsx",
+      "upstreamPath": "js/app/src/pages/TracingRoot.tsx",
+      "upstreamSha256": "aa1ca471384a559a421439ebf4a3863d3f6b8b25b59044f4604f86fb349485a4",
+      "localSha256": "aa1ca471384a559a421439ebf4a3863d3f6b8b25b59044f4604f86fb349485a4",
+      "modified": false
+    },
+    {
+      "path": "pages/__generated__/SpanHeader_span.graphql.ts",
+      "upstreamPath": "js/app/src/pages/__generated__/SpanHeader_span.graphql.ts",
+      "upstreamSha256": "2bb84f0fe84de4fc0b175595a38edd9c2eb92c511a41c6792dbca7da6a8595a7",
+      "localSha256": "2bb84f0fe84de4fc0b175595a38edd9c2eb92c511a41c6792dbca7da6a8595a7",
+      "modified": false
+    },
+    {
+      "path": "pages/__generated__/authenticatedRootLoaderQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/__generated__/authenticatedRootLoaderQuery.graphql.ts",
+      "upstreamSha256": "53f7a0ece18d9f350e020170fa8a088719b66cc0a0485c8ff7d327f7f64cbc26",
+      "localSha256": "53f7a0ece18d9f350e020170fa8a088719b66cc0a0485c8ff7d327f7f64cbc26",
+      "modified": false
+    },
+    {
+      "path": "pages/__generated__/layoutLoaderQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/__generated__/layoutLoaderQuery.graphql.ts",
+      "upstreamSha256": "4d62e0c624929b56fc22b217370119727ab23b9e2772003bdb942b1d5a745b8c",
+      "localSha256": "4d62e0c624929b56fc22b217370119727ab23b9e2772003bdb942b1d5a745b8c",
+      "modified": false
+    },
+    {
+      "path": "pages/authenticatedRootLoader.ts",
+      "upstreamPath": "js/app/src/pages/authenticatedRootLoader.ts",
+      "upstreamSha256": "d5cb9674f2a09bf521bce3a80b3583552a93c7ad16961751b554d6a62e8d9f9e",
+      "localSha256": "9f77ae1e531288f5de4e927dc7b7bccbc0f945d0e00fa5e954d33038f5ffdac7",
+      "modified": true
+    },
+    {
+      "path": "pages/layoutLoader.ts",
+      "upstreamPath": "js/app/src/pages/layoutLoader.ts",
+      "upstreamSha256": "9d3a1290a8cfc70057b53f89aba9e5b61173830de3a552adbd32de2fe09c5a9d",
+      "localSha256": "ec65fcbdc7b27b3d8e5dff167174f23f40f1abf21b0d5df0231aa8682fe24901",
+      "modified": true
+    },
+    {
+      "path": "pages/project/IOValueTooltipCell.tsx",
+      "upstreamPath": "js/app/src/pages/project/IOValueTooltipCell.tsx",
+      "upstreamSha256": "01f95e4fb02ef3bc611bfd28ce7b08fe1b4a68c73d8b98795f539a1fdd842547",
+      "localSha256": "ecaa0a99c7f34d5b4128e0d3cead559e5fbc0d326229a378ff67595f9ad9ded8",
+      "modified": true
+    },
+    {
+      "path": "pages/project/ProjectPage.tsx",
+      "upstreamPath": "js/app/src/pages/project/ProjectPage.tsx",
+      "upstreamSha256": "5bf42ad215e75ba192cc486fe206a479b3fe6c26a943b711c517c9ee41922a8e",
+      "localSha256": "d271722acbdf5ba3f2d05cae86b4d273b857cd2060c1f84211af9e92d6f63ff3",
+      "modified": true
+    },
+    {
+      "path": "pages/project/ProjectPageQueries.tsx",
+      "upstreamPath": "js/app/src/pages/project/ProjectPageQueries.tsx",
+      "upstreamSha256": "04ad61c791af18f44c5091f80e1f78ad1a66aab257d36882e6daeab2722cecbd",
+      "localSha256": "9bbfd389b0081f111db7921d2159fbc9c0681160bbf18fd269247c174e1a3aa9",
+      "modified": true
+    },
+    {
+      "path": "pages/project/ProjectRoot.tsx",
+      "upstreamPath": "js/app/src/pages/project/ProjectRoot.tsx",
+      "upstreamSha256": "70c95e4b9eb4943c24d0166fd991a8926fc7f43884913fc1ecee5a5f8db4cf10",
+      "localSha256": "70c95e4b9eb4943c24d0166fd991a8926fc7f43884913fc1ecee5a5f8db4cf10",
+      "modified": false
+    },
+    {
+      "path": "pages/project/ProjectTableEmpty.tsx",
+      "upstreamPath": "js/app/src/pages/project/ProjectTableEmpty.tsx",
+      "upstreamSha256": "73c2c73b8ae73ae25465f42829ad5f1facf64346dddf72a89bfbb3fd0730a572",
+      "localSha256": "4222137296f918f84e810ca1b98c8ee0b0f8671dece2446607af9b45d3180e79",
+      "modified": true
+    },
+    {
+      "path": "pages/project/ProjectTimeRangeControls.tsx",
+      "upstreamPath": "js/app/src/pages/project/ProjectTimeRangeControls.tsx",
+      "upstreamSha256": "b9ef054590cb3a6885ba7964b9c1006a9ec09dd0c6c5523c2d58d6ec6e10c376",
+      "localSha256": "c749c2d47aa87ebf4bf75bd58bc5c352f715d7c2501b822af7a92255f46a46d8",
+      "modified": true
+    },
+    {
+      "path": "pages/project/ProjectTracesPage.tsx",
+      "upstreamPath": "js/app/src/pages/project/ProjectTracesPage.tsx",
+      "upstreamSha256": "0a62925f014fc526f67793776d6fe01216f65e0b36332fe0ed478f02b6f7f370",
+      "localSha256": "4eda95383f6b800bbd3494d342f8cf2281260b092260e05b87f356cc750bdeab",
+      "modified": true
+    },
+    {
+      "path": "pages/project/RetrievalEvaluationLabel.tsx",
+      "upstreamPath": "js/app/src/pages/project/RetrievalEvaluationLabel.tsx",
+      "upstreamSha256": "952c48dce4e00f5db8d5a5a96e6dffd0d3307995728fa5577c62b8bc2719233d",
+      "localSha256": "d39b1ce520ddd94246ef3f783628ff9fcb34d528a67b425388542bed7d5af86f",
+      "modified": true
+    },
+    {
+      "path": "pages/project/TableMetricsCharts.tsx",
+      "upstreamPath": "js/app/src/pages/project/TableMetricsCharts.tsx",
+      "upstreamSha256": "0dd1cc8c2fb4fe24f44f2b255c207f1a5fba51bfc91d6989919a3ccef215873f",
+      "localSha256": "8e45bdb1a0cc78abf334efb846729ba6b158e822d79db0486bd1f60e2c1d2e39",
+      "modified": true
+    },
+    {
+      "path": "pages/project/TraceFiltersContext.tsx",
+      "upstreamPath": "js/app/src/pages/project/TraceFiltersContext.tsx",
+      "upstreamSha256": "fe1401196f365fdda2c386353af2ed7462ec30061dd0dbb2474016363d13db59",
+      "localSha256": "fe1401196f365fdda2c386353af2ed7462ec30061dd0dbb2474016363d13db59",
+      "modified": false
+    },
+    {
+      "path": "pages/project/TracesTable.tsx",
+      "upstreamPath": "js/app/src/pages/project/TracesTable.tsx",
+      "upstreamSha256": "745ca61de6f9a7b34e5ac0d701a36fdeff928286a96cb63b944018f981a16434",
+      "localSha256": "89c9d0fb81a6dd9681c3964171b1e52669b439972c1bfc73ec9e9ba9810c84fe",
+      "modified": true
+    },
+    {
+      "path": "pages/project/__generated__/IOValueTooltipCellSessionInputQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/IOValueTooltipCellSessionInputQuery.graphql.ts",
+      "upstreamSha256": "63f14a4d77d36cac6ce638e23dfc4450894e92e722b7130db75abfd9c46eb22e",
+      "localSha256": "63f14a4d77d36cac6ce638e23dfc4450894e92e722b7130db75abfd9c46eb22e",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/IOValueTooltipCellSessionOutputQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/IOValueTooltipCellSessionOutputQuery.graphql.ts",
+      "upstreamSha256": "81b55049bb23a67c69937ba74183931360a5a04713b28c670bc06888ecebd6fd",
+      "localSha256": "81b55049bb23a67c69937ba74183931360a5a04713b28c670bc06888ecebd6fd",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/IOValueTooltipCellSpanInputQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/IOValueTooltipCellSpanInputQuery.graphql.ts",
+      "upstreamSha256": "1d725a9834b9426461381cc93ec0aa080fe61c2124d5f21d1ade2d96f86d48ab",
+      "localSha256": "1d725a9834b9426461381cc93ec0aa080fe61c2124d5f21d1ade2d96f86d48ab",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/IOValueTooltipCellSpanOutputQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/IOValueTooltipCellSpanOutputQuery.graphql.ts",
+      "upstreamSha256": "ac06f8ea53e2becf6d6d3452e4b3e463ef2481ebb75e3d4917ab7a7527398770",
+      "localSha256": "ac06f8ea53e2becf6d6d3452e4b3e463ef2481ebb75e3d4917ab7a7527398770",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/ProjectPageQueriesTracesQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/ProjectPageQueriesTracesQuery.graphql.ts",
+      "upstreamSha256": "52a4d57be49d1cfb19aba4585473700f448111a8eb2a86e17ffa20a78bebe1a1",
+      "localSha256": "52a4d57be49d1cfb19aba4585473700f448111a8eb2a86e17ffa20a78bebe1a1",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/ProjectPageQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/ProjectPageQuery.graphql.ts",
+      "upstreamSha256": "d64956fb9ed969c49aa8874e2837bfb1332f0887ec66ccabbca0a113126e0d2c",
+      "localSha256": "d64956fb9ed969c49aa8874e2837bfb1332f0887ec66ccabbca0a113126e0d2c",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/ProjectTimeRangeControlsRefetchQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/ProjectTimeRangeControlsRefetchQuery.graphql.ts",
+      "upstreamSha256": "fde8612df505fa77455824c9d64aa6092843bdd02ca1235908e3648a2b60b39c",
+      "localSha256": "fde8612df505fa77455824c9d64aa6092843bdd02ca1235908e3648a2b60b39c",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/ProjectTimeRangeControls_data.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/ProjectTimeRangeControls_data.graphql.ts",
+      "upstreamSha256": "699c3c97405a7807b30d6e545c1a5e2a684af582e0c487ae1e1f60aca61c177d",
+      "localSha256": "699c3c97405a7807b30d6e545c1a5e2a684af582e0c487ae1e1f60aca61c177d",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/SessionsTableQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/SessionsTableQuery.graphql.ts",
+      "upstreamSha256": "043c531c221fedda10150602408f221a38d7af474e774d3ac6b5d3ded490bf40",
+      "localSha256": "043c531c221fedda10150602408f221a38d7af474e774d3ac6b5d3ded490bf40",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/TracesTableQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/TracesTableQuery.graphql.ts",
+      "upstreamSha256": "0cff7f4802f4bcf93624775286f8a0bc5bacb5a3d825412bc93be5d7a32a706c",
+      "localSha256": "0cff7f4802f4bcf93624775286f8a0bc5bacb5a3d825412bc93be5d7a32a706c",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/TracesTable_spans.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/TracesTable_spans.graphql.ts",
+      "upstreamSha256": "db3ede25acaa8fc90b3cdad1adfebcaef2e3914fc20ea0f7a0c01cff3eb7c639",
+      "localSha256": "db3ede25acaa8fc90b3cdad1adfebcaef2e3914fc20ea0f7a0c01cff3eb7c639",
+      "modified": false
+    },
+    {
+      "path": "pages/project/__generated__/projectLoaderQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/project/__generated__/projectLoaderQuery.graphql.ts",
+      "upstreamSha256": "2eb884d6d58a84d7c972c2266b291afbcf67b4430c5b47d2266f6501158bc746",
+      "localSha256": "2eb884d6d58a84d7c972c2266b291afbcf67b4430c5b47d2266f6501158bc746",
+      "modified": false
+    },
+    {
+      "path": "pages/project/constants.ts",
+      "upstreamPath": "js/app/src/pages/project/constants.ts",
+      "upstreamSha256": "72890c08ef14008f1d8e260ec79c5edb626de2e7e68ec45b1870c324b2fc85d0",
+      "localSha256": "72890c08ef14008f1d8e260ec79c5edb626de2e7e68ec45b1870c324b2fc85d0",
+      "modified": false
+    },
+    {
+      "path": "pages/project/filterConditionParam.ts",
+      "upstreamPath": "js/app/src/pages/project/filterConditionParam.ts",
+      "upstreamSha256": "3f2c73abf61f6817ba4ca739487c6e1c096b83111870bbe685fe754bb0ccf28e",
+      "localSha256": "3f2c73abf61f6817ba4ca739487c6e1c096b83111870bbe685fe754bb0ccf28e",
+      "modified": false
+    },
+    {
+      "path": "pages/project/projectLoader.ts",
+      "upstreamPath": "js/app/src/pages/project/projectLoader.ts",
+      "upstreamSha256": "6470de00694961cc638f332a5aafcb6a9981448f807c6502af80b93e862144fb",
+      "localSha256": "0b32d542e77ae4abfe4d45e41c5347c4f46dce5bacae2739a762b013de7e0ad5",
+      "modified": true
+    },
+    {
+      "path": "pages/project/styles.tsx",
+      "upstreamPath": "js/app/src/pages/project/styles.tsx",
+      "upstreamSha256": "3337e143ef4a48e84a30869b741a4a0b94f16c83232ad535ccfb1768610e2328",
+      "localSha256": "3337e143ef4a48e84a30869b741a4a0b94f16c83232ad535ccfb1768610e2328",
+      "modified": false
+    },
+    {
+      "path": "pages/project/tableUtils.ts",
+      "upstreamPath": "js/app/src/pages/project/tableUtils.ts",
+      "upstreamSha256": "b5f53994441cdf1948fcfca766a07260fb38dadb1040ed55549916d1e91e28ca",
+      "localSha256": "b5f53994441cdf1948fcfca766a07260fb38dadb1040ed55549916d1e91e28ca",
+      "modified": false
+    },
+    {
+      "path": "pages/project/useSelectedTraceSlots.ts",
+      "upstreamPath": "js/app/src/pages/project/useSelectedTraceSlots.ts",
+      "upstreamSha256": "d53c01e1dfd573963743c0bfe8d9441fd107d3c8cdb2d3fa0e6d141ad2d7d6d0",
+      "localSha256": "d53c01e1dfd573963743c0bfe8d9441fd107d3c8cdb2d3fa0e6d141ad2d7d6d0",
+      "modified": false
+    },
+    {
+      "path": "pages/projects/ProjectViewModeToggle.tsx",
+      "upstreamPath": "js/app/src/pages/projects/ProjectViewModeToggle.tsx",
+      "upstreamSha256": "7403b22609c3d33260c3c36e1f24e077b284aafe555934bb19e521efb2454903",
+      "localSha256": "3957f5f703f799fd81e58cdfaac097118230664e529933c7e19df0fd41bde2f5",
+      "modified": true
+    },
+    {
+      "path": "pages/projects/ProjectsPage.tsx",
+      "upstreamPath": "js/app/src/pages/projects/ProjectsPage.tsx",
+      "upstreamSha256": "823f0ac2f7a3ed8f8594255f02a7b1db594a77090ae8fd9836fe5e9863fba735",
+      "localSha256": "9dde87415e1611398ee6454ba14937dcbe76668172d9d0d8eca6ec5376c618a3",
+      "modified": true
+    },
+    {
+      "path": "pages/projects/__generated__/ProjectsPageProjectMetricsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/projects/__generated__/ProjectsPageProjectMetricsQuery.graphql.ts",
+      "upstreamSha256": "f7ea83ec7f99b3ce0ace6be78071daa328a810cee1586e7f8f9e6df061922963",
+      "localSha256": "f7ea83ec7f99b3ce0ace6be78071daa328a810cee1586e7f8f9e6df061922963",
+      "modified": false
+    },
+    {
+      "path": "pages/projects/__generated__/ProjectsPageProjectsFragment.graphql.ts",
+      "upstreamPath": "js/app/src/pages/projects/__generated__/ProjectsPageProjectsFragment.graphql.ts",
+      "upstreamSha256": "d32c1b9c75d51a3566a782ddbfe6a8b0c20b1e28fbed364a3f7ab7f21d40c8d3",
+      "localSha256": "d32c1b9c75d51a3566a782ddbfe6a8b0c20b1e28fbed364a3f7ab7f21d40c8d3",
+      "modified": false
+    },
+    {
+      "path": "pages/projects/__generated__/ProjectsPageProjectsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/projects/__generated__/ProjectsPageProjectsQuery.graphql.ts",
+      "upstreamSha256": "a0df594ab945897cf05e395fe2823b039e2fa91ea7888eb38d7310b4e359b2fe",
+      "localSha256": "a0df594ab945897cf05e395fe2823b039e2fa91ea7888eb38d7310b4e359b2fe",
+      "modified": false
+    },
+    {
+      "path": "pages/projects/__generated__/ProjectsPageQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/projects/__generated__/ProjectsPageQuery.graphql.ts",
+      "upstreamSha256": "752834dd349c30dae5d3274c7fb17001a4731ec6a4ca996b6f313407a6c88c69",
+      "localSha256": "752834dd349c30dae5d3274c7fb17001a4731ec6a4ca996b6f313407a6c88c69",
+      "modified": false
+    },
+    {
+      "path": "pages/redirects/notFound.ts",
+      "upstreamPath": "js/app/src/pages/redirects/notFound.ts",
+      "upstreamSha256": "bafdf9f9e078846551200d15f129f619be5e75492d6c0cd891f64495f232e579",
+      "localSha256": "bafdf9f9e078846551200d15f129f619be5e75492d6c0cd891f64495f232e579",
+      "modified": false
+    },
+    {
+      "path": "pages/settings/__generated__/AnnotationConfigTableFragment.graphql.ts",
+      "upstreamPath": "js/app/src/pages/settings/__generated__/AnnotationConfigTableFragment.graphql.ts",
+      "upstreamSha256": "de571c27b81ba459ea0fda78998fc0bd135c45ee9c2ce3dd9a34a10b0c2b315e",
+      "localSha256": "de571c27b81ba459ea0fda78998fc0bd135c45ee9c2ce3dd9a34a10b0c2b315e",
+      "modified": false
+    },
+    {
+      "path": "pages/settings/types.ts",
+      "upstreamPath": "js/app/src/pages/settings/types.ts",
+      "upstreamSha256": "2a1e9a45f68cb5e0f5ed277766bf7ad762fe2d2ac5f03d2b9f0492e2fdae97a1",
+      "localSha256": "2a1e9a45f68cb5e0f5ed277766bf7ad762fe2d2ac5f03d2b9f0492e2fdae97a1",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/ConnectedTraceTree.tsx",
+      "upstreamPath": "js/app/src/pages/trace/ConnectedTraceTree.tsx",
+      "upstreamSha256": "4c81ef610b7c03d9bffc2b07be301be9cc8edfabdd3e9b0d4afd7435dac9568e",
+      "localSha256": "3420d9712359e753d5da6453d4355a4f063f1b47e66475309437c278d1a779ca",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/DocumentAnnotationItem.tsx",
+      "upstreamPath": "js/app/src/pages/trace/DocumentAnnotationItem.tsx",
+      "upstreamSha256": "73b85704a16a5238f4f7a4d3978c0aa7091cffc45584733d3e80e86dad009981",
+      "localSha256": "042132e39ff7bd0a81b96501c1db2fb4e1499739c43f61dee4c4d60cd149f37c",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/DocumentItem.tsx",
+      "upstreamPath": "js/app/src/pages/trace/DocumentItem.tsx",
+      "upstreamSha256": "84cc0340ec97cc6bff089145514dd63b67010aeeee122694b04ca3637d72d241",
+      "localSha256": "5ece1f4e67635d5b77c0d5e91843ef49ff2517f2775fb056c85b380d0eb544dd",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/ReadonlyJSONBlock.tsx",
+      "upstreamPath": "js/app/src/pages/trace/ReadonlyJSONBlock.tsx",
+      "upstreamSha256": "6cceba74d3c778fc854a745b9857121d3d76a16f74bc7c5636c5604d363bee4d",
+      "localSha256": "a948287c0f0c9f7f867aa9cecd8edf71e3959142f4ff773a3259a686c926048b",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/SpanDetails.tsx",
+      "upstreamPath": "js/app/src/pages/trace/SpanDetails.tsx",
+      "upstreamSha256": "7bbf091b83ae2dcd3edde4c980f10e1ea1e4320e5d05d7a92c92bad45020a320",
+      "localSha256": "dcb0f17195eb3205e35cd6cb6eb5ca036747ceaa8355b8da2c96d66007cf5eef",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/SpanEventsList.tsx",
+      "upstreamPath": "js/app/src/pages/trace/SpanEventsList.tsx",
+      "upstreamSha256": "3f3c7790bef593d1cf9c1e763c2504f752a03d9ff60aff1b9b0578dda4ea4396",
+      "localSha256": "9a65586cc2b9b89bea6b1e1a70e50bc4e657a895dea83cf372c428a70cb41755",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/SpanInfoCardsContext.tsx",
+      "upstreamPath": "js/app/src/pages/trace/SpanInfoCardsContext.tsx",
+      "upstreamSha256": "5cc70d154dc7d416d06c4876eaaec116fee190ea1804887cec03119d2626bc28",
+      "localSha256": "9f4d4fcd22b12d99010b329d4de8319eec98a3fea0846391c172b6cc02722dce",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/TraceDetails.tsx",
+      "upstreamPath": "js/app/src/pages/trace/TraceDetails.tsx",
+      "upstreamSha256": "335378fe383283df99217b563f832b31a98460c8235663a03de1849dfbff29d1",
+      "localSha256": "72c15d23865e6c9226069625ca57db4c810685b677266125a4c14661b106db5b",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/TraceDetailsPaginator.tsx",
+      "upstreamPath": "js/app/src/pages/trace/TraceDetailsPaginator.tsx",
+      "upstreamSha256": "0c51ed0a457857c68561b74e6e4b366f31b784ef3be84d098bf4df5b044e6cbb",
+      "localSha256": "8b164d9a696f94004c82481180862e20d1fbe55b025efe37f0b5e8dbf1ae4a22",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/TracePage.tsx",
+      "upstreamPath": "js/app/src/pages/trace/TracePage.tsx",
+      "upstreamSha256": "a79cb2b211e47de9d8366be6b4d9588f565d7790759e4c215e2f73e5e212f722",
+      "localSha256": "10adc0b12efe1589e2061ae397cf3f4f7e97eb80669da6cfa4cdfe984ebea98e",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/TracePaginationContext.tsx",
+      "upstreamPath": "js/app/src/pages/trace/TracePaginationContext.tsx",
+      "upstreamSha256": "5a48cb7dcdef8a0e72508c2db06458832e4aaa7967197040b2f99a05b4803158",
+      "localSha256": "5a48cb7dcdef8a0e72508c2db06458832e4aaa7967197040b2f99a05b4803158",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/__generated__/ConnectedTraceTree.graphql.ts",
+      "upstreamPath": "js/app/src/pages/trace/__generated__/ConnectedTraceTree.graphql.ts",
+      "upstreamSha256": "2756ba14ba508c48050709c64240aabd1cb211f7fb258209bb42401f4c107c00",
+      "localSha256": "2756ba14ba508c48050709c64240aabd1cb211f7fb258209bb42401f4c107c00",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/__generated__/ConnectedTraceTreeQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/trace/__generated__/ConnectedTraceTreeQuery.graphql.ts",
+      "upstreamSha256": "73513558cbde1881b2bef31d8041dbff31228970f540d18accca49f28fdbef9c",
+      "localSha256": "73513558cbde1881b2bef31d8041dbff31228970f540d18accca49f28fdbef9c",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/__generated__/SpanDetailsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/trace/__generated__/SpanDetailsQuery.graphql.ts",
+      "upstreamSha256": "3b784d318bec8eabec714b9326e747df7c1c117b7ce54b087cbaa63f16282a6e",
+      "localSha256": "3b784d318bec8eabec714b9326e747df7c1c117b7ce54b087cbaa63f16282a6e",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/__generated__/SpanEventsListQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/trace/__generated__/SpanEventsListQuery.graphql.ts",
+      "upstreamSha256": "65fc7676b17333f68d8b406a2362db3bf97934b060292592da1998fddb74b03a",
+      "localSha256": "65fc7676b17333f68d8b406a2362db3bf97934b060292592da1998fddb74b03a",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/__generated__/TraceDetailsQuery.graphql.ts",
+      "upstreamPath": "js/app/src/pages/trace/__generated__/TraceDetailsQuery.graphql.ts",
+      "upstreamSha256": "1a7b992ad49cf63863092511d976d1ac857bfcddc3f2d06273331c213226edc6",
+      "localSha256": "1a7b992ad49cf63863092511d976d1ac857bfcddc3f2d06273331c213226edc6",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/span/DecisionSpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/DecisionSpanInfo.tsx",
+      "upstreamSha256": "549ae18635eb7a8071eb17c89ecfdf3366d5ef772018865a5d225cc79cf25501",
+      "localSha256": "1d0f9d0450875418e59144c4d152d110e90fddc2520945fb9959999b3a70992d",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/EmbeddingInput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/EmbeddingInput.tsx",
+      "upstreamSha256": "5c3423a642b5ab2386547b724475d9d601a0faee1d2cd3b3f3fa41b21135ba90",
+      "localSha256": "bc172530bfa2da86558046d3bcf4571cb2fe35f42a1c9bb2358c66e1764f389c",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/EmbeddingSpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/EmbeddingSpanInfo.tsx",
+      "upstreamSha256": "c4ba78ad6f8d05afae4dafd45bf3f8d3a2c76c3b6cd941827adfb544c91a65b9",
+      "localSha256": "e209c8a3a3809d77a4a4f6d41bb0d7f11f5b7be67aa8ee62836652badeb32aff",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMIOViewSelect.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMIOViewSelect.tsx",
+      "upstreamSha256": "84fe6e4e7184f8ed832291dd29d8feefeb367a58e60d7665f080a54fa7f4c44f",
+      "localSha256": "312bb412bd10cd13da849f4a531eeb811ded193553b0c03debfa8bea4b8eeb56",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMInput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMInput.tsx",
+      "upstreamSha256": "2076d29c28889c8683c49cd6c3ab5feb148e3ab93dcf61f27148f9f8bee004e4",
+      "localSha256": "3b24e63fbe303f975853b89a690b72b7ba2b7085f9b76157472b636358eb6d96",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMInvocationParams.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMInvocationParams.tsx",
+      "upstreamSha256": "c7310321695695dc5d505c768444dccca2ce9abd20453b9e0876e34e0d5b5a7c",
+      "localSha256": "3263cb619d820efa840457ec022dbdc0eb738b96bc037ac9b764fda1c0091603",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMMessage.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMMessage.tsx",
+      "upstreamSha256": "d1be8551a1263f34f91b88c4a1ad55060de7b5c4fef27812a86bea367d139e3e",
+      "localSha256": "ab956de33b1fa7c756cfb8079270be044e036fdb1270de6616c7dae7ed2d09cd",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMMessagesCollapseContext.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMMessagesCollapseContext.tsx",
+      "upstreamSha256": "04aab2e5815f01862a11fe37687ffde39ff8bad61279e19dbb1b30e81e544cf8",
+      "localSha256": "04aab2e5815f01862a11fe37687ffde39ff8bad61279e19dbb1b30e81e544cf8",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/span/LLMMessagesCollapseToggle.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMMessagesCollapseToggle.tsx",
+      "upstreamSha256": "a7d0d72cf91096a4253aec3b5d616064f3b2def10a8cd22e96f4a8a0b06cede0",
+      "localSha256": "ffc4159abc58931e6fbb045cab177fc8768aa8ac152d88d35f031560928ee476",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMMessagesList.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMMessagesList.tsx",
+      "upstreamSha256": "9a0b27bfc4a4195fad313d5656184d49c7ab21b65786cdf27a5ef67005b7dff8",
+      "localSha256": "9a0b27bfc4a4195fad313d5656184d49c7ab21b65786cdf27a5ef67005b7dff8",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/span/LLMOutput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMOutput.tsx",
+      "upstreamSha256": "d1d2bc1116becc1e00f3b369f90fe0d4fb71c10b90e6a7b1a09f144ca2284d84",
+      "localSha256": "3779c09643018c20d879a7752c3698ed98328f4d9cb3bc399fb0475080dab730",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMPromptTemplate.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMPromptTemplate.tsx",
+      "upstreamSha256": "bd0bcf616fe8b64530a4842ad96908a9843a32013f45847e470bd8d7ebf6acfc",
+      "localSha256": "65b4311a465865901d09cd919d76b597c33cd98996fdb2d4f7ed5c6c1e149c24",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMPromptsList.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMPromptsList.tsx",
+      "upstreamSha256": "ea76e307985f98eb9216c09f87dbf80d8f116c003bf7153c13a6a24ad1b621a6",
+      "localSha256": "89ff4badb49407eb197a6054cee396b12fc5bc2d1b2789180f75277b8d9696d0",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMSpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMSpanInfo.tsx",
+      "upstreamSha256": "d571326a79333ff2ecfad53c414ac414c6e19f4bb37745b00187c177c59477ca",
+      "localSha256": "50a728eb306144db18d9355b009c9e0eb641b80593c397d26e4306029fe18464",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/LLMToolSchemasList.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/LLMToolSchemasList.tsx",
+      "upstreamSha256": "cc9be72677aa513efc2431af71306d66360c7fba2e5dc9504a71fe90c7dfdd10",
+      "localSha256": "aca25538ddfe9936c9f6e2d39fa650fe56e3b6092af823e1b76ef6ccf7200f77",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/MessageContentsList.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/MessageContentsList.tsx",
+      "upstreamSha256": "6343bde7f6ae507cb2e71d6df3cead8903d5fe2314e2f4f79a704ffc4a942441",
+      "localSha256": "281aa90d1232888d185f8746f78a8e2c8b56615bfe03d4ef75310c4ebe729686",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/MimeTypeCodeBlock.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/MimeTypeCodeBlock.tsx",
+      "upstreamSha256": "603809d6d83e7b2b3abf4a6f462993d2ab140f98709c055e8db3af75c846778b",
+      "localSha256": "fe2fa1bda12e46a6e3655cf44f5aec2952d4d5266edcb96255d933378367d3a2",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/ReasoningMessageContent.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/ReasoningMessageContent.tsx",
+      "upstreamSha256": "a9dfde1400936b32abc59ef6e507e9760bd98f088a0b78af6a2e4c3dd4cdc35f",
+      "localSha256": "4baf3583fe29c26885d4a560a2255d2cbad7c11cc7061577f36bd93d559eb6fb",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/RerankerInput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/RerankerInput.tsx",
+      "upstreamSha256": "be17dcd573fb7d6d2c964b264b49812052fa3e509d300b912ef1b1eec20a53f4",
+      "localSha256": "2fca0a10fe5d99eef7817da5bfe3b45d185b66000ba73030a9a7a901e3ddbc44",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/RerankerOutput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/RerankerOutput.tsx",
+      "upstreamSha256": "f9e89d9a00a1441d3aa168687a23f5766224177aede9e6ef86ab8cf6363ffd1d",
+      "localSha256": "6c51f88ab7c8cb3d767ca07cbcd6b0ba244e7a9472ce868e31d08c7c53a98396",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/RerankerSpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/RerankerSpanInfo.tsx",
+      "upstreamSha256": "6ccae7d2b9001cdf25fa4f58806ff6a73b4eff514e9ae4da884fee07ef161202",
+      "localSha256": "4800f9491fa429b24bba22c59905a8cc348a02cd17e108aaf9ed97b32dfe52cc",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/RetrieverInput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/RetrieverInput.tsx",
+      "upstreamSha256": "325e33c5ff646824b17e96de32f574e4dc82b66628ac2f98a2d6391f66ce6430",
+      "localSha256": "f6a3f709d016fd38d9ba43763f90429aa780eea233a9ade065398950bbf80e65",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/RetrieverOutput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/RetrieverOutput.tsx",
+      "upstreamSha256": "6a160b44468e6ab89913fc6d971527fa75578b8a39f51472dd5fb9371df6c6b7",
+      "localSha256": "ed072bb56ded3a12b75e0b05e35384e60cb383a79616b9675781192fbe973ad2",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/RetrieverSpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/RetrieverSpanInfo.tsx",
+      "upstreamSha256": "1bff860a6a2c3002cff88e79aecde953c819ec9dd800fe404ab4f7d28c73d4e8",
+      "localSha256": "6917c28f6a9ec4bea69e5641c5cff42adfedd6e95f158ac231b2719bfe9dd211",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanAttributesCard.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanAttributesCard.tsx",
+      "upstreamSha256": "e3b5fcefc31f4ae4f6f0889f2d6a44c0833c796659d0d3db69e9e5fd23a51787",
+      "localSha256": "c3a7c8d1984f587ddc75abb0a3e905d50707cc95e21d0f2e518cd1bd907ecd6e",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanIO.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanIO.tsx",
+      "upstreamSha256": "420061106296e4299a6a37acb9befe848b7af33c4dc1ae10a4c2d8fc0dfb1d53",
+      "localSha256": "8a1960d2ebfd48fe2a9af3b42aebef945a8928aea026fe616a808ff0cd97ef4d",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanImage.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanImage.tsx",
+      "upstreamSha256": "bd241e43570868e279b68aa47a304ca4edccd286bdc269254d20493661ddb0b9",
+      "localSha256": "b820371714c02bd72ba715c7e2a5c8127a9316b215c3ca326ba0960a3975a233",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanInfo.tsx",
+      "upstreamSha256": "7a996eb6b4198d4914d1acca7c7749ce07d53588919bd885da3b592f5c828179",
+      "localSha256": "492834b9b05571bd025d0df932e92fe508d0b46bd604d81b4401a13a6d878d1b",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanInput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanInput.tsx",
+      "upstreamSha256": "e47b9f9a621d3754d57de42972ed32656281e1e4a606b6f6a3967cbdddea48bb",
+      "localSha256": "51928d2adf2514b8c844be599867dba5b7089bfdc62516931c462d02c6318a3d",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanMetadata.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanMetadata.tsx",
+      "upstreamSha256": "3b1de7e3d830d8b3d040709e826005f5385583039b09d594119c399e619ea4e0",
+      "localSha256": "5ee16ab08da9bc2b198d0c3f47b2dce454db7a4772ccc992e3095d8a82fba01d",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/SpanOutput.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/SpanOutput.tsx",
+      "upstreamSha256": "b332c4fb20225cbf15ec817dcbc10f839415c4389f7fae4bdeef9f22f0cf8851",
+      "localSha256": "57bcedb245ffdd3455dbaafecbc532d01ec71c6f90eab9760a5affb721ab27a8",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/ToolMetadata.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/ToolMetadata.tsx",
+      "upstreamSha256": "f1d80634bd9d1053bd73d2a5209dccdcf3211c9834c28188d0bc251a78a1ddb5",
+      "localSha256": "3a1b6bf55c88a07a5675a98d77ee76bd97af5f5b3fc8da86808fbace61bb78fb",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/ToolSpanInfo.tsx",
+      "upstreamPath": "js/app/src/pages/trace/span/ToolSpanInfo.tsx",
+      "upstreamSha256": "a044777970a3038bd15fea79fbdce6c68d50fe06efc401aa309c48e49ca888c4",
+      "localSha256": "7bd859494fd0879c81b63f7b42232f16825a13d6dbf9e2d8f7e5e2457bd2be7b",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/constants.ts",
+      "upstreamPath": "js/app/src/pages/trace/span/constants.ts",
+      "upstreamSha256": "1682f7e03628541ee781a686b0b2bfa240d36c2e57771c632e9fb35fd7fdb0ae",
+      "localSha256": "d9447caf1727ea5b14cdcecf3ac2084c786034b0b47c6753e691d41649aa723b",
+      "modified": true
+    },
+    {
+      "path": "pages/trace/span/types.ts",
+      "upstreamPath": "js/app/src/pages/trace/span/types.ts",
+      "upstreamSha256": "9b3adc362cd7029364505580cd20e7aa7f7e1cb4794955f0aa180958bcbf6cc3",
+      "localSha256": "9b3adc362cd7029364505580cd20e7aa7f7e1cb4794955f0aa180958bcbf6cc3",
+      "modified": false
+    },
+    {
+      "path": "pages/trace/span/utils.ts",
+      "upstreamPath": "js/app/src/pages/trace/span/utils.ts",
+      "upstreamSha256": "939a7f11d5c418c4c16058428536f5670d70746d66d0cd33dec267de504aed47",
+      "localSha256": "939a7f11d5c418c4c16058428536f5670d70746d66d0cd33dec267de504aed47",
+      "modified": false
+    },
+    {
+      "path": "relayDebugInstrumentation.ts",
+      "upstreamPath": "js/app/src/relayDebugInstrumentation.ts",
+      "upstreamSha256": "72a0229c4383dd9b41011dee32d714cd9aa51a66a3251ca80f349c84423bb843",
+      "localSha256": "72a0229c4383dd9b41011dee32d714cd9aa51a66a3251ca80f349c84423bb843",
+      "modified": false
+    },
+    {
+      "path": "store/preferencesStore.tsx",
+      "upstreamPath": "js/app/src/store/preferencesStore.tsx",
+      "upstreamSha256": "803fbc39bf88e8b979b5df9bce35671cd2aab53c457dd9a336461eddf7e74241",
+      "localSha256": "5f24b3a5efdd12e9bff8c544651350ba80e51bb0fb0534f7c4c0ccea7b89a35a",
+      "modified": true
+    },
+    {
+      "path": "store/projectStore.ts",
+      "upstreamPath": "js/app/src/store/projectStore.ts",
+      "upstreamSha256": "2a6a1f81b3226f279d7ba879a8361a5b4bf11dab6b89d09d9d6a96a59c35b4ab",
+      "localSha256": "2a6a1f81b3226f279d7ba879a8361a5b4bf11dab6b89d09d9d6a96a59c35b4ab",
+      "modified": false
+    },
+    {
+      "path": "store/tracingStore.tsx",
+      "upstreamPath": "js/app/src/store/tracingStore.tsx",
+      "upstreamSha256": "0bdee936c041761b80589768b4d14b7e49a439e610938af521468e63a2d22587",
+      "localSha256": "0bdee936c041761b80589768b4d14b7e49a439e610938af521468e63a2d22587",
+      "modified": false
+    },
+    {
+      "path": "styles/cascade-layers.css",
+      "upstreamPath": "js/app/src/styles/cascade-layers.css",
+      "upstreamSha256": "b54f2e9d6db1210555f214a48add7f088654b7fb72e1d6c4df2083f52d31f791",
+      "localSha256": "b54f2e9d6db1210555f214a48add7f088654b7fb72e1d6c4df2083f52d31f791",
+      "modified": false
+    },
+    {
+      "path": "typeUtils.ts",
+      "upstreamPath": "js/app/src/typeUtils.ts",
+      "upstreamSha256": "45a0eacff959d71e6958eeee0925a94fc0eccbaaddac212f58d5e52c40ac2a7d",
+      "localSha256": "45a0eacff959d71e6958eeee0925a94fc0eccbaaddac212f58d5e52c40ac2a7d",
+      "modified": false
+    },
+    {
+      "path": "types/code.ts",
+      "upstreamPath": "js/app/src/types/code.ts",
+      "upstreamSha256": "a3639b1366314bb5315cdbf22f2f973d42cc0a84a8f178f0f7a1e44e36985961",
+      "localSha256": "a3639b1366314bb5315cdbf22f2f973d42cc0a84a8f178f0f7a1e44e36985961",
+      "modified": false
+    },
+    {
+      "path": "types/table.ts",
+      "upstreamPath": "js/app/src/types/table.ts",
+      "upstreamSha256": "99bf00866841a3b7e45e883bfe747c54bf3729fa4a4eb957fba4737a17ad1ad9",
+      "localSha256": "99bf00866841a3b7e45e883bfe747c54bf3729fa4a4eb957fba4737a17ad1ad9",
+      "modified": false
+    },
+    {
+      "path": "utils/classNames.ts",
+      "upstreamPath": "js/app/src/utils/classNames.ts",
+      "upstreamSha256": "dc66f43a6758073adc07d0313d1ef2a37a96ed6f2719949bc1187641662edc77",
+      "localSha256": "dc66f43a6758073adc07d0313d1ef2a37a96ed6f2719949bc1187641662edc77",
+      "modified": false
+    },
+    {
+      "path": "utils/colorUtils.ts",
+      "upstreamPath": "js/app/src/utils/colorUtils.ts",
+      "upstreamSha256": "7fff472d77443a9a0635e99e4f8666c6ddca9156b53c3d50e62fd89c7674b047",
+      "localSha256": "e1165f48bd7718c24b1919004c8a0cf6c1a7577abcb73f20218ed2c4d147388e",
+      "modified": true
+    },
+    {
+      "path": "utils/contentPreviewUtils.ts",
+      "upstreamPath": "js/app/src/utils/contentPreviewUtils.ts",
+      "upstreamSha256": "3f4664519117f14816ee3a7e9fde8aede4e3e5e8a44f26c6619696cfdb0624c5",
+      "localSha256": "3f4664519117f14816ee3a7e9fde8aede4e3e5e8a44f26c6619696cfdb0624c5",
+      "modified": false
+    },
+    {
+      "path": "utils/filterConditionUtils.ts",
+      "upstreamPath": "js/app/src/utils/filterConditionUtils.ts",
+      "upstreamSha256": "7d9826603948fc35a636a9954de06e665f00d8fa6e3b782784d5202ef45a9c75",
+      "localSha256": "7d9826603948fc35a636a9954de06e665f00d8fa6e3b782784d5202ef45a9c75",
+      "modified": false
+    },
+    {
+      "path": "utils/generativeUtils.ts",
+      "upstreamPath": "js/app/src/utils/generativeUtils.ts",
+      "upstreamSha256": "ecd17d77efdf8c2ba61fea9dc6f56545d090b0728aa1dddee38c25f2c597d731",
+      "localSha256": "ecd17d77efdf8c2ba61fea9dc6f56545d090b0728aa1dddee38c25f2c597d731",
+      "modified": false
+    },
+    {
+      "path": "utils/jsonUtils.ts",
+      "upstreamPath": "js/app/src/utils/jsonUtils.ts",
+      "upstreamSha256": "69f3237cb12d5c08590ea02fc0ed5f97d729ff0ff475db09660e6a1c4e142725",
+      "localSha256": "69f3237cb12d5c08590ea02fc0ed5f97d729ff0ff475db09660e6a1c4e142725",
+      "modified": false
+    },
+    {
+      "path": "utils/numberFormatUtils.ts",
+      "upstreamPath": "js/app/src/utils/numberFormatUtils.ts",
+      "upstreamSha256": "d02e7827a8cdb0003be954c9be03c7a96824eff13cbdc9cd3d9feb262d875dc9",
+      "localSha256": "d02e7827a8cdb0003be954c9be03c7a96824eff13cbdc9cd3d9feb262d875dc9",
+      "modified": false
+    },
+    {
+      "path": "utils/numberUtils.ts",
+      "upstreamPath": "js/app/src/utils/numberUtils.ts",
+      "upstreamSha256": "d6fcee290eaab8fea02cb78c3645877b2e80a3b8e536eb32a77d56cf44d59377",
+      "localSha256": "d6fcee290eaab8fea02cb78c3645877b2e80a3b8e536eb32a77d56cf44d59377",
+      "modified": false
+    },
+    {
+      "path": "utils/redactionUtils.ts",
+      "upstreamPath": "js/app/src/utils/redactionUtils.ts",
+      "upstreamSha256": "ed160ce1579c314b44827d71e2eae39fe165fa4099dc4af866394c2994416bf5",
+      "localSha256": "ed160ce1579c314b44827d71e2eae39fe165fa4099dc4af866394c2994416bf5",
+      "modified": false
+    },
+    {
+      "path": "utils/reportClientError.ts",
+      "upstreamPath": "js/app/src/utils/reportClientError.ts",
+      "upstreamSha256": "d8c19b3e29fc24ea5cf20fbd757c3900381088f4d84732ebc14b3d3df82ffd20",
+      "localSha256": "d8c19b3e29fc24ea5cf20fbd757c3900381088f4d84732ebc14b3d3df82ffd20",
+      "modified": false
+    },
+    {
+      "path": "utils/routingUtils.ts",
+      "upstreamPath": "js/app/src/utils/routingUtils.ts",
+      "upstreamSha256": "bc7eade364543508514936c088ee41843345660dcb417f83992b11fc444a9274",
+      "localSha256": "bc7eade364543508514936c088ee41843345660dcb417f83992b11fc444a9274",
+      "modified": false
+    },
+    {
+      "path": "utils/storageSizeFormatUtils.ts",
+      "upstreamPath": "js/app/src/utils/storageSizeFormatUtils.ts",
+      "upstreamSha256": "f4f1902a12196b31d2d6b3ec645f9ba4e6417d70783663413e697e23581a076a",
+      "localSha256": "f4f1902a12196b31d2d6b3ec645f9ba4e6417d70783663413e697e23581a076a",
+      "modified": false
+    },
+    {
+      "path": "utils/timeFormatUtils.ts",
+      "upstreamPath": "js/app/src/utils/timeFormatUtils.ts",
+      "upstreamSha256": "a3f66224c6378db56cfb1049a0187f152db30f33939efd8ffe3fc54ed772c448",
+      "localSha256": "a3f66224c6378db56cfb1049a0187f152db30f33939efd8ffe3fc54ed772c448",
+      "modified": false
+    },
+    {
+      "path": "utils/timeUtils.ts",
+      "upstreamPath": "js/app/src/utils/timeUtils.ts",
+      "upstreamSha256": "496a86a5bcde792d9299a10acf09ed87014a08f6d4daaad36e25637ca8e04812",
+      "localSha256": "496a86a5bcde792d9299a10acf09ed87014a08f6d4daaad36e25637ca8e04812",
+      "modified": false
+    },
+    {
+      "path": "utils/tokenDetailUtils.ts",
+      "upstreamPath": "js/app/src/utils/tokenDetailUtils.ts",
+      "upstreamSha256": "82cdb9d79e000d1a7c2a27396bf883b2591ff8c3682e6777db479a63ed902546",
+      "localSha256": "d35339ea8ff091809970a2de62416d9bd8b548eacc1ea8701790028937dcf978",
+      "modified": true
+    },
+    {
+      "path": "utils/traceSelectionUtils.ts",
+      "upstreamPath": "js/app/src/utils/traceSelectionUtils.ts",
+      "upstreamSha256": "3362f6da4817a1e45a2cee807a779ff181ac27cddec451a5a9b76a3dc1e759c7",
+      "localSha256": "3362f6da4817a1e45a2cee807a779ff181ac27cddec451a5a9b76a3dc1e759c7",
+      "modified": false
+    },
+    {
+      "path": "utils/urlUtils.ts",
+      "upstreamPath": "js/app/src/utils/urlUtils.ts",
+      "upstreamSha256": "61ac0ab08abc1173cf86c023f43aea6eb61eb07e48410a0020cbed80cec579bf",
+      "localSha256": "61ac0ab08abc1173cf86c023f43aea6eb61eb07e48410a0020cbed80cec579bf",
+      "modified": false
+    },
+    {
+      "path": "vite-env.d.ts",
+      "upstreamPath": "js/app/src/vite-env.d.ts",
+      "upstreamSha256": "229a09396a068853c269c48a32c68ba1584450b1fa2e01e811d764c3695fcb76",
+      "localSha256": "229a09396a068853c269c48a32c68ba1584450b1fa2e01e811d764c3695fcb76",
+      "modified": false
+    },
+    {
+      "path": "window.d.ts",
+      "upstreamPath": "js/app/src/window.d.ts",
+      "upstreamSha256": "c634c34fe046fde5efa8dde17675450cdc70b060cbf9703d094e4e039e3736a0",
+      "localSha256": "c634c34fe046fde5efa8dde17675450cdc70b060cbf9703d094e4e039e3736a0",
+      "modified": false
+    }
+  ]
+}
