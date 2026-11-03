@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
@@ -9,7 +9,10 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "types": ["@emotion/react/types/css-prop", "vite/client", "node"],
+    "paths": { "@phoenix/*": ["./phoenix-src/*"] }
   },
-  "include": ["src"]
+  "include": ["phoenix-src", "bootstrap.ts", "vite.config.ts"]
 }
