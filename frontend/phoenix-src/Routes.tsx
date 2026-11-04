@@ -7,6 +7,7 @@ import {
 } from "react-router";
 import { RouterProvider } from "react-router/dom";
 
+import { DashboardPage } from "../dashboard/DashboardPage";
 import { AuthenticatedRoot } from "./pages/AuthenticatedRoot";
 import { authenticatedRootLoader } from "./pages/authenticatedRootLoader";
 import { ErrorElement } from "./pages/ErrorElement";
@@ -24,7 +25,14 @@ export const appRouteObjects = createRoutesFromElements(
   <Route path="/" element={<RootLayout />} errorElement={<ErrorElement />}>
     <Route element={<AuthenticatedRoot />} loader={authenticatedRootLoader}>
       <Route element={<Layout />} loader={layoutLoader}>
-        <Route index element={<Navigate to="/projects" replace />} />
+        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route
+          path="dashboard"
+          element={<ProjectsRoot />}
+          handle={{ crumb: () => "全局看板" }}
+        >
+          <Route index element={<DashboardPage />} />
+        </Route>
         <Route
           path="projects"
           element={<ProjectsRoot />}

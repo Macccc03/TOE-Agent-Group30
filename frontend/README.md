@@ -1,8 +1,8 @@
 # Phoenix 精简前端
 
-直接以 Phoenix 原版页面源码做减法，保留项目入口、Trace 列表、详情抽屉、调用树、时间条与节点输入输出。主题、公共组件和 Relay/GraphQL 数据层沿用上游实现。
+直接以 Phoenix 原版页面源码做减法，保留项目入口、Trace 列表、详情抽屉、调用树、时间条与节点输入输出。在此基础上增加全局指标看板。主题、公共组件和原页面的 Relay/GraphQL 数据层沿用上游实现。
 
-当前代码入口是 `phoenix-src/index.tsx`。此前独立编写的 `src/` 原型已从当前应用移除，可从 Git 提交 `5d4ac39` 找回。此次调整先恢复原版基础体验，尚未加入团队自有功能。
+当前代码入口是 `phoenix-src/index.tsx`。此前独立编写的 `src/` 原型已从当前应用移除，可从 Git 提交 `5d4ac39` 找回。新增看板代码位于 `dashboard/`，复用原主题、Disclosure、ChartPanel、时间选择器及已有 Recharts。
 
 项目背景见[项目 README](../README.md)，职责见[团队分工](../分工.md)，上游复用范围与许可见[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
@@ -42,6 +42,21 @@ pnpm dev
 
 ## 体验步骤
 
+### 全局指标看板
+
+打开 [全局看板](http://127.0.0.1:5175/dashboard?timeRangeKey=7d)，也可通过侧栏进入；根路径默认跳转到看板。
+
+- 六项指标：调用量、成功率、平均耗时、P95 耗时、Token、费用。项目筛选、时间范围和刷新作用于整页。
+- 四张图按两组互斥展开：默认显示“调用表现”（调用量/错误、耗时），点击“资源使用”切换到 Token/费用和工具分布；再次点击当前组全部收起。最多挂载两张图，收起时卸载图表。
+- 分组、项目与时间选择保存在地址中，刷新可恢复。最近调用最多显示 10 条，点击名称进入原 Trace 详情抽屉，浏览器返回可恢复看板状态。
+- 当前数据来自现有 Phoenix 数据库，不使用生图数字。按项目和 Trace ID 去重；节点自身 Token/费用只累加一次；P95 使用最近秩法；“—”表示未记录，0 保留为 0。工具分布只统计原服务的 `tool` 类型，检索节点不冒充工具。
+
+新增查询通过现有 `/graphql` 代理读取项目及所选范围内的所有分页 Span，再在浏览器汇总。范围沿用 Phoenix 的 Span 开始时间口径，因此跨时间边界的 Trace 可能只有部分节点参与统计；当前适用于本地少量数据体验。后续与成员 2 对接服务端聚合，统一跨边界调用口径及大量数据性能。没有接入团队 processor/storage。
+
+聚合逻辑检查：`pnpm test:dashboard`。覆盖 Trace 去重、耗时/Token/费用、状态与空值、时间分桶/P95，以及小写工具类型。
+
+### 原调用追踪流程
+
 1. 打开 `local-agent-demo`，点击 `demo-agent` 进入 Trace 详情。
 2. 选择 `knowledge-search` 或 `answer-generation`，查看不同节点的输入输出、属性和耗时。
 3. 搜索调用树、展开/收起、切换指标显示，刷新详情地址检查选中节点是否恢复。
@@ -68,9 +83,10 @@ pnpm preview
 ## 代码结构
 
 ```text
+dashboard/                    # 新增看板、读取和聚合逻辑及聚合测试
 phoenix-src/
   App.tsx / GlobalStyles.tsx   # 原应用、主题与设计基础
-  Routes.tsx                  # 仅保留 Projects → Traces → Trace
+  Routes.tsx                  # 全局看板及 Projects → Traces → Trace
   pages/projects/             # 原版项目入口
   pages/project/              # 裁剪后的原版列表及时间范围
   pages/trace/                # 原版详情、节点输入输出和属性
