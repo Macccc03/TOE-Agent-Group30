@@ -236,6 +236,14 @@ function SideNavContent({
         <ul css={sideLinksCSS}>
           <li>
             <NavLink
+              to="/dashboard"
+              text="全局看板"
+              leadingVisual={<Icon svg={<Icons.BarChart />} />}
+              isExpanded={isExpanded}
+            />
+          </li>
+          <li>
+            <NavLink
               to="/projects"
               text="Tracing"
               leadingVisual={<Icon svg={<Icons.Trace />} />}
