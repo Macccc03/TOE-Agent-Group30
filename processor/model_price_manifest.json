@@ -1,4 +1,236 @@
 {
-  "gpt-4o": {"prompt": 5.0, "completion": 15.0},
-  "deepseek-chat": {"prompt": 0.14, "completion": 0.28}
+  "gpt-6-astra": {
+    "currency": "USD",
+    "pricing_type": "tiered",
+    "tiers": [
+      {
+        "max_input_tokens": 272000,
+        "prompt": 10.00,
+        "completion": 50.00,
+        "cache_read": 1.00,
+        "cache_write_30m": 12.50,
+        "cache_write_12h": 25.00
+      },
+      {
+        "max_input_tokens": null,
+        "prompt": 20.00,
+        "completion": 75.00,
+        "cache_read": 2.00,
+        "cache_write_30m": 25.00,
+        "cache_write_12h": 50.00
+      }
+    ]
+  },
+  "gpt-6.1-sol": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 2.00,
+    "completion": 10.00,
+    "cache_read": 0.20
+  },
+  "gpt-6-luna": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 0.10,
+    "completion": 0.50,
+    "cache_read": 0.02
+  },
+  "gpt-5.6-sol": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 4.00,
+    "completion": 20.00,
+    "cache_read": 0.40
+  },
+  "claude-opus-5.5": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 4.00,
+    "completion": 20.00,
+    "cache_read": 0.20,
+    "cache_write_5m": 5.00
+  },
+  "claude-sonnet-5.5": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 2.00,
+    "completion": 10.00,
+    "cache_read": 0.20,
+    "cache_write_5m": 2.50
+  },
+  "claude-haiku-5.5": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 0.10,
+    "completion": 0.50,
+    "cache_read": 0.01
+  },
+  "claude-fable-5.1": {
+    "currency": "USD",
+    "pricing_type": "standard",
+    "prompt": 10.00,
+    "completion": 50.00,
+    "cache_read": 0.25
+  },
+  "gemini-4-argon": {
+    "currency": "USD",
+    "pricing_type": "tiered",
+    "tiers": [
+      {
+        "max_input_tokens": null,
+        "prompt": 2.00,
+        "completion": 10.00,
+        "cache_read": 0.10,
+        "valid_until": "2026-11-30"
+      },
+      {
+        "max_input_tokens": null,
+        "prompt": 4.00,
+        "completion": 20.00,
+        "cache_read": 0.20,
+        "valid_from": "2026-12-01"
+      }
+    ]
+  },
+  "deepseek-v4-pro": {
+    "currency": "CNY",
+    "pricing_type": "time_based",
+    "peak_hours": [[9, 12], [14, 18]],
+    "peak_days": [0, 1, 2, 3, 4],
+    "peak": {
+      "prompt_cache_hit": 0.04,
+      "prompt_cache_miss": 2.00,
+      "completion": 8.00
+    },
+    "off_peak": {
+      "prompt_cache_hit": 0.02,
+      "prompt_cache_miss": 1.00,
+      "completion": 4.00
+    }
+  },
+  "deepseek-flash": {
+    "currency": "CNY",
+    "pricing_type": "time_based",
+    "peak_hours": [[9, 12], [14, 18]],
+    "peak_days": [0, 1, 2, 3, 4],
+    "peak": {
+      "prompt_cache_hit": 0.02,
+      "prompt_cache_miss": 2.00,
+      "completion": 8.00
+    },
+    "off_peak": {
+      "prompt_cache_hit": 0.01,
+      "prompt_cache_miss": 1.00,
+      "completion": 4.00
+    }
+  },
+  "glm-5.3": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 8.00,
+    "completion": 28.00,
+    "cache_read": 2.00
+  },
+  "glm-5.3-flash": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 0.80,
+    "completion": 2.80,
+    "cache_read": 0.20
+  },
+  "kimi-k3.1-pro": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 13.00,
+    "completion": 68.00,
+    "cache_read": 1.30
+  },
+  "kimi-k3.1-pro-highspeed": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 26.00,
+    "completion": 136.00,
+    "cache_read": 2.60
+  },
+  "doubao-seed-2.1-pro": {
+    "currency": "CNY",
+    "pricing_type": "tiered",
+    "tiers": [
+      {
+        "max_input_tokens": 1024,
+        "prompt": 6.00,
+        "completion": 30.00,
+        "cache_read": 1.20
+      },
+      {
+        "max_input_tokens": 32768,
+        "prompt": 3.20,
+        "completion": 16.00,
+        "cache_read": 0.64
+      },
+      {
+        "max_input_tokens": null,
+        "prompt": 1.60,
+        "completion": 8.00,
+        "cache_read": 0.32
+      }
+    ]
+  },
+  "doubao-seed-2.1-turbo": {
+    "currency": "CNY",
+    "pricing_type": "tiered",
+    "tiers": [
+      {
+        "max_input_tokens": 256,
+        "prompt": 3.00,
+        "completion": 15.00,
+        "cache_read": 0.60
+      },
+      {
+        "max_input_tokens": null,
+        "prompt": 1.60,
+        "completion": 8.00,
+        "cache_read": 0.32
+      }
+    ]
+  },
+  "doubao-seed-2.1-lite": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 0.60,
+    "completion": 2.70,
+    "cache_read": 0.12
+  },
+  "qwen3.8-max": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 12.00,
+    "completion": 36.00,
+    "cache_read": 1.50
+  },
+  "qwen3.8-flash": {
+    "currency": "CNY",
+    "pricing_type": "standard",
+    "prompt": 0.80,
+    "completion": 2.70,
+    "cache_read": 0.10
+  },
+  "qwen3.7-plus": {
+    "currency": "CNY",
+    "pricing_type": "tiered",
+    "tiers": [
+      {
+        "max_input_tokens": 256000,
+        "prompt": 2.00,
+        "completion": 8.00,
+        "cache_read": 0.40
+      },
+      {
+        "max_input_tokens": null,
+        "prompt": 4.00,
+        "completion": 16.00,
+        "cache_read": 0.80
+      }
+    ]
+  }
 }
