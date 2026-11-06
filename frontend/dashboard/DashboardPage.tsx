@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router";
+import { Link, useLocation, useSearchParams } from "react-router";
 import {
   Bar,
   BarChart,
@@ -64,12 +64,15 @@ const tooltipStyle = {
 };
 
 export function DashboardPage() {
+  const location = useLocation();
   const [params, setParams] = useSearchParams();
   const projectId = params.get("project") ?? "all";
   const chartGroup = params.get("charts") ?? "performance";
   const { timeRangeISOStrings, timeRangeNow, refreshLiveTimeRange } =
     useTimeRange();
   const timeSearch = useTimeRangeSearch();
+  const detailParams = new URLSearchParams(timeSearch);
+  detailParams.set("dashboardSearch", location.search);
   const [revision, setRevision] = useState(0);
   const [projects, setProjects] = useState<Project[]>([]);
   const [spans, setSpans] = useState<Span[]>([]);
@@ -463,7 +466,7 @@ export function DashboardPage() {
                         <tr key={`${trace.projectId}:${trace.id}`}>
                           <td>
                             <Link
-                              to={`/projects/${trace.projectId}/traces/${trace.id}${timeSearch}`}
+                              to={`/projects/${trace.projectId}/traces/${trace.id}?${detailParams}`}
                             >
                               {trace.name} ›
                             </Link>

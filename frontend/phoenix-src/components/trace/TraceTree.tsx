@@ -202,6 +202,9 @@ function SpanTreeItem<TSpan extends ISpanItem>(
   );
   const isSelected = selectedSpanNodeId === node.span.id;
   const itemRef = useRef<HTMLDivElement>(null);
+  const selectSpan = () => {
+    startTransition(() => onSpanClick?.(node.span));
+  };
 
   // Scroll into view when selected
   useEffect(() => {
@@ -237,13 +240,15 @@ function SpanTreeItem<TSpan extends ISpanItem>(
           <div
             role="button"
             tabIndex={0}
+            aria-pressed={isSelected}
             css={spanNodeButtonCSS}
-            onClick={() => {
-              startTransition(() => {
-                if (onSpanClick) {
-                  onSpanClick(node.span);
-                }
-              });
+            onClick={selectSpan}
+            onKeyDown={(event) => {
+              if (event.target !== event.currentTarget) return;
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                selectSpan();
+              }
             }}
           >
             <SpanNodeWrap
@@ -454,6 +459,9 @@ function CollapseToggleButton({
 }) {
   return (
     <button
+      type="button"
+      aria-label={isCollapsed ? "Expand span" : "Collapse span"}
+      aria-expanded={!isCollapsed}
       onClick={(e) => {
         e.stopPropagation();
         e.preventDefault();

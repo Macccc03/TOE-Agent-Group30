@@ -48,3 +48,9 @@
 - 四图采用两个互斥折叠分组，默认展开调用表现，资源使用收起；可全部收起。URL 保存状态，收起图表不挂载，不提供一键全部展开。
 - 看板用小型独立 GraphQL 读取层通过同一代理取数，分页读取后本地聚合；没有修改原 Relay artifacts。当前按 Span 时间范围统计，跨边界 Trace 的部分节点口径与大量数据聚合留待服务端接口对齐。
 - 不改原 Docker 数据、不制造模型调用、不将参考图数字写死；没有本轮 commit/push。
+
+## 2026-11-06 详情返回与调用树键盘操作
+
+- `dashboard/DashboardPage.tsx` 的详情链接记录原看板查询参数；`phoenix-src/pages/trace/TracePage.tsx` 关闭抽屉时恢复看板。直接详情链接继续使用原项目列表返回逻辑；地址参数使刷新与节点选择后来源仍保留。
+- `phoenix-src/components/trace/TraceTree.tsx` 在原节点上增加 Enter/空格选择和 `aria-pressed`，折叠按钮补充名称/展开状态。子按钮的键盘事件不触发父节点选择，保留原树、时间条、外观及鼠标行为。
+- 两个上游文件的当前哈希已更新到来源清单；没有修改 Relay artifacts 或新增依赖。团队字段对齐提案见 `INTEGRATION.md`，未改队友模块。
