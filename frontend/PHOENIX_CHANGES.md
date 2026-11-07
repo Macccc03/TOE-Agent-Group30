@@ -54,3 +54,9 @@
 - `dashboard/DashboardPage.tsx` 的详情链接记录原看板查询参数；`phoenix-src/pages/trace/TracePage.tsx` 关闭抽屉时恢复看板。直接详情链接继续使用原项目列表返回逻辑；地址参数使刷新与节点选择后来源仍保留。
 - `phoenix-src/components/trace/TraceTree.tsx` 在原节点上增加 Enter/空格选择和 `aria-pressed`，折叠按钮补充名称/展开状态。子按钮的键盘事件不触发父节点选择，保留原树、时间条、外观及鼠标行为。
 - 两个上游文件的当前哈希已更新到来源清单；没有修改 Relay artifacts 或新增依赖。团队字段对齐提案见 `INTEGRATION.md`，未改队友模块。
+
+## 2026-11-07 设置页与深浅主题
+
+- `settings/SettingsPage.tsx` 复用 Phoenix 的卡片、分段控件、图标和 `ThemeProvider`，通过侧栏底部的「设置」进入。全局主题沿用原浏览器偏好键。
+- `dashboard/DashboardPage.tsx` 根据主题应用指标、图表和状态配色，悬浮提示使用原图表的光标样式。
+- `phoenix-src/Routes.tsx` 和 `pages/Layout.tsx` 增加路由和入口，来源清单同步更新。

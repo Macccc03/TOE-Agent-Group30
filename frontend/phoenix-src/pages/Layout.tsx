@@ -259,7 +259,16 @@ function SideNavContent({
           {/* The generative workbench: destinations for talking to models
               directly rather than observing an application. */}
         </ul>
-        <ul css={bottomLinksCSS}></ul>
+        <ul css={bottomLinksCSS}>
+          <li>
+            <NavLink
+              to="/settings"
+              text="设置"
+              leadingVisual={<Icon svg={<Icons.Settings />} />}
+              isExpanded={isExpanded}
+            />
+          </li>
+        </ul>
       </Flex>
     </SideNavbar>
   );

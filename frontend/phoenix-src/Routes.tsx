@@ -8,6 +8,7 @@ import {
 import { RouterProvider } from "react-router/dom";
 
 import { DashboardPage } from "../dashboard/DashboardPage";
+import { SettingsPage } from "../settings/SettingsPage";
 import { AuthenticatedRoot } from "./pages/AuthenticatedRoot";
 import { authenticatedRootLoader } from "./pages/authenticatedRootLoader";
 import { ErrorElement } from "./pages/ErrorElement";
@@ -33,6 +34,11 @@ export const appRouteObjects = createRoutesFromElements(
         >
           <Route index element={<DashboardPage />} />
         </Route>
+        <Route
+          path="settings"
+          element={<SettingsPage />}
+          handle={{ crumb: () => "设置" }}
+        />
         <Route
           path="projects"
           element={<ProjectsRoot />}

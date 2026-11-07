@@ -18,6 +18,7 @@ import { ChartPanel } from "@phoenix/components/chart/ChartPanel";
 import { ChartResponsiveContainer } from "@phoenix/components/chart/ChartResponsiveContainer";
 import {
   defaultCartesianGridProps,
+  defaultTooltipProps,
   defaultXAxisProps,
   defaultYAxisProps,
 } from "@phoenix/components/chart/defaults";
@@ -50,11 +51,11 @@ const metric = (value: number | null, formatter: (n: number) => string) =>
   value === null ? "—" : formatter(value);
 const seconds = (value: number) => `${value.toFixed(2)} s`;
 const colors = {
-  calls: "#54c5b7",
-  errors: "#ef827c",
-  average: "#f2b766",
-  p95: "#aeb5c4",
-  tokens: "#aa88d1",
+  calls: "var(--dashboard-calls-color)",
+  errors: "var(--dashboard-errors-color)",
+  average: "var(--dashboard-average-color)",
+  p95: "var(--dashboard-p95-color)",
+  tokens: "var(--dashboard-tokens-color)",
 };
 const tooltipStyle = {
   background: "var(--global-background-color-default)",
@@ -266,7 +267,10 @@ export function DashboardPage() {
                                 {...defaultYAxisProps}
                                 allowDecimals={false}
                               />
-                              <Tooltip contentStyle={tooltipStyle} />
+                              <Tooltip
+                                {...defaultTooltipProps}
+                                contentStyle={tooltipStyle}
+                              />
                               <Legend />
                               <Bar
                                 dataKey="calls"
@@ -300,6 +304,7 @@ export function DashboardPage() {
                                 tickFormatter={(value: number) => `${value}s`}
                               />
                               <Tooltip
+                                {...defaultTooltipProps}
                                 contentStyle={tooltipStyle}
                                 formatter={(value) =>
                                   `${Number(value).toFixed(2)} s`
@@ -363,6 +368,7 @@ export function DashboardPage() {
                                 tickFormatter={(value: number) => `$${value}`}
                               />
                               <Tooltip
+                                {...defaultTooltipProps}
                                 contentStyle={tooltipStyle}
                                 formatter={(value, name) =>
                                   name === "费用"
@@ -417,7 +423,10 @@ export function DashboardPage() {
                                   width={120}
                                   tick={{ fontSize: 11 }}
                                 />
-                                <Tooltip contentStyle={tooltipStyle} />
+                                <Tooltip
+                                  {...defaultTooltipProps}
+                                  contentStyle={tooltipStyle}
+                                />
                                 <Bar
                                   dataKey="count"
                                   name="调用次数"
@@ -519,6 +528,20 @@ export function DashboardPage() {
 }
 
 const pageCSS = css`
+  --dashboard-calls-color: #54c5b7;
+  --dashboard-errors-color: #ef827c;
+  --dashboard-average-color: #f2b766;
+  --dashboard-p95-color: #aeb5c4;
+  --dashboard-tokens-color: #aa88d1;
+
+  .theme--light & {
+    --dashboard-calls-color: #146c62;
+    --dashboard-errors-color: #a12928;
+    --dashboard-average-color: #865209;
+    --dashboard-p95-color: #475569;
+    --dashboard-tokens-color: #6945a0;
+  }
+
   flex: 1;
   min-height: 0;
   overflow: auto;

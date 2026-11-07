@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc --noEmit && vite build",
     "dev": "vite --host 127.0.0.1 --port 5175 --strictPort",
-    "format:check": "oxfmt --check --config .oxfmtrc.jsonc phoenix-src dashboard bootstrap.ts scripts vite.config.ts tsconfig.json package.json index.html",
+    "format:check": "oxfmt --check --config .oxfmtrc.jsonc phoenix-src dashboard settings bootstrap.ts scripts vite.config.ts tsconfig.json package.json index.html",
     "manifest:update": "node scripts/source-manifest.mjs --update",
     "preview": "vite preview --host 127.0.0.1 --port 5175 --strictPort",
     "test:dashboard": "node --test dashboard/metrics.test.mjs",

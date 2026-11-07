@@ -9,7 +9,7 @@
 ## 保留与裁剪
 
 - 保留：项目卡片/表格、项目搜索、时间范围、Trace 表格及展开、排序/分页、原版详情抽屉、节点选择、树搜索/折叠、耗时及 Token/费用、Info/Attributes/Events、输入输出复制与显示模式。
-- 移除：Datasets/Experiments、Evaluators、Prompts、Playground、Chat/PXI、Dashboards、设置和 API 浏览页的路由与导航；项目创建/管理操作；项目中的 Spans/Sessions/Metrics/Config 标签。
+- 移除：Datasets/Experiments、Evaluators、Prompts、Playground、Chat/PXI、Dashboards、原版管理设置和 API 浏览页的路由与导航；项目创建/管理操作；项目中的 Spans/Sessions/Metrics/Config 标签。
 - 移除：列表上方多图看板、DSL/自然语言筛选、动态列选择、批量操作及标注列；详情中的标注/Notes、导入数据集、Playground、下载与会话跳转入口。
 - 保留必要的共用样式、格式化、Relay artifacts 和部分读取元数据的查询，方便原页面运行。裁剪不表示后台 Phoenix 服务也已精简。
 
@@ -42,6 +42,10 @@ pnpm dev
 
 ## 体验步骤
 
+### 设置与主题
+
+从侧栏底部打开 [设置](http://127.0.0.1:5175/settings)，在「外观」选择浅色或深色。主题立即应用到全局，选择保存在当前浏览器；没有已保存的偏好时使用深色。全局看板的指标、图表和状态文字随主题调整配色。
+
 ### 全局指标看板
 
 打开 [全局看板](http://127.0.0.1:5175/dashboard?timeRangeKey=7d)，也可通过侧栏进入；根路径默认跳转到看板。
@@ -65,7 +69,7 @@ pnpm dev
 4. 拖动详情抽屉边缘和树/节点详情之间的分隔线。上游树宽小于 500px 时隐藏时间条，小于 300px 时进一步隐藏指标与折叠控件；要看时间条，请把树区域拉宽。
 5. 返回 Projects，打开无数据的 `default` 项目检查空列表。
 
-`local-agent-demo` 是之前写入 Phoenix 数据库的三条合成示例，模型名含 `synthetic-demo-no-api-call`；不是团队真实 Agent 的采集结果，也不会调用模型。若看不到旧数据，调整时间范围。另一台电脑的空数据库需要自行写入测试 Trace。
+`local-agent-demo` 包含写入本机 Phoenix 数据库的合成示例，模型名含 `synthetic-demo-no-api-call`。如果「最近 7 天」为空，可以从右上角改选 `Last Month`。也可以在本机 `phoenix-local` 目录执行 `python .\seed_demo.py`，向示例项目追加 3 条当前时间的合成调用。脚本使用本地 Phoenix 容器，无需模型 API Key。其他机器的空数据库也可以用同样方式写入测试 Trace。
 
 团队数据接入的最新字段差异、处理层输出样例和待确认事项见 [接入准备](INTEGRATION.md)。该材料是联调提案，当前页面尚未切换到团队接口。
 
@@ -88,9 +92,10 @@ pnpm preview
 
 ```text
 dashboard/                    # 新增看板、读取和聚合逻辑及聚合测试
+settings/                     # 外观设置页，使用原 Phoenix 主题
 phoenix-src/
   App.tsx / GlobalStyles.tsx   # 原应用、主题与设计基础
-  Routes.tsx                  # 全局看板及 Projects → Traces → Trace
+  Routes.tsx                  # 全局看板、设置及 Projects → Traces → Trace
   pages/projects/             # 原版项目入口
   pages/project/              # 裁剪后的原版列表及时间范围
   pages/trace/                # 原版详情、节点输入输出和属性
