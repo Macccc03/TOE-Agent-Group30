@@ -1,0 +1,196 @@
+/* ==========================================================================
+   TOE Agent frontend — presentation layer
+   Visual polish and motion only. No behavior, data, or routing changes.
+   Imported once from bootstrap.ts so it also covers the Phoenix shell.
+   ========================================================================== */
+
+:root {
+  --toe-accent: #54c5b7;
+  --toe-accent-strong: #7de0d3;
+  --toe-accent-soft: rgba(84, 197, 183, 0.12);
+  --toe-danger: #ef827c;
+  --toe-amber: #f2b766;
+  --toe-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --toe-radius: 12px;
+  --toe-radius-sm: 8px;
+}
+
+.theme--light {
+  --toe-accent: #0f766e;
+  --toe-accent-strong: #115e59;
+  --toe-accent-soft: rgba(15, 118, 110, 0.1);
+  --toe-danger: #b42318;
+  --toe-amber: #a16207;
+}
+
+/* ---------- Shared shell ---------- */
+
+body {
+  font-feature-settings: "cv11", "ss01";
+}
+
+[data-testid="content"] {
+  background-image:
+    radial-gradient(
+      circle at 16% -8%,
+      var(--toe-accent-soft),
+      transparent 32rem
+    ),
+    linear-gradient(180deg, transparent 0, transparent 18rem, transparent 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.top-navbar {
+  border-bottom: 1px solid var(--global-border-color-default);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.top-navbar a,
+.top-navbar .breadcrumb a {
+  transition: color 160ms var(--toe-ease);
+}
+
+.top-navbar .breadcrumb a:hover {
+  color: var(--toe-accent);
+}
+
+[data-testid="application-side-navigation"] nav a.active {
+  background: linear-gradient(
+    90deg,
+    var(--toe-accent-soft),
+    rgba(84, 197, 183, 0.02)
+  );
+  box-shadow: inset 2px 0 0 var(--toe-accent);
+  color: var(--global-text-color-900);
+}
+
+[data-testid="application-side-navigation"] nav a:not(.active):hover {
+  box-shadow: inset 2px 0 0 var(--global-border-color-default);
+}
+
+[data-testid="application-side-navigation"] nav a {
+  transition:
+    color 160ms var(--toe-ease),
+    background-color 160ms var(--toe-ease),
+    box-shadow 160ms var(--toe-ease);
+}
+
+/* Keep focus visible and on-brand. */
+:focus-visible {
+  outline: 2px solid var(--toe-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--toe-accent-soft);
+  color: var(--global-text-color-900);
+}
+
+/* Slim, quiet scrollbars for the analysis surfaces. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--global-color-gray-300) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--global-color-gray-300);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--global-color-gray-400);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ---------- Motion primitives ---------- */
+
+@keyframes toe-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toe-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toe-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toe-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 var(--toe-accent-soft);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 4px transparent;
+  }
+}
+
+@keyframes toe-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes toe-shimmer {
+  from {
+    background-position: -180% 0;
+  }
+  to {
+    background-position: 180% 0;
+  }
+}
+
+@keyframes toe-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes toe-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

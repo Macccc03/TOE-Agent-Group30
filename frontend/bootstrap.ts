@@ -1,3 +1,8 @@
+// Presentation-only polish for the tracing shell. This file must stay free of
+// data, routing, or behavior changes; it is loaded before the Phoenix app so
+// the shared surfaces and motion primitives are available on every route.
+import "./polish/global.css";
+
 // Phoenix requires server-injected configuration before importing its modules.
 // Keep a useful message if that local server is not running.
 if (window.Config) {

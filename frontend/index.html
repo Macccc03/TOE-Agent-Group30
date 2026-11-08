@@ -12,6 +12,18 @@
       rel="stylesheet"
     />
     <script src="/modernizr.js"></script>
+    <style>
+      /* Paint the product surface before the React bundle resolves the theme,
+         so a refresh does not flash a white page in dark mode. */
+      html {
+        background: #0e0e0e;
+        color-scheme: dark;
+      }
+      html:has(body.theme--light) {
+        background: #ffffff;
+        color-scheme: light;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

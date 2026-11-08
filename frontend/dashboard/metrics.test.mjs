@@ -73,6 +73,26 @@ test("日趋势总数等于调用量，P95 使用最近秩法", () => {
   assert.equal(p95([]), null);
 });
 
+test("成功率趋势排除进行中的调用，只有进行中时没有成功率", () => {
+  const start = Date.parse("2026-11-04T10:00:00+08:00");
+  const traces = getTraces([
+    span({ statusCode: "ERROR" }),
+    span({ trace: { traceId: "pending-1" }, endTime: null }),
+    span({
+      trace: { traceId: "pending-2" },
+      startTime: "2026-11-04T11:00:00+08:00",
+      endTime: null,
+    }),
+  ]);
+
+  assert.deepEqual(
+    getTrend(traces, start, start + 60 * 60 * 1000).map(
+      (bin) => bin.successRate
+    ),
+    [0, null]
+  );
+});
+
 test("工具分布只统计 Phoenix 小写 tool 类型，排除检索与 Agent", () => {
   assert.deepEqual(
     getTools([
