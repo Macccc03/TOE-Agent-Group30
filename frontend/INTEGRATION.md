@@ -43,6 +43,6 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:6060/api/spans `
   -ContentType 'application/json; charset=utf-8' -Body (ConvertTo-Json -InputObject $spans -Depth 6)
 ```
 
-刷新[全局看板](http://127.0.0.1:5175/dashboard?timeRangeKey=7d)，点击最近调用即可打开详情，也可以从 Tracing 的「本地项目」进入。接口详情见[团队 API 文档](http://127.0.0.1:6060/docs)。回归检查用 `python -m pytest -q tests/test_frontend_integration.py`。
+刷新[全局看板](http://127.0.0.1:5175/dashboard?timeRangeKey=7d)，点击最近调用即可打开详情，也可以从 Tracing 的「本地项目」进入。接口详情见[团队 API 文档](http://127.0.0.1:6060/docs)。
 
 现有 DeepSeek 探针仍向 Phoenix OTLP 端点发送数据。用上面的 REST 接口验证的是团队处理、存储和展示这段链路，真实探针接入团队服务需另行对接。
