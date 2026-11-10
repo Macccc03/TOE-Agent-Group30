@@ -4,16 +4,16 @@
 """
 
 from storage.queries.queries import (
-    query_spans_by_trace_id,
-    query_recent_traces,
     query_dashboard_metrics,
+    query_recent_traces,
     query_span_by_id,
+    query_spans_by_trace_id,
 )
 
 __all__ = [
-    "query_spans_by_trace_id",
-    "query_recent_traces",
     "query_dashboard_metrics",
+    "query_recent_traces",
     "query_span_by_id",
+    "query_spans_by_trace_id",
 ]
 

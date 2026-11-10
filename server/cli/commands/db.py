@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Phoenix 命令行接口命令处理器 (CLI Command): db.py
 ================================================================================
@@ -9,7 +8,7 @@ import asyncio
 from argparse import SUPPRESS, Namespace
 from typing import TYPE_CHECKING
 
-from server.config import get_env_database_connection_str
+from config import get_env_database_connection_str
 from storage.engines import create_engine
 
 if TYPE_CHECKING:

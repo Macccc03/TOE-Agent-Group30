@@ -137,9 +137,9 @@ def _select_tier(model_config: dict, input_tokens: int, reference_time: Optional
 # =====================================================================
 
 def calculate_cost(
-    model_name: str,
-    prompt_tokens: int,
-    completion_tokens: int,
+    model_name: Optional[str] = None,
+    prompt_tokens: int = 0,
+    completion_tokens: int = 0,
     cache_hit_tokens: int = 0,
     reference_time: Optional[datetime] = None,
 ) -> float:

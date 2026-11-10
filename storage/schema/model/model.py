@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+
 
 @dataclass
 class ProcessedSpanRecord:
@@ -14,7 +14,7 @@ class ProcessedSpanRecord:
     【所属链路 ID (UUID)】：对应数据库 `spans.trace_id`，创建索引以支持毫秒级整链批量点查。
     """
 
-    parent_id: Optional[str]
+    parent_id: str | None
     """
     【父步骤 ID】：对应数据库 `spans.parent_id`。建树算法据此建立树形层次关联。
     """
@@ -93,7 +93,7 @@ class ProcessedSpanRecord:
     【标准化状态码】："OK" | "ERROR"。
     """
 
-    error_message: Optional[str]
+    error_message: str | None
     """
     【错误详情文本】：无错误时为 None，发生异常时记录堆栈信息。
     """

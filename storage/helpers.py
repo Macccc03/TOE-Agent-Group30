@@ -1,5 +1,6 @@
 from enum import Enum
-from typing import Any, Literal
+from typing import Literal
+
 from typing_extensions import assert_never
 
 SupportedSQLDialectName = Literal["postgresql", "sqlite"]
@@ -30,11 +31,11 @@ class SupportedSQLDialect(Enum):
         assert_never(self)
 
     @classmethod
-    def _missing_(cls, v: Any) -> "SupportedSQLDialect":
+    def _missing_(cls, value: object) -> "SupportedSQLDialect":
         """容错解析函数：支持大小写不敏感的方言字符串输入。
 
         例如传入 "PostgreSQL"、"POSTGRESQL" 或 "SQLite" 时，均能正确映射至对应的枚举成员。
         """
-        if isinstance(v, str) and v and v.isascii() and not v.islower():
-            return cls(v.lower())
-        raise ValueError(f"`{v}` is not a supported SQL backend/dialect.")
+        if isinstance(value, str) and value and value.isascii() and not value.islower():
+            return cls(value.lower())
+        raise ValueError(f"`{value}` is not a supported SQL backend/dialect.")

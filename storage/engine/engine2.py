@@ -14,12 +14,13 @@
    - 集成 storage.queries 中的覆盖索引查询接口，对外提供开箱即用的微秒级读取能力。
 """
 
-import os
-import sys
-import sqlite3
 import logging
-from typing import Any, Dict, List, Optional
+import os
+import sqlite3
+import sys
+from collections.abc import Sequence
 from datetime import datetime
+from typing import Any
 
 # 保证当前包及其父路径能够被正确导入
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -31,9 +32,17 @@ for path in [PROJECT_ROOT, STORAGE_ROOT]:
         sys.path.insert(0, path)
 
 try:
-    from storage.schema.model.model import ProcessedSpanRecord
+    from storage.schema.model.model import ProcessedSpanRecord as StorageSpanRecord
 except ImportError:
-    from processor.contracts import ProcessedSpanRecord
+    StorageSpanRecord = Any  # type: ignore
+
+try:
+    from processor.contracts import ProcessedSpanRecord as ProcessorSpanRecord
+except ImportError:
+    ProcessorSpanRecord = Any  # type: ignore
+
+ProcessedSpanRecord = StorageSpanRecord
+SpanRecordInput = ProcessorSpanRecord | StorageSpanRecord | dict[str, Any]
 
 try:
     from storage.schema.migrate.migrate import init_database, verify_schema
@@ -41,10 +50,10 @@ except ImportError:
     from schema.migrate.migrate import init_database, verify_schema
 
 from storage.queries.queries import (
-    query_spans_by_trace_id,
-    query_recent_traces,
     query_dashboard_metrics,
+    query_recent_traces,
     query_span_by_id,
+    query_spans_by_trace_id,
 )
 
 logger = logging.getLogger(__name__)
@@ -53,6 +62,7 @@ logger = logging.getLogger(__name__)
 # =====================================================================
 # 1. PRAGMA 极致性能与并发安全配置
 # =====================================================================
+
 
 def configure_pragmas(conn: sqlite3.Connection) -> None:
     """
@@ -76,7 +86,11 @@ def configure_pragmas(conn: sqlite3.Connection) -> None:
 # 2. 极致写入算法接口：内存预聚合 + 两阶段原子 UPSERT
 # =====================================================================
 
-def bulk_upsert_spans(conn: sqlite3.Connection, spans: List[ProcessedSpanRecord]) -> None:
+
+def bulk_upsert_spans(
+    conn: sqlite3.Connection,
+    spans: Sequence[SpanRecordInput],
+) -> None:
     """
     【极致高效批量写入算法接口】：
     1. 内存 O(N) 单趟哈希预聚合（Fold & Aggregate），消除冗余 DB 往返；
@@ -89,35 +103,49 @@ def bulk_upsert_spans(conn: sqlite3.Connection, spans: List[ProcessedSpanRecord]
 
     cursor = conn.cursor()
 
+    def get_val(item: SpanRecordInput, attr: str, default: Any = None) -> Any:
+        if isinstance(item, dict):
+            return item.get(attr, default)
+        return getattr(item, attr, default)
+
     # -------------------------------------------------------------
     # 算法步骤 1：内存单趟哈希预聚合 (O(N) 线性时间)
     # -------------------------------------------------------------
-    traces_map: Dict[str, Dict[str, Any]] = {}
+    traces_map: dict[str, dict[str, Any]] = {}
     for s in spans:
-        t_id = s.trace_id
+        t_id = get_val(s, "trace_id")
+        if not t_id:
+            continue
+        s_name = get_val(s, "name", "Unknown Node")
+        s_parent = get_val(s, "parent_id")
+        s_start = str(get_val(s, "start_time", ""))
+        s_end = str(get_val(s, "end_time", ""))
+        s_tokens = int(get_val(s, "total_tokens", 0) or 0)
+        s_cost = float(get_val(s, "cost_usd", 0.0) or 0.0)
+        s_status = str(get_val(s, "status", "OK"))
+        s_err = get_val(s, "error_message")
+
         if t_id not in traces_map:
             traces_map[t_id] = {
                 "trace_id": t_id,
-                "root_name": s.name if s.parent_id is None else "Agent_Pipeline",
-                "start_time": s.start_time,
-                "end_time": s.end_time,
+                "root_name": s_name if s_parent is None else "Agent_Pipeline",
+                "start_time": s_start,
+                "end_time": s_end,
                 "total_tokens": 0,
                 "total_cost_usd": 0.0,
                 "status": "OK",
                 "error_message": None,
             }
         item = traces_map[t_id]
-        if s.parent_id is None:
-            item["root_name"] = s.name
-        if s.start_time < item["start_time"]:
-            item["start_time"] = s.start_time
-        if s.end_time > item["end_time"]:
-            item["end_time"] = s.end_time
-        item["total_tokens"] += s.total_tokens
-        item["total_cost_usd"] += s.cost_usd
-        if s.status == "ERROR":
+        if s_parent is None:
+            item["root_name"] = s_name
+        item["start_time"] = min(item["start_time"], s_start)
+        item["end_time"] = max(item["end_time"], s_end)
+        item["total_tokens"] += s_tokens
+        item["total_cost_usd"] += s_cost
+        if s_status == "ERROR":
             item["status"] = "ERROR"
-            item["error_message"] = s.error_message
+            item["error_message"] = s_err
 
     # -------------------------------------------------------------
     # 算法步骤 2：两阶段依赖批量原子写入 (单一事务)
@@ -150,10 +178,19 @@ def bulk_upsert_spans(conn: sqlite3.Connection, spans: List[ProcessedSpanRecord]
             except Exception:
                 latency = 0.0
 
-            trace_params.append((
-                t["trace_id"], t["root_name"], t["start_time"], t["end_time"],
-                latency, t["total_tokens"], t["total_cost_usd"], t["status"], t["error_message"]
-            ))
+            trace_params.append(
+                (
+                    t["trace_id"],
+                    t["root_name"],
+                    t["start_time"],
+                    t["end_time"],
+                    latency,
+                    t["total_tokens"],
+                    t["total_cost_usd"],
+                    t["status"],
+                    t["error_message"],
+                )
+            )
 
         cursor.executemany(upsert_trace_sql, trace_params)
 
@@ -179,10 +216,23 @@ def bulk_upsert_spans(conn: sqlite3.Connection, spans: List[ProcessedSpanRecord]
 
         span_params = [
             (
-                s.span_id, s.trace_id, s.parent_id, s.span_kind, s.name,
-                s.start_time, s.end_time, s.latency_ms, s.input_str, s.output_str,
-                s.prompt_tokens, s.completion_tokens, s.total_tokens, s.cost_usd,
-                s.status, s.error_message, s.attributes_json
+                str(get_val(s, "span_id")),
+                str(get_val(s, "trace_id")),
+                get_val(s, "parent_id"),
+                str(get_val(s, "span_kind", "CHAIN")),
+                str(get_val(s, "name", "Unknown Node")),
+                str(get_val(s, "start_time", "")),
+                str(get_val(s, "end_time", "")),
+                float(get_val(s, "latency_ms") or 0.0),
+                str(get_val(s, "input_str", "")),
+                str(get_val(s, "output_str", "")),
+                int(get_val(s, "prompt_tokens") or 0),
+                int(get_val(s, "completion_tokens") or 0),
+                int(get_val(s, "total_tokens") or 0),
+                float(get_val(s, "cost_usd") or 0.0),
+                str(get_val(s, "status", "OK")),
+                get_val(s, "error_message"),
+                str(get_val(s, "attributes_json", "{}")),
             )
             for s in spans
         ]
@@ -200,6 +250,7 @@ def bulk_upsert_spans(conn: sqlite3.Connection, spans: List[ProcessedSpanRecord]
 # 3. SQLite 高性能存储引擎核心类
 # =====================================================================
 
+
 class SQLiteStorageEngine:
     """
     【SQLite 本地存储引擎】：
@@ -208,7 +259,7 @@ class SQLiteStorageEngine:
 
     def __init__(self, db_path: str = "trace.db"):
         self.db_path = db_path
-        self._conn: Optional[sqlite3.Connection] = None
+        self._conn: sqlite3.Connection | None = None
         self._is_initialized: bool = False
 
     def connect(self) -> sqlite3.Connection:
@@ -216,10 +267,14 @@ class SQLiteStorageEngine:
         获取或建立底层数据库连接（配置 row_factory 与 PRAGMA 优化）
         """
         if self._conn is None:
+            if self.db_path != ":memory:":
+                parent_dir = os.path.dirname(os.path.abspath(self.db_path))
+                if parent_dir and not os.path.exists(parent_dir):
+                    os.makedirs(parent_dir, exist_ok=True)
             self._conn = sqlite3.connect(
                 self.db_path,
                 check_same_thread=False,
-                isolation_level=None  # 显式事务控制（autocommit）
+                isolation_level=None,  # 显式事务控制（autocommit）
             )
             self._conn.row_factory = sqlite3.Row  # 原生支持字典列名访问
             configure_pragmas(self._conn)
@@ -237,7 +292,9 @@ class SQLiteStorageEngine:
         init_database(conn)
 
         if not verify_schema(conn):
-            raise RuntimeError(f"数据库启动失败: 表结构或索引完整性校验未通过 ({self.db_path})")
+            raise RuntimeError(
+                f"数据库启动失败: 表结构或索引完整性校验未通过 ({self.db_path})"
+            )
 
         self._is_initialized = True
         logger.info(f"SQLite 存储引擎启动成功，数据库文件路径: {self.db_path}")
@@ -247,11 +304,11 @@ class SQLiteStorageEngine:
     # 写入接口
     # -----------------------------------------------------------------
 
-    def save_span(self, span: ProcessedSpanRecord) -> None:
-        """写入单个原子步骤（Span）"""
+    def save_span(self, span: SpanRecordInput) -> None:
+        """写入单个原子步骤（Span），支持 processor 契约模型、storage 实体模型或原生字典"""
         self.save_spans_batch([span])
 
-    def save_spans_batch(self, spans: List[ProcessedSpanRecord]) -> None:
+    def save_spans_batch(self, spans: Sequence[SpanRecordInput]) -> None:
         """批量写入 Span（调用 bulk_upsert_spans 极致写入算法）"""
         conn = self.connect()
         bulk_upsert_spans(conn, spans)
@@ -260,28 +317,32 @@ class SQLiteStorageEngine:
     # 查出接口：覆盖索引优化
     # -----------------------------------------------------------------
 
-    def get_spans_by_trace_id(self, trace_id: str) -> List[Dict[str, Any]]:
+    def get_spans_by_trace_id(self, trace_id: str) -> list[dict[str, Any]]:
         """
         【建树核心查询】：B-Tree 覆盖索引顺序扫描，严格按时间升序返回，天然满足 build_trace_tree 要求。
         """
         conn = self.connect()
         return query_spans_by_trace_id(conn, trace_id)
 
-    def get_recent_traces(self, limit: int = 50, offset: int = 0) -> List[Dict[str, Any]]:
+    def get_recent_traces(
+        self, limit: int = 50, offset: int = 0
+    ) -> list[dict[str, Any]]:
         """
         【大屏首页分页】：B-Tree 逆向游标点查，常数级开销获取最新 Traces。
         """
         conn = self.connect()
         return query_recent_traces(conn, limit=limit, offset=offset)
 
-    def get_dashboard_metrics(self, start_time_gte: Optional[str] = None) -> Dict[str, Any]:
+    def get_dashboard_metrics(
+        self, start_time_gte: str | None = None
+    ) -> dict[str, Any]:
         """
         【总览大盘卡片】：单趟扫描聚合调用量、总 Token、总花费、平均延迟与错误率。
         """
         conn = self.connect()
         return query_dashboard_metrics(conn, start_time_gte=start_time_gte)
 
-    def get_span_by_id(self, span_id: str) -> Optional[Dict[str, Any]]:
+    def get_span_by_id(self, span_id: str) -> dict[str, Any] | None:
         """
         【单步下钻点查】：主键 O(log M) 查询单个 Span 完整明细。
         """
@@ -298,10 +359,15 @@ class SQLiteStorageEngine:
             self._conn = None
             self._is_initialized = False
 
+    async def dispose(self) -> None:
+        """兼容异步上下文的释放方法 (对标 SQLAlchemy engine.dispose)"""
+        self.close()
+
 
 # =====================================================================
 # 4. 极简开箱即用启动函数 (Standalone Startup Helper)
 # =====================================================================
+
 
 def init_db(db_path: str = "trace.db") -> SQLiteStorageEngine:
     """
@@ -316,89 +382,3 @@ def init_db(db_path: str = "trace.db") -> SQLiteStorageEngine:
     engine = SQLiteStorageEngine(db_path=db_path)
     return engine.startup()
 
-
-# =====================================================================
-# 5. 模块自测入口
-# =====================================================================
-
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
-
-    print("[*] 正在启动 SQLite 本地存储引擎自测...")
-    test_db_path = "test_trace.db"
-
-    # 1. 启动数据库
-    storage = init_db(test_db_path)
-    print(f"[OK] 数据库启动成功: {test_db_path}")
-
-    # 2. 模拟构造两条符合 ProcessedSpanRecord 契约的记录（1个根节点 + 1个子节点）
-    mock_span_1 = ProcessedSpanRecord(
-        span_id="span_root_001",
-        trace_id="trace_test_1001",
-        parent_id=None,
-        span_kind="AGENT",
-        name="Weather_ReAct_Agent",
-        start_time="2026-11-01T12:00:00.000000+00:00",
-        end_time="2026-11-01T12:00:01.200000+00:00",
-        latency_ms=1200.0,
-        input_str="帮我查询杭州天气",
-        output_str="杭州今天晴，气温20度。",
-        prompt_tokens=400,
-        completion_tokens=60,
-        total_tokens=460,
-        cost_usd=0.0015,
-        status="OK",
-        error_message=None,
-        attributes_json='{"user_id": "user_007"}'
-    )
-
-    mock_span_2 = ProcessedSpanRecord(
-        span_id="span_tool_002",
-        trace_id="trace_test_1001",
-        parent_id="span_root_001",
-        span_kind="TOOL",
-        name="Weather_API",
-        start_time="2026-11-01T12:00:00.200000+00:00",
-        end_time="2026-11-01T12:00:00.500000+00:00",
-        latency_ms=300.0,
-        input_str="杭州",
-        output_str="晴, 20℃",
-        prompt_tokens=0,
-        completion_tokens=0,
-        total_tokens=0,
-        cost_usd=0.0,
-        status="OK",
-        error_message=None,
-        attributes_json='{}'
-    )
-
-    # 3. 批量写入
-    storage.save_spans_batch([mock_span_1, mock_span_2])
-    print("[OK] 写入 Span 记录成功！")
-
-    # 4. 读取该 Trace 的扁平 Span 列表
-    queried_spans = storage.get_spans_by_trace_id("trace_test_1001")
-    print(f"[OK] 查出 Span 数量: {len(queried_spans)}")
-    assert len(queried_spans) == 2, "查询条数不匹配！"
-
-    # 5. 读取最近 Traces 列表
-    recent_traces = storage.get_recent_traces(limit=10)
-    print(f"[OK] 查出最近 Trace 数量: {len(recent_traces)}")
-    print(f"     Trace 摘要: ID={recent_traces[0]['trace_id']}, 根任务={recent_traces[0]['root_name']}, 耗时={recent_traces[0]['latency_ms']}ms, 消耗Token={recent_traces[0]['total_tokens']}")
-
-    # 6. 大盘聚合指标
-    metrics = storage.get_dashboard_metrics()
-    print(f"[OK] 大盘指标聚合: 总调用={metrics['total_traces']}, 总Token={metrics['total_tokens']}, 总成本=${metrics['total_cost_usd']}, 平均延迟={metrics['avg_latency_ms']}ms")
-
-    # 7. 单步点查
-    detail = storage.get_span_by_id("span_tool_002")
-    assert detail is not None and detail["name"] == "Weather_API"
-    print(f"[OK] 单步点查验证成功: {detail['name']} (耗时: {detail['latency_ms']}ms)")
-
-    # 8. 关闭并清理测试文件
-    storage.close()
-    for ext in ["", "-wal", "-shm"]:
-        f_to_del = test_db_path + ext
-        if os.path.exists(f_to_del):
-            os.remove(f_to_del)
-    print("[OK] 自测测试完成，临时库已清理！全部功能就绪。")

@@ -1,0 +1,15 @@
+# Ruff 统一代码检查与格式化配置
+target-version = "py310"
+line-length = 100
+
+[lint]
+# 开启标准规则以及 RUF022 (__all__ 自动排序规则)
+extend-select = ["I", "RUF022"]
+
+# 将 RUF022 (__all__ 排序) 标记为 safe fix
+# 配合 VS Code / Antigravity 的 "source.fixAll"，每次保存 (Ctrl+S) 时均会自动自动按 isort 规范排序 __all__
+extend-safe-fixes = ["RUF022"]
+
+[format]
+quote-style = "double"
+indent-style = "space"

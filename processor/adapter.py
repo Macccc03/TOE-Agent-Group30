@@ -17,18 +17,18 @@ def probe_to_raw_dict(probe_json: Dict[str, Any]) -> Dict[str, Any]:
     """将成员1的探针JSON转为内部字典"""
     return {
         "trace_id": probe_json.get("traceId") or probe_json.get("trace_id", "unknown_trace"),
-        "span_id": probe_json.get("spanId") or probe_json.get("id", "unknown_span"),
-        "parent_id": probe_json.get("parentId"),
+        "span_id": probe_json.get("spanId") or probe_json.get("span_id") or probe_json.get("id", "unknown_span"),
+        "parent_id": probe_json.get("parentId") or probe_json.get("parent_id"),
         "name": probe_json.get("name", "Unknown Node"),
-        "span_kind": probe_json.get("kind") or probe_json.get("spanKind", "CHAIN"),
-        "start_time": probe_json.get("startTime"),
-        "end_time": probe_json.get("endTime"),
-        "input_data": probe_json.get("input", ""),
-        "output_data": probe_json.get("output", ""),
-        "model_name": probe_json.get("model", None),
-        "raw_tokens": probe_json.get("tokens", {}),
+        "span_kind": probe_json.get("kind") or probe_json.get("spanKind") or probe_json.get("span_kind", "CHAIN"),
+        "start_time": probe_json.get("startTime") or probe_json.get("start_time"),
+        "end_time": probe_json.get("endTime") or probe_json.get("end_time"),
+        "input_data": probe_json.get("input") if "input" in probe_json else probe_json.get("input_data", ""),
+        "output_data": probe_json.get("output") if "output" in probe_json else probe_json.get("output_data", ""),
+        "model_name": probe_json.get("model") or probe_json.get("model_name", None),
+        "raw_tokens": probe_json.get("tokens") or probe_json.get("raw_tokens", {}),
         "status": "ERROR" if probe_json.get("isError") else probe_json.get("status", "OK"),
-        "error_message": probe_json.get("errorMessage"),
+        "error_message": probe_json.get("errorMessage") or probe_json.get("error_message"),
         "metadata": probe_json
     }
 
