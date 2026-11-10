@@ -17,10 +17,10 @@
 """
 
 import sqlite3
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 
-def query_spans_by_trace_id(conn: sqlite3.Connection, trace_id: str) -> List[Dict[str, Any]]:
+def query_spans_by_trace_id(conn: sqlite3.Connection, trace_id: str) -> list[dict[str, Any]]:
     """
     【整链拓扑建树专用读取接口】：
     - 算法: 命中复合覆盖索引 idx_spans_trace_time (trace_id, start_time ASC)。
@@ -42,7 +42,7 @@ def query_spans_by_trace_id(conn: sqlite3.Connection, trace_id: str) -> List[Dic
     return [dict(row) for row in rows]
 
 
-def query_recent_traces(conn: sqlite3.Connection, limit: int = 50, offset: int = 0) -> List[Dict[str, Any]]:
+def query_recent_traces(conn: sqlite3.Connection, limit: int = 50, offset: int = 0) -> list[dict[str, Any]]:
     """
     【大屏首页分页读取接口】：
     - 算法: 命中 idx_traces_start_time (start_time DESC) 倒序索引，常数级游标扫描。
@@ -61,7 +61,7 @@ def query_recent_traces(conn: sqlite3.Connection, limit: int = 50, offset: int =
     return [dict(row) for row in rows]
 
 
-def query_dashboard_metrics(conn: sqlite3.Connection, start_time_gte: Optional[str] = None) -> Dict[str, Any]:
+def query_dashboard_metrics(conn: sqlite3.Connection, start_time_gte: str | None = None) -> dict[str, Any]:
     """
     【大屏核心指标卡片聚合接口】：
     - 算法: 一次扫描直接提取总调用数、总消耗、平均延迟与错误率，杜绝多次聚合。
@@ -114,7 +114,7 @@ def query_dashboard_metrics(conn: sqlite3.Connection, start_time_gte: Optional[s
     }
 
 
-def query_span_by_id(conn: sqlite3.Connection, span_id: str) -> Optional[Dict[str, Any]]:
+def query_span_by_id(conn: sqlite3.Connection, span_id: str) -> dict[str, Any] | None:
     """
     【侧边栏抽屉详情点查】：
     - 算法: 主键 O(log M) 极速点查。

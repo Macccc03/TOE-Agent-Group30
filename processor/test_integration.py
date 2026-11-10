@@ -8,7 +8,13 @@
 
 from datetime import datetime, timezone, timedelta
 import json
+import sys
+from pathlib import Path
 from dataclasses import asdict
+
+_project_root = str(Path(__file__).resolve().parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 
 # 引入我们写的核心组件
 from processor.contracts import RawSpanData

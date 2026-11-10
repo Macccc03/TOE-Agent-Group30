@@ -8,8 +8,8 @@
 3. 遵循与数据处理中枢（processor）一致的数据契约（ProcessedSpanRecord）。
 """
 
-import sqlite3
 import logging
+import sqlite3
 
 logger = logging.getLogger(__name__)
 

@@ -11,9 +11,24 @@
 """
 from datetime import datetime, timedelta
 from dataclasses import asdict
-from contracts import RawSpanData
-from ingress import process_ingress
-from egress import build_trace_tree
+import os
+import sys
+from pathlib import Path
+
+_current_dir = Path(__file__).resolve().parent
+_project_root = _current_dir.parent
+for _p in (str(_project_root), str(_current_dir)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    from processor.contracts import RawSpanData
+    from processor.ingress import process_ingress
+    from processor.egress import build_trace_tree
+except ImportError:
+    from contracts import RawSpanData
+    from ingress import process_ingress
+    from egress import build_trace_tree
 
 def run_test():
     print("🚀 开始测试成员 2 的数据流...")
