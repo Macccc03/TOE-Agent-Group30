@@ -27,6 +27,37 @@
 - `examples/`：典型 Agent 运行场景（RAG、ReAct 单 Agent、多 Agent 协同）
 - `tests/`：各模块单元测试与全链路闭环测试
 
+## 快速开始与依赖安装
+
+### 1. 后端依赖安装
+推荐使用 Python 3.10+ 虚拟环境：
+```powershell
+# 创建并激活虚拟环境
+python -m venv .venv
+.venv\Scripts\activate
+
+# 一键安装所需清单依赖
+pip install -r requirements.txt
+```
+
+### 2. 运行与验证
+```powershell
+# 运行 processor 数据流测试
+python -m processor.test_processor
+python -m processor.pipeline
+
+# 启动本地一体化可观测服务
+python -m server.main serve --host 127.0.0.1 --port 6006
+```
+
+### 3. 前端启动（可选）
+```powershell
+cd frontend
+pnpm install
+pnpm dev
+# 访问 http://127.0.0.1:5175
+```
+
 ---
 > 详细设计协议与数据契约请参阅：[分工.md](./分工.md)
 
