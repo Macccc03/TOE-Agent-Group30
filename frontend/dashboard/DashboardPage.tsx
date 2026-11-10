@@ -1,6 +1,5 @@
-import { css } from "@emotion/react";
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router";
+import { Link, useLocation, useSearchParams } from "react-router";
 import {
   Bar,
   BarChart,
@@ -18,6 +17,7 @@ import { ChartPanel } from "@phoenix/components/chart/ChartPanel";
 import { ChartResponsiveContainer } from "@phoenix/components/chart/ChartResponsiveContainer";
 import {
   defaultCartesianGridProps,
+  defaultTooltipProps,
   defaultXAxisProps,
   defaultYAxisProps,
 } from "@phoenix/components/chart/defaults";
@@ -28,7 +28,6 @@ import {
   DisclosurePanel,
   DisclosureTrigger,
 } from "@phoenix/components/core/disclosure/Disclosure";
-import { Loading } from "@phoenix/components/core/loading/Loading";
 import { ConnectedTimeRangeSelector } from "@phoenix/components/datetime/ConnectedTimeRangeSelector";
 import {
   useTimeRange,
@@ -40,6 +39,8 @@ import { loadProjects, loadSpans } from "./data";
 import type { Project, Span } from "./data";
 import { getTools, getTraces, getTrend, summarize } from "./metrics";
 
+import "./dashboard.css";
+
 const number = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 0 });
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -50,26 +51,86 @@ const metric = (value: number | null, formatter: (n: number) => string) =>
   value === null ? "—" : formatter(value);
 const seconds = (value: number) => `${value.toFixed(2)} s`;
 const colors = {
-  calls: "#54c5b7",
-  errors: "#ef827c",
-  average: "#f2b766",
-  p95: "#aeb5c4",
-  tokens: "#aa88d1",
+  calls: "var(--dashboard-calls-color)",
+  errors: "var(--dashboard-errors-color)",
+  average: "var(--dashboard-average-color)",
+  p95: "var(--dashboard-p95-color)",
+  tokens: "var(--dashboard-tokens-color)",
 };
 const tooltipStyle = {
   background: "var(--global-background-color-default)",
   border: "1px solid var(--global-border-color-default)",
-  borderRadius: 4,
+  borderRadius: 9,
   color: "var(--global-text-color-900)",
+  boxShadow: "0 14px 34px rgba(0, 0, 0, 0.28)",
+  fontFamily: "var(--global-font-family-sans)",
+  fontSize: 12,
+  padding: "9px 11px",
 };
 
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(query.matches);
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  return reduced;
+}
+
+function Sparkline({ values }: { values: (number | null)[] }) {
+  const recorded = values.filter(
+    (value): value is number => value !== null && Number.isFinite(value)
+  );
+  if (recorded.length < 2) return null;
+  const min = Math.min(...recorded);
+  const max = Math.max(...recorded);
+  const range = max - min || 1;
+  const points: string[] = [];
+  let lastX = 0;
+  let lastY = 14;
+  values.forEach((value, index) => {
+    if (value === null || !Number.isFinite(value)) return;
+    const x = (index / (values.length - 1)) * 100;
+    const y = 25 - ((value - min) / range) * 21;
+    points.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+    lastX = x;
+    lastY = y;
+  });
+  return (
+    <svg
+      className="sparkline"
+      viewBox="0 0 100 28"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+      <polyline
+        points={points.join(" ")}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
+      />
+      <circle cx={lastX} cy={lastY} r="2" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function DashboardPage() {
+  const location = useLocation();
   const [params, setParams] = useSearchParams();
   const projectId = params.get("project") ?? "all";
   const chartGroup = params.get("charts") ?? "performance";
   const { timeRangeISOStrings, timeRangeNow, refreshLiveTimeRange } =
     useTimeRange();
   const timeSearch = useTimeRangeSearch();
+  const detailParams = new URLSearchParams(timeSearch);
+  detailParams.set("dashboardSearch", location.search);
   const [revision, setRevision] = useState(0);
   const [projects, setProjects] = useState<Project[]>([]);
   const [spans, setSpans] = useState<Span[]>([]);
@@ -77,6 +138,7 @@ export function DashboardPage() {
   const [error, setError] = useState<string | null>(null);
   const [updatedAt, setUpdatedAt] = useState<Date | null>(null);
   const { start, end } = timeRangeISOStrings;
+  const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -110,6 +172,22 @@ export function DashboardPage() {
 
   const traces = useMemo(() => getTraces(spans), [spans]);
   const summary = useMemo(() => summarize(traces), [traces]);
+  const finished = useMemo(
+    () => traces.filter((trace) => trace.status !== "进行中"),
+    [traces]
+  );
+  const failed = useMemo(
+    () => finished.filter((trace) => trace.status === "失败"),
+    [finished]
+  );
+  const averageTokens =
+    summary.tokens !== null && summary.count
+      ? summary.tokens / summary.count
+      : null;
+  const averageCost =
+    summary.cost !== null && summary.count
+      ? summary.cost / summary.count
+      : null;
   const trend = useMemo(
     () =>
       getTrend(
@@ -120,6 +198,26 @@ export function DashboardPage() {
     [traces, start, end, timeRangeNow]
   );
   const tools = useMemo(() => getTools(spans), [spans]);
+  const successRate = summary.successRate;
+  const successTone =
+    successRate === null
+      ? "neutral"
+      : successRate >= 80
+        ? "success"
+        : successRate >= 50
+          ? "average"
+          : "error";
+  const successColor =
+    successRate === null
+      ? undefined
+      : successRate >= 80
+        ? colors.calls
+        : successRate >= 50
+          ? colors.average
+          : colors.errors;
+  const hasResourceTrend = trend.some(
+    (bin) => bin.tokens !== null || bin.cost !== null
+  );
   const updateParam = (key: string, value: string) =>
     setParams(
       (current) => {
@@ -132,33 +230,66 @@ export function DashboardPage() {
   const cards = [
     {
       label: "总调用量",
+      en: "CALLS",
+      tone: "calls",
       value: number.format(summary.count),
       color: undefined,
+      hint: `${projectId === "all" ? `${projects.length} 项目` : "当前项目"} · ${traces.length} 条`,
+      series: trend.map((bin) => bin.calls),
     },
     {
       label: "成功率",
+      en: "SUCCESS",
+      tone: successTone,
       value: metric(summary.successRate, (value) => `${value.toFixed(1)}%`),
-      color: colors.calls,
+      color: successColor,
+      hint:
+        finished.length > 0
+          ? `${finished.length - failed.length} / ${finished.length} 成功`
+          : "暂无已结束调用",
+      series: trend.map((bin) => bin.successRate),
     },
     {
       label: "平均耗时",
+      en: "AVG LATENCY",
+      tone: "average",
       value: metric(summary.average, seconds),
       color: colors.average,
+      hint: `P95 ${metric(summary.p95, seconds)}`,
+      series: trend.map((bin) => bin.average),
     },
     {
       label: "P95 耗时",
+      en: "P95",
+      tone: "p95",
       value: metric(summary.p95, seconds),
-      color: colors.average,
+      color: colors.p95,
+      hint: `平均 ${metric(summary.average, seconds)}`,
+      series: trend.map((bin) => bin.p95),
     },
     {
       label: "总 Token",
+      en: "TOKENS",
+      tone: "tokens",
       value: metric(summary.tokens, number.format),
       color: colors.tokens,
+      hint:
+        averageTokens === null
+          ? "未记录 Token"
+          : `约 ${number.format(averageTokens)} / 次`,
+      series: trend.map((bin) => bin.tokens),
     },
     {
       label: "总费用",
+      en: "COST",
+      tone: "cost",
       value: metric(summary.cost, money.format),
       color: undefined,
+      hint:
+        averageCost === null
+          ? "未记录费用"
+          : `${money.format(averageCost)} / 次`,
+      series: trend.map((bin) => bin.cost),
     },
   ];
 
@@ -167,44 +298,76 @@ export function DashboardPage() {
       <TopNavActions>
         <ConnectedTimeRangeSelector size="S" />
       </TopNavActions>
-      <main css={pageCSS} aria-busy={loading}>
+      <main className="dashboard-page" aria-busy={loading}>
         <header className="dashboard-header">
-          <div>
+          <div className="dashboard-heading">
+            <p className="dashboard-eyebrow">
+              <span className="live-dot" aria-hidden="true" />
+              Agent Observability
+            </p>
             <h1>全局指标看板</h1>
-            <p>跨项目查看 Agent 运行情况</p>
+            <p className="dashboard-subtitle">跨项目查看 Agent 运行情况</p>
           </div>
           <div className="dashboard-controls">
-            <select
-              aria-label="项目范围"
-              value={projectId}
-              onChange={(event) => updateParam("project", event.target.value)}
-            >
-              <option value="all">全部项目</option>
-              {projects.map((project) => (
-                <option key={project.id} value={project.id}>
-                  {project.name}
-                </option>
-              ))}
-            </select>
+            <label className="select-field">
+              <span className="select-field__label">项目范围</span>
+              <span className="select-field__control">
+                <select
+                  aria-label="项目范围"
+                  value={projectId}
+                  onChange={(event) =>
+                    updateParam("project", event.target.value)
+                  }
+                >
+                  <option value="all">全部项目</option>
+                  {projects.map((project) => (
+                    <option key={project.id} value={project.id}>
+                      {project.name}
+                    </option>
+                  ))}
+                </select>
+                <span className="select-field__chevron" aria-hidden="true">
+                  ⌄
+                </span>
+              </span>
+            </label>
             <Button
               size="S"
               isDisabled={loading}
+              className="refresh-button"
               onPress={() => {
                 refreshLiveTimeRange();
                 setRevision((value) => value + 1);
               }}
             >
+              <span
+                className={`refresh-icon${loading ? " is-spinning" : ""}`}
+                aria-hidden="true"
+              >
+                ↻
+              </span>
               刷新
             </Button>
           </div>
         </header>
         {loading ? (
-          <div className="dashboard-message" role="status">
-            <Loading />
-            正在汇总调用数据…
+          <div className="dashboard-loading" role="status">
+            <span className="loading-caption">
+              <span className="loading-spinner" aria-hidden="true" />
+              正在汇总调用数据…
+            </span>
+            <div className="metric-grid">
+              {Array.from({ length: 6 }, (_, index) => (
+                <div key={index} className="skeleton-card" aria-hidden="true" />
+              ))}
+            </div>
+            <div className="skeleton-panel" aria-hidden="true" />
           </div>
         ) : error ? (
-          <div className="dashboard-message" role="alert">
+          <div
+            className="dashboard-message dashboard-message--error"
+            role="alert"
+          >
             {error}
             <Button size="S" onPress={() => setRevision((value) => value + 1)}>
               重试
@@ -214,17 +377,37 @@ export function DashboardPage() {
           <>
             <section className="metric-grid" aria-label="全局指标">
               {cards.map((card) => (
-                <article key={card.label} className="metric-card">
-                  <h2>{card.label}</h2>
+                <article
+                  key={card.label}
+                  className="metric-card"
+                  data-tone={card.tone}
+                >
+                  <div className="metric-card__head">
+                    <h2>{card.label}</h2>
+                    <span className="metric-card__en">{card.en}</span>
+                  </div>
                   <strong style={{ color: card.color }}>{card.value}</strong>
-                  <span>所选时间范围内</span>
+                  <div className="metric-card__foot">
+                    <span className="metric-card__hint">{card.hint}</span>
+                    <span
+                      className="metric-card__spark"
+                      style={card.color ? { color: card.color } : undefined}
+                    >
+                      <Sparkline values={card.series} />
+                    </span>
+                  </div>
                 </article>
               ))}
             </section>
             <div className="data-caption">
-              当前读取本机 Phoenix 数据，示例项目为合成调用。
+              <span className="data-caption__source">
+                <span className="live-dot" aria-hidden="true" />
+                当前读取本机服务中的调用记录。
+              </span>
               {updatedAt && (
-                <span>更新于 {updatedAt.toLocaleTimeString("zh-CN")}</span>
+                <span className="data-caption__time">
+                  更新于 {updatedAt.toLocaleTimeString("zh-CN")}
+                </span>
               )}
             </div>
             <section aria-label="趋势分析" className="analysis-section">
@@ -239,6 +422,7 @@ export function DashboardPage() {
               >
                 <Disclosure id="performance">
                   <DisclosureTrigger>
+                    <span className="group-index">01</span>
                     <span className="group-title">调用表现</span>
                     <span className="group-description">
                       调用量与错误趋势 · 耗时趋势
@@ -263,19 +447,28 @@ export function DashboardPage() {
                                 {...defaultYAxisProps}
                                 allowDecimals={false}
                               />
-                              <Tooltip contentStyle={tooltipStyle} />
-                              <Legend />
+                              <Tooltip
+                                {...defaultTooltipProps}
+                                contentStyle={tooltipStyle}
+                              />
+                              <Legend iconType="circle" iconSize={7} />
                               <Bar
                                 dataKey="calls"
                                 name="调用量"
                                 fill={colors.calls}
-                                isAnimationActive={false}
+                                radius={[4, 4, 0, 0]}
+                                isAnimationActive={!reducedMotion}
+                                animationDuration={700}
+                                animationEasing="ease-out"
                               />
                               <Bar
                                 dataKey="errors"
                                 name="错误数"
                                 fill={colors.errors}
-                                isAnimationActive={false}
+                                radius={[4, 4, 0, 0]}
+                                isAnimationActive={!reducedMotion}
+                                animationDuration={700}
+                                animationEasing="ease-out"
                               />
                             </BarChart>
                           </ChartResponsiveContainer>
@@ -297,25 +490,34 @@ export function DashboardPage() {
                                 tickFormatter={(value: number) => `${value}s`}
                               />
                               <Tooltip
+                                {...defaultTooltipProps}
                                 contentStyle={tooltipStyle}
                                 formatter={(value) =>
                                   `${Number(value).toFixed(2)} s`
                                 }
                               />
-                              <Legend />
+                              <Legend iconType="circle" iconSize={7} />
                               <Line
                                 dataKey="average"
                                 name="平均耗时"
                                 stroke={colors.average}
                                 strokeWidth={2}
-                                isAnimationActive={false}
+                                strokeLinecap="round"
+                                activeDot={{ r: 3 }}
+                                isAnimationActive={!reducedMotion}
+                                animationDuration={700}
+                                animationEasing="ease-out"
                               />
                               <Line
                                 dataKey="p95"
                                 name="P95 耗时"
                                 stroke={colors.p95}
                                 strokeWidth={2}
-                                isAnimationActive={false}
+                                strokeLinecap="round"
+                                activeDot={{ r: 3 }}
+                                isAnimationActive={!reducedMotion}
+                                animationDuration={700}
+                                animationEasing="ease-out"
                               />
                             </LineChart>
                           </ChartResponsiveContainer>
@@ -326,6 +528,7 @@ export function DashboardPage() {
                 </Disclosure>
                 <Disclosure id="resources">
                   <DisclosureTrigger>
+                    <span className="group-index">02</span>
                     <span className="group-title">资源使用</span>
                     <span className="group-description">
                       Token 与费用趋势 · 工具调用分布
@@ -338,53 +541,67 @@ export function DashboardPage() {
                           title="Token 与费用趋势"
                           subtitle="仅汇总已记录值，费用单位：USD"
                         >
-                          <ChartResponsiveContainer>
-                            <ComposedChart data={trend}>
-                              <CartesianGrid {...defaultCartesianGridProps} />
-                              <XAxis
-                                {...defaultXAxisProps}
-                                dataKey="label"
-                                minTickGap={28}
-                              />
-                              <YAxis
-                                {...defaultYAxisProps}
-                                yAxisId="tokens"
-                                tickFormatter={(value: number) =>
-                                  number.format(value)
-                                }
-                              />
-                              <YAxis
-                                {...defaultYAxisProps}
-                                yAxisId="cost"
-                                orientation="right"
-                                tickFormatter={(value: number) => `$${value}`}
-                              />
-                              <Tooltip
-                                contentStyle={tooltipStyle}
-                                formatter={(value, name) =>
-                                  name === "费用"
-                                    ? money.format(Number(value))
-                                    : number.format(Number(value))
-                                }
-                              />
-                              <Legend />
-                              <Bar
-                                yAxisId="tokens"
-                                dataKey="tokens"
-                                name="Token"
-                                fill={colors.tokens}
-                                isAnimationActive={false}
-                              />
-                              <Line
-                                yAxisId="cost"
-                                dataKey="cost"
-                                name="费用"
-                                stroke={colors.average}
-                                strokeWidth={2}
-                                isAnimationActive={false}
-                              />
-                            </ComposedChart>
-                          </ChartResponsiveContainer>
+                          {hasResourceTrend ? (
+                            <ChartResponsiveContainer>
+                              <ComposedChart data={trend}>
+                                <CartesianGrid {...defaultCartesianGridProps} />
+                                <XAxis
+                                  {...defaultXAxisProps}
+                                  dataKey="label"
+                                  minTickGap={28}
+                                />
+                                <YAxis
+                                  {...defaultYAxisProps}
+                                  yAxisId="tokens"
+                                  tickFormatter={(value: number) =>
+                                    number.format(value)
+                                  }
+                                />
+                                <YAxis
+                                  {...defaultYAxisProps}
+                                  yAxisId="cost"
+                                  orientation="right"
+                                  tickFormatter={(value: number) => `$${value}`}
+                                />
+                                <Tooltip
+                                  {...defaultTooltipProps}
+                                  contentStyle={tooltipStyle}
+                                  formatter={(value, name) =>
+                                    name === "费用"
+                                      ? money.format(Number(value))
+                                      : number.format(Number(value))
+                                  }
+                                />
+                                <Legend iconType="circle" iconSize={7} />
+                                <Bar
+                                  yAxisId="tokens"
+                                  dataKey="tokens"
+                                  name="Token"
+                                  fill={colors.tokens}
+                                  radius={[4, 4, 0, 0]}
+                                  isAnimationActive={!reducedMotion}
+                                  animationDuration={700}
+                                  animationEasing="ease-out"
+                                />
+                                <Line
+                                  yAxisId="cost"
+                                  dataKey="cost"
+                                  name="费用"
+                                  stroke={colors.average}
+                                  strokeWidth={2}
+                                  strokeLinecap="round"
+                                  activeDot={{ r: 3 }}
+                                  isAnimationActive={!reducedMotion}
+                                  animationDuration={700}
+                                  animationEasing="ease-out"
+                                />
+                              </ComposedChart>
+                            </ChartResponsiveContainer>
+                          ) : (
+                            <div className="chart-empty">
+                              当前范围内没有 Token 或费用记录
+                            </div>
+                          )}
                         </ChartPanel>
                         <ChartPanel
                           title="工具调用分布"
@@ -414,12 +631,18 @@ export function DashboardPage() {
                                   width={120}
                                   tick={{ fontSize: 11 }}
                                 />
-                                <Tooltip contentStyle={tooltipStyle} />
+                                <Tooltip
+                                  {...defaultTooltipProps}
+                                  contentStyle={tooltipStyle}
+                                />
                                 <Bar
                                   dataKey="count"
                                   name="调用次数"
                                   fill={colors.calls}
-                                  isAnimationActive={false}
+                                  radius={[0, 4, 4, 0]}
+                                  isAnimationActive={!reducedMotion}
+                                  animationDuration={700}
+                                  animationEasing="ease-out"
                                 />
                               </BarChart>
                             </ChartResponsiveContainer>
@@ -437,8 +660,13 @@ export function DashboardPage() {
             </section>
             <section className="recent-section" aria-label="最近调用">
               <header>
-                <h2>最近调用</h2>
-                <Link to={`/projects${timeSearch}`}>查看项目调用列表 ›</Link>
+                <div className="recent-heading">
+                  <h2>最近调用</h2>
+                  <span className="recent-count">{traces.length}</span>
+                </div>
+                <Link to={`/projects${timeSearch}`}>
+                  查看项目调用列表 <span aria-hidden="true">›</span>
+                </Link>
               </header>
               {traces.length ? (
                 <div className="table-scroll">
@@ -463,7 +691,7 @@ export function DashboardPage() {
                         <tr key={`${trace.projectId}:${trace.id}`}>
                           <td>
                             <Link
-                              to={`/projects/${trace.projectId}/traces/${trace.id}${timeSearch}`}
+                              to={`/projects/${trace.projectId}/traces/${trace.id}?${detailParams}`}
                             >
                               {trace.name} ›
                             </Link>
@@ -473,10 +701,10 @@ export function DashboardPage() {
                             <span
                               className={
                                 trace.status === "失败"
-                                  ? "status-error"
+                                  ? "status status-error"
                                   : trace.status === "成功"
-                                    ? "status-success"
-                                    : ""
+                                    ? "status status-success"
+                                    : "status"
                               }
                             >
                               {trace.status}
@@ -514,199 +742,3 @@ export function DashboardPage() {
     </>
   );
 }
-
-const pageCSS = css`
-  flex: 1;
-  min-height: 0;
-  overflow: auto;
-  padding: 24px;
-  color: var(--global-text-color-900);
-  h1,
-  h2,
-  p {
-    margin: 0;
-  }
-  h1 {
-    font-size: 26px;
-    font-weight: 600;
-  }
-  .dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 22px;
-  }
-  .dashboard-header p {
-    color: var(--global-text-color-500);
-    margin-top: 6px;
-  }
-  .dashboard-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  select {
-    color: var(--global-text-color-900);
-    background: var(--global-background-color-default);
-    border: 1px solid var(--global-border-color-default);
-    border-radius: 4px;
-    padding: 7px 10px;
-    font: inherit;
-    max-width: 220px;
-  }
-  .metric-grid {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 12px;
-  }
-  .metric-card {
-    padding: 16px;
-    border: 1px solid var(--global-border-color-default);
-    border-radius: 6px;
-    background: var(--chart-panel-background-color);
-  }
-  .metric-card h2 {
-    color: var(--global-text-color-700);
-    font-size: 13px;
-    font-weight: 500;
-  }
-  .metric-card strong {
-    display: block;
-    font-size: clamp(22px, 2vw, 30px);
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    margin: 8px 0;
-    white-space: nowrap;
-  }
-  .metric-card span,
-  .data-caption,
-  .metric-note {
-    color: var(--global-text-color-500);
-    font-size: 12px;
-  }
-  .data-caption {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin: 12px 0 20px;
-  }
-  .analysis-section {
-    border: 1px solid var(--global-border-color-default);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .group-title {
-    font-weight: 600;
-    font-size: 15px;
-  }
-  .group-description {
-    color: var(--global-text-color-500);
-    font-size: 12px;
-    margin-left: 12px;
-  }
-  .chart-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    padding: 14px;
-  }
-  .chart-grid .chart-panel {
-    min-width: 0;
-  }
-  .chart-empty {
-    display: grid;
-    place-items: center;
-    height: 100%;
-    color: var(--global-text-color-500);
-  }
-  .recent-section {
-    margin-top: 20px;
-    border: 1px solid var(--global-border-color-default);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .recent-section > header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-  }
-  .recent-section h2 {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  a {
-    color: var(--global-text-color-900);
-    text-decoration: none;
-  }
-  a:hover {
-    color: ${colors.calls};
-    text-decoration: underline;
-  }
-  .recent-section > header a {
-    color: ${colors.calls};
-    font-size: 12px;
-  }
-  .table-scroll {
-    overflow-x: auto;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    white-space: nowrap;
-    font-size: 13px;
-    font-variant-numeric: tabular-nums;
-  }
-  th,
-  td {
-    text-align: left;
-    padding: 12px 16px;
-    border-top: 1px solid var(--global-border-color-default);
-  }
-  th {
-    font-weight: 500;
-    color: var(--global-text-color-500);
-  }
-  tbody tr:hover {
-    background: var(--global-background-color-default);
-  }
-  .status-success {
-    color: ${colors.calls};
-  }
-  .status-error {
-    color: ${colors.errors};
-  }
-  .metric-note {
-    margin: 12px 0 0;
-    line-height: 1.7;
-  }
-  .dashboard-message {
-    min-height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    color: var(--global-text-color-700);
-  }
-  @media (max-width: 1100px) {
-    .metric-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  @media (max-width: 800px) {
-    padding: 16px;
-    .chart-grid {
-      grid-template-columns: minmax(0, 1fr);
-    }
-    .group-description {
-      display: none;
-    }
-    .dashboard-header {
-      flex-wrap: wrap;
-    }
-    .data-caption {
-      flex-wrap: wrap;
-    }
-  }
-`;

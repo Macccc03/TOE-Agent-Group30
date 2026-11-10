@@ -29,7 +29,7 @@
 
 - 直接导入实际使用的公共组件，避免大型 barrel exports 拉入其他产品。清理裁剪后无用的导入，沿用上游格式规范。
 - 原 GraphQL 标签链接到同一提交已有的 Relay artifacts，artifacts 内对其他 artifacts 的 require 改为静态模块导入。本地安装/构建不要求整套 Phoenix monorepo；查询字段仍按固定上游版本维护。
-- Vite 代理 GraphQL 到本机 6006；从该服务公开 HTML 中读取原 `window.Config`，由开发与预览中间件提供。没有代理整个原站来冒充源码运行。
+- Vite 默认将 GraphQL 转发到团队后端 6060，并为保留的源码提供本地 `window.Config`。显式指定 `PHOENIX_BACKEND_URL` 时，仍可读取原 Phoenix 服务的运行配置和数据。
 - 页面路由待原抽屉 portal 宿主建立后挂载，处理直接打开详情链接时宿主尚未就绪的情况；抽屉组件本身仍沿用原版。
 - 许可文件保留在 vendor/arize-phoenix；逐文件基准与当前哈希见源码清单，修改源码后可更新清单继续审查。
 
@@ -48,3 +48,15 @@
 - 四图采用两个互斥折叠分组，默认展开调用表现，资源使用收起；可全部收起。URL 保存状态，收起图表不挂载，不提供一键全部展开。
 - 看板用小型独立 GraphQL 读取层通过同一代理取数，分页读取后本地聚合；没有修改原 Relay artifacts。当前按 Span 时间范围统计，跨边界 Trace 的部分节点口径与大量数据聚合留待服务端接口对齐。
 - 不改原 Docker 数据、不制造模型调用、不将参考图数字写死；没有本轮 commit/push。
+
+## 2026-11-06 详情返回与调用树键盘操作
+
+- `dashboard/DashboardPage.tsx` 的详情链接记录原看板查询参数；`phoenix-src/pages/trace/TracePage.tsx` 关闭抽屉时恢复看板。直接详情链接继续使用原项目列表返回逻辑；地址参数使刷新与节点选择后来源仍保留。
+- `phoenix-src/components/trace/TraceTree.tsx` 在原节点上增加 Enter/空格选择和 `aria-pressed`，折叠按钮补充名称/展开状态。子按钮的键盘事件不触发父节点选择，保留原树、时间条、外观及鼠标行为。
+- 两个上游文件的当前哈希已更新到来源清单；没有修改 Relay artifacts 或新增依赖。团队字段对齐提案见 `INTEGRATION.md`，未改队友模块。
+
+## 2026-11-07 设置页与深浅主题
+
+- `settings/SettingsPage.tsx` 复用 Phoenix 的卡片、分段控件、图标和 `ThemeProvider`，通过侧栏底部的「设置」进入。全局主题沿用原浏览器偏好键。
+- `dashboard/DashboardPage.tsx` 根据主题应用指标、图表和状态配色，悬浮提示使用原图表的光标样式。
+- `phoenix-src/Routes.tsx` 和 `pages/Layout.tsx` 增加路由和入口，来源清单同步更新。

@@ -1,0 +1,455 @@
+# Subset of Arize Phoenix js/app/schema.graphql at c660258.
+# See frontend/THIRD_PARTY_NOTICES.md for source and license.
+type AgentsConfig {
+  collectorEndpoint: String
+  assistantProjectName: String!
+  forceTracing: Boolean!
+  webAccessEnabled: Boolean!
+  assistantEnabled: Boolean!
+  githubServerEnabled: Boolean!
+  githubEnabled: Boolean!
+  githubWorkspaceTokenConfigured: Boolean!
+  allowLocalTraces: Boolean!
+  allowRemoteExport: Boolean!
+  sessionRetentionMaxIdleDays: Int
+  sessionRetentionMaxCountPerUser: Int
+}
+
+union AnnotationConfig = CategoricalAnnotationConfig | ContinuousAnnotationConfig | FreeformAnnotationConfig
+
+interface AnnotationConfigBase {
+  name: String!
+  description: String
+  annotationType: AnnotationType!
+}
+
+type AnnotationConfigConnection {
+  edges: [AnnotationConfigEdge!]!
+}
+
+type AnnotationConfigEdge {
+  node: AnnotationConfig!
+}
+
+input AnnotationFilter {
+  include: AnnotationFilterCondition
+  exclude: AnnotationFilterCondition
+}
+
+input AnnotationFilterCondition {
+  names: [String!]
+  sources: [AnnotationSource!]
+  userIds: [ID]
+}
+
+enum AnnotationSource {
+  API
+  APP
+}
+
+type AnnotationSummary {
+  name: String!
+  count: Int!
+  labelFractions: [LabelFraction!]!
+  meanScore: Float
+  scoreCount: Int!
+  labelCount: Int!
+}
+
+enum AnnotationType {
+  CATEGORICAL
+  CONTINUOUS
+  FREEFORM
+}
+
+enum AnnotatorKind {
+  LLM
+  HUMAN
+  CODE
+  DECISION
+  AGENT
+}
+
+enum AuthMethod {
+  LOCAL
+  OAUTH2
+  LDAP
+}
+
+type CategoricalAnnotationConfig implements Node & AnnotationConfigBase {
+  id: ID!
+  name: String!
+  description: String
+  annotationType: AnnotationType!
+  optimizationDirection: OptimizationDirection!
+  values: [CategoricalAnnotationValue!]!
+}
+
+type CategoricalAnnotationValue {
+  label: String!
+  score: Float
+}
+
+type ContinuousAnnotationConfig implements Node & AnnotationConfigBase {
+  id: ID!
+  name: String!
+  description: String
+  annotationType: AnnotationType!
+  optimizationDirection: OptimizationDirection!
+  lowerBound: Float
+  upperBound: Float
+}
+
+type CostBreakdown {
+  tokens: Float
+  cost: Float
+}
+
+scalar DateTime
+
+type DocumentAnnotation implements Node {
+  id: ID!
+  name: String!
+  annotatorKind: AnnotatorKind!
+  label: String
+  score: Float
+  explanation: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User
+  documentPosition: Int!
+}
+
+type DocumentRetrievalMetrics {
+  evaluationName: String!
+  ndcg(k: Int): Float
+  precision(k: Int): Float
+  hit: Float
+}
+
+enum EvalAttr {
+  score
+  label
+}
+
+input EvalResultKey {
+  name: String!
+  attr: EvalAttr!
+}
+
+type FreeformAnnotationConfig implements Node & AnnotationConfigBase {
+  id: ID!
+  name: String!
+  description: String
+  annotationType: AnnotationType!
+  optimizationDirection: OptimizationDirection!
+  threshold: Float
+  lowerBound: Float
+  upperBound: Float
+}
+
+scalar JSON @specifiedBy(url: "https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf")
+
+type LabelFraction {
+  label: String!
+  fraction: Float!
+}
+
+enum MimeType {
+  text
+  json
+}
+
+interface Node {
+  id: ID!
+}
+
+type OAuth2Grant implements Node {
+  id: ID!
+  clientName: String!
+  isFirstParty: Boolean!
+  clientId: String!
+  scopes: [String!]!
+  createdAt: DateTime!
+  expiresAt: DateTime
+  lastUsedAt: DateTime
+}
+
+enum OptimizationDirection {
+  MINIMIZE
+  MAXIMIZE
+  NONE
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  endCursor: String
+}
+
+type Project implements Node {
+  id: ID!
+  name: String!
+  gradientStartColor: String!
+  gradientEndColor: String!
+  startTime: DateTime
+  endTime: DateTime
+  hasTraces: Boolean!
+  traceCount(timeRange: TimeRange, filterCondition: String, sessionFilterCondition: String): Int!
+  costSummary(timeRange: TimeRange, filterCondition: String, sessionFilterCondition: String): SpanCostSummary!
+  latencyMsQuantile(probability: Float!, timeRange: TimeRange, filterCondition: String, sessionFilterCondition: String): Float
+  trace(traceId: ID!): Trace
+  spans(first: Int!, timeRange: TimeRange, last: Int, after: String, before: String, sort: SpanSort, filterCondition: String, traceFilterCondition: String): SpanConnection!
+  sessionCount(timeRange: TimeRange, sessionFilterCondition: String): Int!
+  traceAnnotationNames: [String!]!
+  spanAnnotationNames: [String!]!
+  documentEvaluationNames(spanId: ID): [String!]!
+  streamingLastUpdatedAt: DateTime
+  annotationConfigs(first: Int = 50, last: Int = null, after: String = null, before: String = null, names: [String!]): AnnotationConfigConnection!
+}
+
+enum ProjectColumn {
+  name
+  endTime
+}
+
+type ProjectConnection {
+  pageInfo: PageInfo!
+  edges: [ProjectEdge!]!
+}
+
+type ProjectEdge {
+  cursor: String!
+  node: Project!
+}
+
+input ProjectFilter {
+  col: ProjectFilterColumn!
+  value: String!
+}
+
+enum ProjectFilterColumn {
+  name
+}
+
+input ProjectSort {
+  col: ProjectColumn!
+  dir: SortDir!
+}
+
+type Query {
+  projects(first: Int = 50, last: Int, after: String, before: String, sort: ProjectSort, filter: ProjectFilter): ProjectConnection!
+  node(id: ID!): Node!
+  viewer: User
+  agentsConfig: AgentsConfig!
+  projectCount: Int!
+  datasetCount: Int!
+  promptCount: Int!
+  evaluatorCount: Int!
+}
+
+enum SortDir {
+  asc
+  desc
+}
+
+type Span implements Node {
+  id: ID!
+  name: String!
+  statusCode: SpanStatusCode!
+  statusMessage: String!
+  startTime: DateTime!
+  endTime: DateTime
+  latencyMs: Float
+  parentId: ID
+  spanKind: SpanKind!
+  spanId: ID!
+  trace: Trace!
+  attributes: String!
+  metadata: String
+  tokenCountTotal: Int
+  tokenCountPrompt: Int
+  tokenCountCompletion: Int
+  input: SpanIOValue
+  output: SpanIOValue
+  events: [SpanEvent!]!
+  cumulativeTokenCountTotal: Float
+  cumulativeTokenCountPrompt: Float
+  cumulativeTokenCountCompletion: Float
+  propagatedStatusCode: SpanStatusCode!
+  spanAnnotations(sort: SpanAnnotationSort, filter: AnnotationFilter = null): [SpanAnnotation!]!
+  spanAnnotationSummaries(filter: AnnotationFilter = null): [AnnotationSummary!]!
+  documentEvaluations: [DocumentAnnotation!]!
+  documentRetrievalMetrics(evaluationName: String): [DocumentRetrievalMetrics!]!
+  descendants(maxDepth: Int = 3, first: Int = 50, last: Int, after: String, before: String): SpanConnection!
+  project: Project!
+  costSummary: SpanCostSummary
+  costDetailSummaryEntries: [SpanCostDetailSummaryEntry!]!
+  cumulativeCostDetailSummaryEntries: [SpanCostDetailSummaryEntry!]!
+}
+
+type SpanAnnotation implements Node {
+  id: ID!
+  name: String!
+  annotatorKind: AnnotatorKind!
+  label: String
+  score: Float
+  explanation: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User
+}
+
+enum SpanAnnotationColumn {
+  createdAt
+  name
+}
+
+input SpanAnnotationSort {
+  col: SpanAnnotationColumn!
+  dir: SortDir!
+}
+
+enum SpanColumn {
+  startTime
+  endTime
+  latencyMs
+  tokenCountTotal
+  tokenCountPrompt
+  tokenCountCompletion
+  cumulativeTokenCountTotal
+  cumulativeTokenCountPrompt
+  cumulativeTokenCountCompletion
+  cumulativeTokenCostTotal
+  tokenCostTotal
+}
+
+type SpanConnection {
+  pageInfo: PageInfo!
+  edges: [SpanEdge!]!
+}
+
+type SpanCostDetailSummaryEntry {
+  tokenType: String!
+  isPrompt: Boolean!
+  value: CostBreakdown!
+}
+
+type SpanCostSummary {
+  prompt: CostBreakdown!
+  completion: CostBreakdown!
+  total: CostBreakdown!
+}
+
+type SpanEdge {
+  cursor: String!
+  node: Span!
+}
+
+type SpanEvent {
+  name: String!
+  message: String!
+  timestamp: DateTime!
+  attributes: JSON!
+}
+
+type SpanIOValue {
+  mimeType: MimeType!
+  truncatedValue: String!
+  value: String!
+}
+
+enum SpanKind {
+  chain
+  tool
+  llm
+  prompt
+  retriever
+  embedding
+  agent
+  reranker
+  evaluator
+  guardrail
+  decision
+  unknown
+}
+
+input SpanSort {
+  col: SpanColumn
+  evalResultKey: EvalResultKey
+  dir: SortDir!
+}
+
+enum SpanStatusCode {
+  OK
+  ERROR
+  UNSET
+}
+
+input TimeRange {
+  start: DateTime = null
+  end: DateTime = null
+}
+
+type Trace implements Node {
+  id: ID!
+  traceId: ID!
+  latencyMs: Float
+  project: Project!
+  projectSessionId: ID
+  rootSpan: Span
+  userId: String
+  numSpans: Int!
+  spans(first: Int!, last: Int, after: String, before: String, filterCondition: String): SpanConnection!
+  traceAnnotations(sort: TraceAnnotationSort, filter: AnnotationFilter = null): [TraceAnnotation!]!
+  traceAnnotationSummaries(filter: AnnotationFilter = null): [AnnotationSummary!]!
+  costSummary: SpanCostSummary!
+  costDetailSummaryEntries: [SpanCostDetailSummaryEntry!]!
+}
+
+type TraceAnnotation implements Node {
+  id: ID!
+  name: String!
+  annotatorKind: AnnotatorKind!
+  label: String
+  score: Float
+  explanation: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User
+}
+
+enum TraceAnnotationColumn {
+  createdAt
+  name
+}
+
+input TraceAnnotationSort {
+  col: TraceAnnotationColumn!
+  dir: SortDir!
+}
+
+type User implements Node {
+  id: ID!
+  passwordNeedsReset: Boolean!
+  email: String
+  username: String!
+  profilePictureUrl: String
+  authMethod: AuthMethod!
+  role: UserRole!
+  apiKeys: [UserApiKey!]!
+  oauth2Grants: [OAuth2Grant!]!
+  isManagementUser: Boolean!
+}
+
+type UserApiKey implements Node {
+  name: String!
+  description: String
+  createdAt: DateTime!
+  expiresAt: DateTime
+  id: ID!
+}
+
+type UserRole implements Node {
+  id: ID!
+  name: String!
+}

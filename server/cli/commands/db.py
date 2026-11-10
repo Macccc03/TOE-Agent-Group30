@@ -4,6 +4,8 @@ Phoenix 命令行接口命令处理器 (CLI Command): db.py
 提供控制台命令行工具执行逻辑（服务启动、数据库初始化、数据导出等）。
 """
 
+from __future__ import annotations
+
 import asyncio
 from argparse import SUPPRESS, Namespace
 from typing import TYPE_CHECKING

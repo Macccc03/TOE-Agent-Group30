@@ -14,5 +14,11 @@
     "types": ["@emotion/react/types/css-prop", "vite/client", "node"],
     "paths": { "@phoenix/*": ["./phoenix-src/*"] }
   },
-  "include": ["phoenix-src", "dashboard", "bootstrap.ts", "vite.config.ts"]
+  "include": [
+    "phoenix-src",
+    "dashboard",
+    "settings",
+    "bootstrap.ts",
+    "vite.config.ts"
+  ]
 }

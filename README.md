@@ -30,13 +30,14 @@
 ## 快速开始与依赖安装
 
 ### 1. 后端依赖安装
-推荐使用 Python 3.10+ 虚拟环境：
+推荐使用 Python 3.12 虚拟环境：
 ```powershell
 # 创建并激活虚拟环境
 python -m venv .venv
 .venv\Scripts\activate
 
 # 一键安装所需清单依赖
+$env:PYTHONUTF8 = '1'
 pip install -r requirements.txt
 ```
 
@@ -47,7 +48,7 @@ python -m processor.test_processor
 python -m processor.pipeline
 
 # 启动本地一体化可观测服务
-python -m server.main serve --host 127.0.0.1 --port 6006
+python -m server.main serve --host 127.0.0.1 --port 6060
 ```
 
 ### 3. 前端启动（可选）
@@ -57,6 +58,8 @@ pnpm install
 pnpm dev
 # 访问 http://127.0.0.1:5175
 ```
+
+前端默认连接 `6060` 上的团队服务。启动、切换数据源和写入合成样例见[前端说明](frontend/README.md)和[联调说明](frontend/INTEGRATION.md)。
 
 ---
 > 详细设计协议与数据契约请参阅：[分工.md](./分工.md)

@@ -113,6 +113,7 @@ export function getTrend(traces: Trace[], start: number, end: number) {
       ),
       calls: summary.count,
       errors: subset.filter((trace) => trace.status === "失败").length,
+      successRate: summary.successRate,
       average: summary.average,
       p95: summary.p95,
       tokens: summary.tokens,

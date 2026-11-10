@@ -9,6 +9,8 @@
 3. 组装并启动 Uvicorn ASGI 高并发 HTTP 服务。
 """
 
+from __future__ import annotations
+
 import logging
 from argparse import SUPPRESS, ArgumentParser, Namespace, _SubParsersAction
 

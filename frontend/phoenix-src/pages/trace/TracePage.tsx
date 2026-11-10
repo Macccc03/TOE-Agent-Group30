@@ -37,6 +37,7 @@ export function TracePage() {
   const location = useLocation();
   const { rootPath, tab } = useProjectRootPath();
   const selectedSpanNodeId = searchParams.get(SELECTED_SPAN_NODE_ID_PARAM);
+  const dashboardSearch = searchParams.get("dashboardSearch");
   const parentSearch = withSearchParams(searchParams, (params) => {
     params.delete(SELECTED_SPAN_NODE_ID_PARAM);
   });
@@ -52,11 +53,16 @@ export function TracePage() {
     <Drawer
       isOpen
       onClose={() =>
-        navigate({
-          pathname: `${rootPath}/${tab}`,
-          search: parentSearch,
-          hash: location.hash,
-        })
+        dashboardSearch !== null
+          ? navigate(
+              { pathname: "/dashboard", search: dashboardSearch },
+              { replace: true }
+            )
+          : navigate({
+              pathname: `${rootPath}/${tab}`,
+              search: parentSearch,
+              hash: location.hash,
+            })
       }
       defaultSize={defaultSize}
       minSize={DRAWER_DEFAULT_MIN_SIZE}
