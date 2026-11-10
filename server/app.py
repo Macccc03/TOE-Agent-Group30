@@ -64,16 +64,10 @@ def create_app(
     )
 
     # 3. 挂载新架构核心观测 API 路由 (/api/spans, /api/traces, /api/metrics 等)
-    try:
-        from server.routers import api_router
+    from server.routers import api_router
+    from server.routers.phoenix import router as phoenix_router
 
-        app.include_router(api_router)
-    except ImportError:
-        try:
-            from routers import api_router
-
-            app.include_router(api_router)
-        except ImportError as e:
-            logger.error("Failed to mount api_router: %s", e)
+    app.include_router(api_router)
+    app.include_router(phoenix_router)
 
     return app

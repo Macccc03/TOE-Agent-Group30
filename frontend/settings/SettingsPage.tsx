@@ -157,7 +157,7 @@ export function SettingsPage() {
         <section className="settings-about" aria-label="关于">
           <span>Phoenix Tracing</span>
           <p>精简前端 · v{window.Config.platformVersion}</p>
-          <p>数据存储在本机 Phoenix 服务，不离开你的环境。</p>
+          <p>页面读取当前配置的本地追踪服务。</p>
         </section>
       </div>
     </main>

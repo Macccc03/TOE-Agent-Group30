@@ -17,28 +17,24 @@
 
 ## 环境与启动
 
-本次验证使用 Node.js 24.22.1、pnpm 10.30.3。依赖由 `pnpm-lock.yaml` 固定。需要本机 Phoenix 21.0.0 服务，默认地址 `http://127.0.0.1:6006`；前端继续使用它的原生 GraphQL 接口。
+前端验证使用 Node.js 24.22.1 和 pnpm 10.30.3。默认连接团队的 Python/SQLite 服务，可以直接本机运行。
 
-本工作区此前部署的 Docker 服务可在仓库根目录启动：
+在仓库根目录按[项目 README](../README.md#快速开始与依赖安装)安装 Python 依赖后，启动后端：
 
 ```powershell
-docker compose -f ..\phoenix-local\compose.yaml up -d
+python -m server.main serve --host 127.0.0.1 --port 6060
 ```
 
-Docker Desktop 需处于运行状态。首次在另一台电脑部署时，先按照 Phoenix 官方方式准备匹配的 21.0.0 后端；相邻的 `phoenix-local` 不是本仓库内容。
-
-在本目录打开终端：
+另开终端进入 `frontend`：
 
 ```powershell
 pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-打开 [源码精简版](http://127.0.0.1:5175/projects)，原版在 [Phoenix 原版](http://127.0.0.1:6006/projects)。二者读取同一个本地服务的数据。当前入口端口为 **5175**，此前原型的 5174 不再是当前应用入口。
+打开[全局看板](http://127.0.0.1:5175/dashboard)。空数据库会显示 0 条调用，可以按[联调说明](INTEGRATION.md)写入一条合成 Trace。开发服务器只绑定本机，端口占用时退出。停止前台服务用 Ctrl+C。
 
-开发服务器只绑定本机；端口占用会退出。前台运行时用 Ctrl+C 停止。若需修改后端地址，在启动前设置 `$env:PHOENIX_BACKEND_URL = 'http://127.0.0.1:6006'`。此版本面向本地未开启认证的体验环境；登录和账户页面已裁掉。
-
-如果已有本地体验服务正在运行，直接打开地址即可，不必重复启动。
+若团队服务使用其他端口，启动前设置 `$env:TOE_BACKEND_URL = 'http://127.0.0.1:6060'`。要对比原版或查看此前 Docker 的数据，可设置 `$env:PHOENIX_BACKEND_URL = 'http://127.0.0.1:6006'` 后重启前端，切回团队服务时清除该变量。两个后端各用自己的数据库。
 
 ## 体验步骤
 
@@ -54,24 +50,16 @@ pnpm dev
 - 四张图按两组互斥展开：默认显示“调用表现”（调用量/错误、耗时），点击“资源使用”切换到 Token/费用和工具分布；再次点击当前组全部收起。最多挂载两张图，收起时卸载图表。
 - 分组、项目与时间选择保存在地址中，刷新可恢复。最近调用最多显示 10 条，点击名称进入原 Trace 详情抽屉，浏览器返回可恢复看板状态。
 - 从看板进入详情时，地址中的 `dashboardSearch` 保存原看板筛选；切换节点或刷新后关闭抽屉，仍回到原项目、时间和图表分组。直接打开不带该参数的详情链接，关闭后回项目 Trace 列表。
-- 当前数据来自现有 Phoenix 数据库，不使用生图数字。按项目和 Trace ID 去重；节点自身 Token/费用只累加一次；P95 使用最近秩法；“—”表示未记录，0 保留为 0。工具分布只统计原服务的 `tool` 类型，检索节点不冒充工具。
+- 按项目和 Trace ID 去重，节点自身 Token/费用只累加一次。P95 使用最近秩法，费用单位为美元。工具分布统计 `tool` 节点。
 
-新增查询通过现有 `/graphql` 代理读取项目及所选范围内的所有分页 Span，再在浏览器汇总。范围沿用 Phoenix 的 Span 开始时间口径，因此跨时间边界的 Trace 可能只有部分节点参与统计；当前适用于本地少量数据体验。后续与成员 2 对接服务端聚合，统一跨边界调用口径及大量数据性能。没有接入团队 processor/storage。
+看板读取所选时间段内的分页 Span，并在浏览器聚合。筛选按 Span 开始时间执行，跨时间边界的调用可能只有部分节点参与统计。详情抽屉仍读取整条 Trace。聚合逻辑检查用 `pnpm test:dashboard`。
 
-聚合逻辑检查：`pnpm test:dashboard`。覆盖 Trace 去重、耗时/Token/费用、状态与空值、时间分桶/P95，以及小写工具类型。
+### 调用追踪
 
-### 原调用追踪流程
-
-1. 打开 `local-agent-demo`，点击 `demo-agent` 进入 Trace 详情。
-2. 选择 `knowledge-search` 或 `answer-generation`，查看不同节点的输入输出、属性和耗时。
-3. 搜索调用树、展开/收起、切换指标显示，刷新详情地址检查选中节点是否恢复。
-   调用树节点可用 Tab 聚焦，Enter/空格选择；折叠按钮独立操作，不改变选中节点。选中状态同时提供给辅助工具。
-4. 拖动详情抽屉边缘和树/节点详情之间的分隔线。上游树宽小于 500px 时隐藏时间条，小于 300px 时进一步隐藏指标与折叠控件；要看时间条，请把树区域拉宽。
-5. 返回 Projects，打开无数据的 `default` 项目检查空列表。
-
-`local-agent-demo` 包含写入本机 Phoenix 数据库的合成示例，模型名含 `synthetic-demo-no-api-call`。如果「最近 7 天」为空，可以从右上角改选 `Last Month`。也可以在本机 `phoenix-local` 目录执行 `python .\seed_demo.py`，向示例项目追加 3 条当前时间的合成调用。脚本使用本地 Phoenix 容器，无需模型 API Key。其他机器的空数据库也可以用同样方式写入测试 Trace。
-
-团队数据接入的最新字段差异、处理层输出样例和待确认事项见 [接入准备](INTEGRATION.md)。该材料是联调提案，当前页面尚未切换到团队接口。
+1. 侧栏进入 Tracing，选择「本地项目」，从列表点开一条 Trace。
+2. 选择不同节点，核对输入输出、错误、耗时和 Token。调用树节点支持 Tab 聚焦、Enter/空格选择，折叠按钮独立操作。
+3. 搜索调用树、展开/收起，刷新详情地址检查选中节点是否恢复。
+4. 拉宽抽屉或树与节点详情之间的分隔线，查看原版时间条。树宽小于 500px 时，上游组件会隐藏时间条。
 
 ## 构建与检查
 
@@ -110,6 +98,4 @@ vendor/arize-phoenix/          # 上游许可和通知
 
 ## 数据接入边界
 
-当前通路：本地 Phoenix 数据库 → Phoenix GraphQL → Vite 本地代理 → 原 Relay 查询 → 原页面。前端直接从本地保留源码编译，不是嵌入原站的 iframe。
-
-团队 processor/storage 还没有接入此页面。后续需要与成员 2 确认：保留 Phoenix GraphQL、建设适配层还是提供团队 API；不能假定之前原型的 repository 替换方案继续适用。查询使用固定上游生成结果；修改 GraphQL 字段时需从同一 Phoenix 版本的 schema 重新生成并同步 artifacts，不能只修改生成文件中的查询文本。
+团队服务通过 `POST /api/spans` 接收数据，经过 processor 写入 SQLite。前端经 Vite 代理访问同一服务的只读 `/graphql`，由适配层把团队记录转换成保留的 Phoenix Relay 查询所需的数据。接口范围和验证见[联调说明](INTEGRATION.md)。

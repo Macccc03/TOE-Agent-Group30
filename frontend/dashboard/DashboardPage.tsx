@@ -402,7 +402,7 @@ export function DashboardPage() {
             <div className="data-caption">
               <span className="data-caption__source">
                 <span className="live-dot" aria-hidden="true" />
-                当前读取本机 Phoenix 数据，示例项目为合成调用。
+                当前读取本机服务中的调用记录。
               </span>
               {updatedAt && (
                 <span className="data-caption__time">

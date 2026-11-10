@@ -2,21 +2,55 @@ import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
 
-const backend = process.env.PHOENIX_BACKEND_URL || "http://127.0.0.1:6006";
+const upstreamPhoenix = process.env.PHOENIX_BACKEND_URL;
+const backend =
+  upstreamPhoenix || process.env.TOE_BACKEND_URL || "http://127.0.0.1:6060";
 const proxy = {
-  "/graphql": { target: backend, changeOrigin: true, ws: true },
-  "/v1": { target: backend, changeOrigin: true },
-  "/client_errors": { target: backend, changeOrigin: true },
+  "/graphql": {
+    target: backend,
+    changeOrigin: true,
+    ws: Boolean(upstreamPhoenix),
+  },
+  ...(upstreamPhoenix
+    ? {
+        "/v1": { target: backend, changeOrigin: true },
+        "/client_errors": { target: backend, changeOrigin: true },
+      }
+    : { "/api": { target: backend, changeOrigin: true } }),
 };
 
-// Python normally injects window.Config into Phoenix's HTML template.
+const localConfig = {
+  basename: "/",
+  platformVersion: "TOE Agent",
+  authenticationEnabled: false,
+  basicAuthDisabled: true,
+  passwordResetEmailEnabled: false,
+  oAuth2Idps: [],
+  ldapEnabled: false,
+  ldapManualUserCreationEnabled: false,
+  hasDbThreshold: false,
+  allowExternalResources: false,
+  agentAssistantDisabled: true,
+  agentBashDisabled: true,
+  mcpServerEnabled: false,
+  mcpCodeModeEnabled: false,
+  authErrorMessages: {},
+} satisfies Window["Config"];
+
 function phoenixRuntimeConfig(): Plugin {
   const configure = (server: { middlewares: { use: Function } }) => {
     server.middlewares.use(
       "/phoenix-runtime-config.js",
       async (_req: unknown, res: any) => {
+        res.setHeader("Content-Type", "application/javascript; charset=utf-8");
+        res.setHeader("Cache-Control", "no-store");
+        if (!upstreamPhoenix) {
+          res.end(`window.Config = ${JSON.stringify(localConfig)};`);
+          return;
+        }
+
         try {
-          const response = await fetch(backend, {
+          const response = await fetch(upstreamPhoenix, {
             signal: AbortSignal.timeout(8000),
           });
           if (!response.ok)
@@ -32,18 +66,9 @@ function phoenixRuntimeConfig(): Plugin {
             );
           if (!config)
             throw new Error("Phoenix public window.Config was not found");
-          res.setHeader(
-            "Content-Type",
-            "application/javascript; charset=utf-8"
-          );
-          res.setHeader("Cache-Control", "no-store");
           res.end(config);
         } catch (error) {
           res.statusCode = 503;
-          res.setHeader(
-            "Content-Type",
-            "application/javascript; charset=utf-8"
-          );
           res.end(
             `document.getElementById('root').textContent=${JSON.stringify(`无法连接本地 Phoenix 后端 ${backend}，请先启动 Docker Phoenix。`)}; throw new Error(${JSON.stringify(String(error))});`
           );

@@ -12,6 +12,7 @@
 | phoenix-src/** | 同路径的 js/app/src/** | 保留原 App、主题、公共组件、Relay 数据层、项目/Trace 列表与详情；删除无关入口及业务代码，调整导入与构建接入 |
 | public/ 的图标、modernizr.js 等 | js/app/static/** | 原静态资源；phoenix-runtime-config.js 是本项目新增的配置占位 |
 | .oxfmtrc.jsonc | 上游根目录 .oxfmtrc.jsonc | 调整本地工具 schema 路径 |
+| [后端只读 schema](../server/routers/phoenix_schema.graphql) | js/app/schema.graphql | 保留精简前端现有查询所需的类型和字段 |
 
 逐文件上游路径、固定提交与文本哈希见 [PHOENIX_SOURCE_MANIFEST.json](PHOENIX_SOURCE_MANIFEST.json)。具体裁剪见 [PHOENIX_CHANGES.md](PHOENIX_CHANGES.md)。文件被标记 modified 可能包含导入整理、格式化及 Relay 模块链接，不等于重写界面实现。
 

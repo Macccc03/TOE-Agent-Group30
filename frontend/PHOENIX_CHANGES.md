@@ -29,7 +29,7 @@
 
 - 直接导入实际使用的公共组件，避免大型 barrel exports 拉入其他产品。清理裁剪后无用的导入，沿用上游格式规范。
 - 原 GraphQL 标签链接到同一提交已有的 Relay artifacts，artifacts 内对其他 artifacts 的 require 改为静态模块导入。本地安装/构建不要求整套 Phoenix monorepo；查询字段仍按固定上游版本维护。
-- Vite 代理 GraphQL 到本机 6006；从该服务公开 HTML 中读取原 `window.Config`，由开发与预览中间件提供。没有代理整个原站来冒充源码运行。
+- Vite 默认将 GraphQL 转发到团队后端 6060，并为保留的源码提供本地 `window.Config`。显式指定 `PHOENIX_BACKEND_URL` 时，仍可读取原 Phoenix 服务的运行配置和数据。
 - 页面路由待原抽屉 portal 宿主建立后挂载，处理直接打开详情链接时宿主尚未就绪的情况；抽屉组件本身仍沿用原版。
 - 许可文件保留在 vendor/arize-phoenix；逐文件基准与当前哈希见源码清单，修改源码后可更新清单继续审查。
 

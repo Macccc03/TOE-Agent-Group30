@@ -6,6 +6,7 @@
 # --- 核心后端服务与 RESTful API 框架 ---
 fastapi>=0.110.0,<1.0.0
 uvicorn[standard]>=0.28.0,<1.0.0
+graphql-core>=3.2,<3.3
 
 # --- 高性能本地存储引擎与数据库抽象 (SQLite-WAL) ---
 SQLAlchemy>=2.0.0,<3.0.0

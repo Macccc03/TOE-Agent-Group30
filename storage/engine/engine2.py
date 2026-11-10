@@ -6,7 +6,7 @@
 1. PRAGMA 调优 (configure_pragmas):
    - WAL 模式、NORMAL 同步、5 秒锁重试、64MB 缓存、外键级联。
 2. 极致写入算法 (bulk_upsert_spans):
-   - 算法: 内存单趟 O(N) 哈希预聚合（Fold & Pre-Aggregate）+ 两阶段依赖写入 + 原生 ON CONFLICT UPSERT。
+   - 算法: 两阶段依赖写入 + 原生 ON CONFLICT UPSERT，并按已保存的 Span 重算受影响的 Trace。
    - 价值: 将原本分散的成百上千次 DB 交互折叠为单一批量原子事务，消除了 95% 以上磁盘页读写与锁竞争。
 3. 启动函数 (startup / init_db):
    - 一键开启底层物理连接、配置 WAL、执行 DDL 迁移、校验结构完整性。
@@ -19,7 +19,7 @@ import os
 import sqlite3
 import sys
 from collections.abc import Sequence
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 # 保证当前包及其父路径能够被正确导入
@@ -91,110 +91,33 @@ def bulk_upsert_spans(
     conn: sqlite3.Connection,
     spans: Sequence[SpanRecordInput],
 ) -> None:
-    """
-    【极致高效批量写入算法接口】：
-    1. 内存 O(N) 单趟哈希预聚合（Fold & Aggregate），消除冗余 DB 往返；
-    2. 两阶段依赖拓扑写入（先 Traces 后 Spans），杜绝外键约束冲突；
-    3. SQLite 原生 ON CONFLICT UPSERT 语法，单次 B-Tree 寻址兼顾新增与幂等覆盖；
-    4. 显式单一事务提交（BEGIN ... COMMIT），IO 吞吐提升 50 倍以上。
-    """
+    """Save spans and rebuild affected trace summaries in a single transaction."""
     if not spans:
         return
-
-    cursor = conn.cursor()
 
     def get_val(item: SpanRecordInput, attr: str, default: Any = None) -> Any:
         if isinstance(item, dict):
             return item.get(attr, default)
         return getattr(item, attr, default)
 
-    # -------------------------------------------------------------
-    # 算法步骤 1：内存单趟哈希预聚合 (O(N) 线性时间)
-    # -------------------------------------------------------------
-    traces_map: dict[str, dict[str, Any]] = {}
-    for s in spans:
-        t_id = get_val(s, "trace_id")
-        if not t_id:
-            continue
-        s_name = get_val(s, "name", "Unknown Node")
-        s_parent = get_val(s, "parent_id")
-        s_start = str(get_val(s, "start_time", ""))
-        s_end = str(get_val(s, "end_time", ""))
-        s_tokens = int(get_val(s, "total_tokens", 0) or 0)
-        s_cost = float(get_val(s, "cost_usd", 0.0) or 0.0)
-        s_status = str(get_val(s, "status", "OK"))
-        s_err = get_val(s, "error_message")
+    def parse_time(value: str) -> datetime:
+        timestamp = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        return timestamp.replace(tzinfo=timezone.utc) if timestamp.tzinfo is None else timestamp
 
-        if t_id not in traces_map:
-            traces_map[t_id] = {
-                "trace_id": t_id,
-                "root_name": s_name if s_parent is None else "Agent_Pipeline",
-                "start_time": s_start,
-                "end_time": s_end,
-                "total_tokens": 0,
-                "total_cost_usd": 0.0,
-                "status": "OK",
-                "error_message": None,
-            }
-        item = traces_map[t_id]
-        if s_parent is None:
-            item["root_name"] = s_name
-        item["start_time"] = min(item["start_time"], s_start)
-        item["end_time"] = max(item["end_time"], s_end)
-        item["total_tokens"] += s_tokens
-        item["total_cost_usd"] += s_cost
-        if s_status == "ERROR":
-            item["status"] = "ERROR"
-            item["error_message"] = s_err
-
-    # -------------------------------------------------------------
-    # 算法步骤 2：两阶段依赖批量原子写入 (单一事务)
-    # -------------------------------------------------------------
-    cursor.execute("BEGIN TRANSACTION;")
+    trace_ids = {str(get_val(span, "trace_id")) for span in spans}
+    cursor = conn.cursor()
+    cursor.execute("BEGIN IMMEDIATE;")
     try:
-        # 阶段 A：批量 Upsert 父级 Traces 表
-        upsert_trace_sql = """
-        INSERT INTO traces (
-            trace_id, root_name, start_time, end_time, latency_ms,
-            total_tokens, total_cost_usd, status, error_message
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ON CONFLICT(trace_id) DO UPDATE SET
-            root_name = CASE WHEN excluded.root_name != 'Agent_Pipeline' THEN excluded.root_name ELSE traces.root_name END,
-            start_time = MIN(traces.start_time, excluded.start_time),
-            end_time = MAX(traces.end_time, excluded.end_time),
-            latency_ms = MAX(0.0, (strftime('%s', MAX(traces.end_time, excluded.end_time)) - strftime('%s', MIN(traces.start_time, excluded.start_time))) * 1000.0),
-            total_tokens = traces.total_tokens + excluded.total_tokens,
-            total_cost_usd = traces.total_cost_usd + excluded.total_cost_usd,
-            status = CASE WHEN excluded.status = 'ERROR' THEN 'ERROR' ELSE traces.status END,
-            error_message = COALESCE(excluded.error_message, traces.error_message);
-        """
+        # Parent rows must exist before inserting the foreign-keyed spans.
+        cursor.executemany(
+            """
+            INSERT INTO traces (trace_id, start_time, end_time)
+            VALUES (?, '', '')
+            ON CONFLICT(trace_id) DO NOTHING
+            """,
+            [(trace_id,) for trace_id in trace_ids],
+        )
 
-        trace_params = []
-        for t_id, t in traces_map.items():
-            try:
-                s_dt = datetime.fromisoformat(t["start_time"].replace("Z", "+00:00"))
-                e_dt = datetime.fromisoformat(t["end_time"].replace("Z", "+00:00"))
-                latency = max(0.0, (e_dt - s_dt).total_seconds() * 1000.0)
-            except Exception:
-                latency = 0.0
-
-            trace_params.append(
-                (
-                    t["trace_id"],
-                    t["root_name"],
-                    t["start_time"],
-                    t["end_time"],
-                    latency,
-                    t["total_tokens"],
-                    t["total_cost_usd"],
-                    t["status"],
-                    t["error_message"],
-                )
-            )
-
-        cursor.executemany(upsert_trace_sql, trace_params)
-
-        # 阶段 B：批量 Upsert 原子 Spans 明细表
         insert_span_sql = """
         INSERT INTO spans (
             span_id, trace_id, parent_id, span_kind, name,
@@ -203,9 +126,15 @@ def bulk_upsert_spans(
             status, error_message, attributes_json
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(span_id) DO UPDATE SET
+            parent_id = excluded.parent_id,
+            span_kind = excluded.span_kind,
+            name = excluded.name,
+            start_time = excluded.start_time,
             end_time = excluded.end_time,
             latency_ms = excluded.latency_ms,
+            input_str = excluded.input_str,
             output_str = excluded.output_str,
+            prompt_tokens = excluded.prompt_tokens,
             completion_tokens = excluded.completion_tokens,
             total_tokens = excluded.total_tokens,
             cost_usd = excluded.cost_usd,
@@ -238,12 +167,46 @@ def bulk_upsert_spans(
         ]
         cursor.executemany(insert_span_sql, span_params)
 
-        # 原子提交
+        for trace_id in trace_ids:
+            rows = cursor.execute(
+                """
+                SELECT span_id, parent_id, name, start_time, end_time,
+                       total_tokens, cost_usd, status, error_message
+                FROM spans WHERE trace_id = ?
+                """,
+                (trace_id,),
+            ).fetchall()
+            if not rows:
+                cursor.execute("DELETE FROM traces WHERE trace_id = ?", (trace_id,))
+                continue
+            rows.sort(key=lambda row: (parse_time(row["start_time"]), row["span_id"]))
+            root = next((row for row in rows if row["parent_id"] is None), None)
+            start = parse_time(rows[0]["start_time"])
+            end = max(parse_time(row["end_time"]) for row in rows)
+            error = next((row for row in rows if row["status"] == "ERROR"), None)
+            cursor.execute(
+                """
+                UPDATE traces SET root_name = ?, start_time = ?, end_time = ?,
+                    latency_ms = ?, total_tokens = ?, total_cost_usd = ?,
+                    status = ?, error_message = ? WHERE trace_id = ?
+                """,
+                (
+                    root["name"] if root else "Agent_Pipeline",
+                    start.astimezone(timezone.utc).isoformat(timespec="microseconds"),
+                    end.astimezone(timezone.utc).isoformat(timespec="microseconds"),
+                    max(0.0, (end - start).total_seconds() * 1000),
+                    sum(row["total_tokens"] for row in rows),
+                    sum(row["cost_usd"] for row in rows),
+                    "ERROR" if error else "OK",
+                    error["error_message"] if error else None,
+                    trace_id,
+                ),
+            )
         cursor.execute("COMMIT;")
-    except Exception as e:
+    except Exception:
         cursor.execute("ROLLBACK;")
-        logger.error(f"批量写入 Spans 发生异常回滚: {e}", exc_info=True)
-        raise e
+        logger.exception("批量写入 Spans 发生异常回滚")
+        raise
 
 
 # =====================================================================
